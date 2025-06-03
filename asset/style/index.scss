@@ -1,0 +1,163 @@
+@use "tailwindcss";
+@use "tags";
+@use "layout";
+
+@layer base {
+  html {
+    // body
+    --bg-body: #fff;
+    --bg-main: #e7e9ee;
+    --bg-aside: #fff;
+    --bg-nav: #fff;
+    --bg-panel: #fff;
+  }
+
+  html {
+    // border
+    --border: #d2d4d9;
+    --border-filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(4905%) hue-rotate(196deg) brightness(87%) contrast(95%);
+
+    .border-all {
+      border: 1px solid var(--border);
+    }
+
+    .border-right {
+      border-right: 1px solid var(--border);
+    }
+
+    .border-top {
+      border-top: 1px solid var(--border);
+    }
+
+    .border-left {
+      border-left: 1px solid var(--border);
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+
+  html {
+    // font
+    .font-d2 {
+      font-family: d2Font, sans-serif;
+    }
+
+    .font-roboto {
+      font-family: robotoFont, sans-serif;
+    }
+
+    .font-neo {
+      font-family: neoFont, sans-serif;
+    }
+  }
+
+  html {
+    // 테이블
+    --color-table-hover: rgb(205, 209, 226);
+  }
+
+  html {
+    // 버튼
+    --color-shadow: rgba(0, 0, 0, 0.1);
+  }
+
+  html {
+    // 폰트
+    --text-1: #c9ccd1;
+    --text-1-filter: brightness(0) saturate(100%) invert(94%) sepia(13%) saturate(80%) hue-rotate(179deg) brightness(86%) contrast(91%);
+    --text-2: #9ba0aa;
+    --text-2-filter: brightness(0) saturate(100%) invert(67%) sepia(15%) saturate(175%) hue-rotate(182deg) brightness(93%) contrast(89%);
+    --text-3: #5c5f69;
+    --text-3-filter: brightness(0) saturate(100%) invert(30%) sepia(13%) saturate(404%) hue-rotate(169deg) brightness(91%) contrast(88%);
+    --text-4: #323a3d;
+    --text-4-filter: brightness(0) saturate(100%) invert(19%) sepia(29%) saturate(206%) hue-rotate(150deg) brightness(97%) contrast(91%);
+    --text-5: #282b2f;
+    --text-5-filter: brightness(0) saturate(100%) invert(15%) sepia(6%) saturate(842%) hue-rotate(175deg) brightness(93%) contrast(93%);
+  }
+
+  html {
+    // color
+    --primary: rgb(78, 172, 109); // #4EAC6D
+    --primary-filter: brightness(0) saturate(100%) invert(53%) sepia(66%) saturate(334%) hue-rotate(87deg) brightness(97%) contrast(88%);
+    --primary-alt: rgb(255, 255, 255); // #ffffff
+    --primary-alt-filter: brightness(0) saturate(100%) invert(79%) sepia(99%) saturate(105%) hue-rotate(193deg) brightness(113%) contrast(101%);
+    --primary-text: #a5ceb1;
+
+    --dark: #626c72;
+    --dark-filter: brightness(0) saturate(100%) invert(45%) sepia(5%) saturate(652%) hue-rotate(158deg) brightness(92%) contrast(98%);
+    --dark-alt: #ffffff;
+    --dark-alt-filter: brightness(0) saturate(100%) invert(79%) sepia(99%) saturate(105%) hue-rotate(193deg) brightness(113%) contrast(101%);
+    --dark-text: #626c72;
+
+    --danger: rgb(255 91 91); // #FF5B5B
+    --danger-filter: invert(60%) sepia(73%) saturate(3419%) hue-rotate(326deg) brightness(101%) contrast(91%);
+    --danger-alt: #fff;
+    --danger-alt-filter: invert(99%) sepia(56%) saturate(463%) hue-rotate(184deg) brightness(113%) contrast(100%);
+    --danger-text: #fff;
+
+
+    --pink: #f5cad1;
+    --pink-alt: #ffffff;
+    --pink-text: #de95ab;
+  }
+
+
+  html.dark {
+    --bs-blue: #4eac6d;
+    --bs-red: #ef476f;
+    --bs-orange: #fc814a;
+    --bs-yellow: #ffd166;
+    --bs-green: #06d6a0;
+    --bs-teal: #050505;
+    --bs-cyan: #50a5f1;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #797c8c;
+    --bs-gray-dark: #333;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #f9f9f9;
+    --bs-gray-300: #f6f6f9;
+    --bs-gray-400: #e6ebf5;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #797c8c;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #333;
+    --bs-gray-900: #212529;
+    --bs-primary: #4eac6d;
+    --bs-secondary: #797c8c;
+    --bs-success: #06d6a0;
+    --bs-info: #50a5f1;
+    --bs-warning: #ffd166;
+    --bs-danger: #ef476f;
+    --bs-pink: #e83e8c;
+    --bs-indigo: #560bad;
+    --bs-purple: #6153cc;
+    --bs-light: #f6f6f9;
+    --bs-dark: #212529;
+    --bs-primary-text-emphasis: #1f452c;
+    --bs-secondary-text-emphasis: #303238;
+    --bs-success-text-emphasis: #025640;
+    --bs-info-text-emphasis: #204260;
+    --bs-warning-text-emphasis: #665429;
+    --bs-danger-text-emphasis: #601c2c;
+    --bs-light-text-emphasis: #495057;
+    --bs-dark-text-emphasis: #495057;
+  }
+
+  html {
+    .no-drag {
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  }
+}

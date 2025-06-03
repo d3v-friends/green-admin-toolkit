@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": false,
+    "removeComments": true,
+    "declaration": true,
+    "inlineSourceMap": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "./src/index.ts",
+    "./src/comp/*",
+    "./src/fn/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "./src/app/*"
+  ]
+}

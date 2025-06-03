@@ -1,0 +1,76 @@
+@layer base {
+  html {
+    --bg-nav-item: #e7e9ee;
+    --text-nav-item: #626c72;
+    --filter-text-nav-item: brightness(0) saturate(100%) invert(43%) sepia(11%) saturate(357%) hue-rotate(159deg) brightness(93%) contrast(89%);
+  }
+
+  html {
+    .nav-item.normal {
+      background: var(--bg-nav-item);
+      color: var(--text-nav-item);
+
+      img {
+        filter: var(--filter-text-nav-item);
+      }
+    }
+
+    .nav-item.normal:hover {
+      background: var(--primary);
+      color: var(--primary-alt);
+
+      img {
+        filter: var(--primary-alt-filter);
+      }
+    }
+
+    // alt
+    .nav-item.alt {
+      background: var(--primary);
+      color: var(--primary-alt);
+
+      img {
+        filter: var(--primary-alt-filter);
+      }
+    }
+
+    .nav-item.alt:hover {
+      filter: brightness(120%);
+    }
+  }
+
+  .aside-title {
+    color: var(--text-2);
+    border-left: 0.2rem solid transparent;
+
+    img {
+      filter: var(--text-2-filter);
+    }
+  }
+
+  .aside-title.activate {
+    color: var(--primary);
+    border-color: var(--primary);
+
+    img {
+      filter: var(--primary-filter);
+    }
+  }
+
+  .aside-item {
+    color: var(--text-2);
+
+    img {
+      filter: var(--text-2-filter);
+    }
+  }
+
+  .aside-item.activate {
+    color: var(--primary);
+    font-weight: bold;
+
+    img {
+      filter: var(--primary-filter);
+    }
+  }
+}
