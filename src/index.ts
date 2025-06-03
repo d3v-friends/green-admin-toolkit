@@ -13,6 +13,7 @@ export {default as Panel} from "@comp/widget/panel";
 export {default as PanelBorder} from "@comp/widget/panel-border";
 export {default as ScreenCenter} from "@comp/widget/screen-center";
 export {default as Button} from "@comp/widget/button";
+export {default as ButtonLink} from "@comp/widget/button-link";
 
 // form
 export {default as InputString} from "@comp/form/input-string";
@@ -23,16 +24,4 @@ export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
 export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
 
 // styles
-export type ColorStyle =
-	| "primary"
-	| "secondary"
-	| "success"
-	| "info"
-	| "warning"
-	| "danger"
-	| "light"
-	| "dark"
-	| "pink"
-	| "purple"
-	| "blue"
-	| string;
+export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;

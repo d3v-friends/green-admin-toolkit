@@ -4,6 +4,7 @@ import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
+import ImgDot from "web-asset/svg/regular/fi-rr-bullet.svg";
 
 interface Props {
 	href: string;
@@ -13,7 +14,7 @@ interface Props {
 	alert?: number;
 }
 
-export default function ({href, prefix = "#", imgSrc, children, alert}: Readonly<Props>) {
+export default function ({href, prefix = "#", imgSrc = ImgDot, children, alert}: Readonly<Props>) {
 	const pathname = usePathname();
 	let active = pathname.includes(prefix);
 

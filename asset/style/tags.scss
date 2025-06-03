@@ -36,7 +36,279 @@
 
   html {
     .button {
-      border: 1px solid transparent;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    // solid
+    .button.solid:hover {
+      filter: brightness(130%);
+    }
+
+    .button.solid.info {
+      background: var(--info);
+      border-color: var(--info);
+      color: var(--info-alt);
+
+      img {
+        filter: var(--info-alt-filter);
+      }
+    }
+
+    .button.solid.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--primary-alt);
+
+      img {
+        filter: var(--primary-alt-filter);
+      }
+    }
+
+    .button.solid.secondary {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--secondary-alt);
+
+      img {
+        filter: var(--secondary-alt-filter);
+      }
+    }
+
+    .button.solid.success {
+      background: var(--success);
+      border-color: var(--success);
+      color: var(--success-alt);
+
+      img {
+        filter: var(--success-alt-filter);
+      }
+    }
+
+    .button.solid.dark {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--dark-alt);
+
+      img {
+        filter: var(--dark-alt-filter);
+      }
+    }
+
+    .button.solid.danger {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: var(--danger-alt);
+
+      img {
+        filter: var(--danger-alt-filter);
+      }
+    }
+
+    .button.solid.warning {
+      background: var(--warning);
+      border-color: var(--warning);
+      color: var(--warning-alt);
+
+      img {
+        filter: var(--warning-alt-filter);
+      }
+    }
+
+    // outline
+    .button.outlined.primary {
+      border-color: var(--primary);
+      color: var(--primary);
+
+      img {
+        filter: var(--primary-filter);
+      }
+    }
+
+    .button.outlined.primary:hover {
+      background: var(--primary);
+      color: var(--primary-alt);
+
+      img {
+        filter: var(--primary-alt-filter);
+      }
+    }
+
+    .button.outlined.secondary {
+      border-color: var(--secondary);
+      color: var(--secondary);
+
+      img {
+        filter: var(--secondary-filter);
+      }
+    }
+
+    .button.outlined.secondary:hover {
+      background: var(--secondary);
+      color: var(--secondary-alt);
+
+      img {
+        filter: var(--secondary-alt-filter);
+      }
+    }
+
+    .button.outlined.success {
+      border-color: var(--success);
+      color: var(--success);
+
+      img {
+        filter: var(--success-filter);
+      }
+    }
+
+    .button.outlined.success:hover {
+      background: var(--success);
+      color: var(--success-alt);
+
+      img {
+        filter: var(--success-alt-filter);
+      }
+    }
+
+    .button.outlined.info {
+      border-color: var(--info);
+      color: var(--info);
+
+      img {
+        filter: var(--info-filter);
+      }
+    }
+
+    .button.outlined.info:hover {
+      background: var(--info);
+      color: var(--info-alt);
+
+      img {
+        filter: var(--info-alt-filter);
+      }
+    }
+
+    .button.outlined.warning {
+      border-color: var(--warning);
+      color: var(--warning);
+
+      img {
+        filter: var(--warning-filter);
+      }
+    }
+
+    .button.outlined.warning:hover {
+      background: var(--warning);
+      color: var(--warning-alt);
+
+      img {
+        filter: var(--warning-alt-filter);
+      }
+    }
+
+    .button.outlined.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+
+      img {
+        filter: var(--danger-filter);
+      }
+    }
+
+    .button.outlined.danger:hover {
+      background: var(--danger);
+      color: var(--danger-alt);
+
+      img {
+        filter: var(--danger-alt-filter);
+      }
+    }
+
+    .button.outlined.dark {
+      border-color: var(--dark);
+      color: var(--dark);
+
+      img {
+        filter: var(--dark-filter);
+      }
+    }
+
+    .button.outlined.dark:hover {
+      background: var(--dark);
+      color: var(--dark-alt);
+
+      img {
+        filter: var(--dark-alt-filter);
+      }
+    }
+
+    // text
+    .button.text.primary {
+      border-color: var(--primary);
+      color: var(--primary);
+
+      img {
+        filter: var(--primary-filter);
+      }
+    }
+
+    .button.text.secondary {
+      border-color: var(--secondary);
+      color: var(--secondary);
+
+      img {
+        filter: var(--secondary-filter);
+      }
+    }
+
+    .button.text.success {
+      border-color: var(--success);
+      color: var(--success);
+
+      img {
+        filter: var(--success-filter);
+      }
+    }
+
+    .button.text.info {
+      border-color: var(--info);
+      color: var(--info);
+
+      img {
+        filter: var(--info-filter);
+      }
+    }
+
+    .button.text.warning {
+      border-color: var(--warning);
+      color: var(--warning);
+
+      img {
+        filter: var(--warning-filter);
+      }
+    }
+
+    .button.text.danger {
+      border-color: var(--danger);
+      color: var(--danger);
+
+      img {
+        filter: var(--danger-filter);
+      }
+    }
+
+    .button.text.dark {
+      border-color: var(--dark);
+      color: var(--dark);
+
+      img {
+        filter: var(--dark-filter);
+      }
+    }
+
+    .button.text:hover {
+      font-weight: bold;
+      text-decoration: underline;
     }
   }
 

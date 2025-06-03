@@ -1,28 +1,29 @@
 "use client";
-import React, {MouseEventHandler} from "react";
+import React from "react";
 import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
 import {ColorStyle} from "@app/index";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
 	children?: ChildNode;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
 	style?: "solid" | "outlined" | "text";
 	color?: ColorStyle;
 	className?: string;
 	imgSrc?: ImgSrc;
+	href?: string;
 }
 
 export default function ({
 	children,
-	onClick,
 	style = "solid",
 	className = "",
 	color = "primary",
 	imgSrc,
+	href = "/",
 }: Readonly<Props>) {
 	return (
-		<button
+		<Link
 			className={fnCss.sum(
 				style,
 				className,
@@ -31,7 +32,7 @@ export default function ({
 				"flex items-center justify-center w-full min-h-[3rem] rounded-md",
 				"outline-none"
 			)}
-			onClick={onClick}>
+			href={href}>
 			{imgSrc && (
 				<Image
 					className="mr-2 w-[0.8rem]"
@@ -42,6 +43,6 @@ export default function ({
 				/>
 			)}
 			<span className={fnCss.sum(imgSrc ? "pr-4" : "")}>{children}</span>
-		</button>
+		</Link>
 	);
 }
