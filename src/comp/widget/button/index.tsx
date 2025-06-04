@@ -3,6 +3,7 @@ import React, {MouseEventHandler} from "react";
 import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
 import {ColorStyle} from "@app/index";
 import Image from "next/image";
+import "@asset/style/button.scss";
 
 interface Props {
 	children?: ChildNode;
@@ -17,7 +18,7 @@ export default function ({
 	children,
 	onClick,
 	style = "solid",
-	className = "",
+	className = "w-full",
 	color = "primary",
 	imgSrc,
 }: Readonly<Props>) {
@@ -28,7 +29,7 @@ export default function ({
 				className,
 				color,
 				"button",
-				"flex items-center justify-center w-full min-h-[3rem] rounded-md",
+				"flex items-center justify-center rounded-md min-h-[3rem]",
 				"outline-none"
 			)}
 			onClick={onClick}>

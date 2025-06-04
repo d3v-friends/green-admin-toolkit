@@ -11,6 +11,7 @@ export default async function ({}: NextPageProps) {
 			<Panel className="mb-4">
 				<h4 className="mb-4">Button</h4>
 				<PanelBorder
+					imgSrc={ImgKey}
 					title="Solid"
 					className="mb-4"
 					classNameContent="p-2 lg:p-4 grid grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-4">

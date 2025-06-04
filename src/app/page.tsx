@@ -1,7 +1,7 @@
 "use server";
 import React from "react";
 import {NextPageProps} from "nextjs-tools";
-import {Button, InputCheckbox, InputString, LayoutBlank, Panel, ScreenCenter} from "@app/index";
+import {Button, ButtonLink, InputCheckbox, InputString, LayoutBlank, Panel, ScreenCenter} from "@app/index";
 import ImgLogo from "@asset/png/icon.png";
 import Image from "next/image";
 import ImgA from "web-asset/svg/solid/fi-sr-user-robot.svg";
@@ -44,19 +44,12 @@ export default async function ({}: NextPageProps) {
 
 					<InputCheckbox className="mb-5">Remember me</InputCheckbox>
 
-					<Button
-						color="dark"
+					<ButtonLink
+						href="/widget/button"
 						imgSrc={ImgKey}
 						className="mb-2">
 						Login
-					</Button>
-
-					<Button
-						color="secondary"
-						imgSrc={ImgKey}
-						className="mb-2">
-						Login
-					</Button>
+					</ButtonLink>
 
 					<Button
 						imgSrc={ImgKey}

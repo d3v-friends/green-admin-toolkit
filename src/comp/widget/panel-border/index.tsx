@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import {ChildNode, fnCss} from "nextjs-tools";
+import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
 import ImgUp from "web-asset/svg/solid/fi-sr-angle-up.svg";
 import ImgDown from "web-asset/svg/solid/fi-sr-angle-down.svg";
 import Image from "next/image";
@@ -12,6 +12,7 @@ interface Props {
 	classNameTitle?: string;
 	classNameContent?: string;
 	collapsed?: boolean;
+	imgSrc?: ImgSrc;
 }
 
 export default function ({
@@ -21,6 +22,7 @@ export default function ({
 	classNameContent = "p-2 lg:p-4",
 	className = "",
 	collapsed = true,
+	imgSrc,
 }: Readonly<Props>) {
 	const [open, setOpen] = useState(collapsed);
 
@@ -34,6 +36,15 @@ export default function ({
 					open ? "" : "bg-(--text-1)"
 				)}
 				onClick={() => setOpen(!open)}>
+				{imgSrc && (
+					<Image
+						className="filter-(--text-1-filter) w-[0.8rem] mr-1"
+						src={imgSrc}
+						alt="icon"
+						width={20}
+						height={20}
+					/>
+				)}
 				{title}
 				<div className="grow flex justify-end no-drag">
 					<Image

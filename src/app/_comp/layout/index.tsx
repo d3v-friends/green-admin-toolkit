@@ -20,17 +20,12 @@ function Aside({}: Readonly<{children?: ChildNode}>) {
 				imgSrc={ImgButton}
 				title="ELEMENT"
 				group="Widget">
-				<LayoutAsideAccordionLink
-					href="/widget/button"
-					prefix="/widget/button">
-					Button
-				</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/widget/button">Button</LayoutAsideAccordionLink>
 
-				<LayoutAsideAccordionLink
-					href="/widget/form"
-					prefix="/widget/form">
-					Form
-				</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/widget/form">Form</LayoutAsideAccordionLink>
+
+				<LayoutAsideAccordionLink href="/widget/table">Table</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/widget/modal">Modal</LayoutAsideAccordionLink>
 			</LayoutAsideAccordion>
 		</>
 	);

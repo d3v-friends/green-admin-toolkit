@@ -4,6 +4,7 @@ import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
 import {ColorStyle} from "@app/index";
 import Image from "next/image";
 import Link from "next/link";
+import "@asset/style/button.scss";
 
 interface Props {
 	children?: ChildNode;

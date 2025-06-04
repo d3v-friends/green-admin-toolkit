@@ -17,7 +17,7 @@ export default function ({title, group, imgSrc, children}: Readonly<Props>) {
 
 	return (
 		<>
-			{title && <div className="text-xs pl-[1rem] text-(--text-2) mb-3">{title}</div>}
+			{title && <div className="text-xs pl-[1rem] text-(--text-2) mb-2">{title}</div>}
 			<button
 				onClick={() => setOpen(!open)}
 				className={fnCss.sum(

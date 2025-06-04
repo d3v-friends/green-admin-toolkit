@@ -14,9 +14,9 @@ interface Props {
 	alert?: number;
 }
 
-export default function ({href, prefix = "#", imgSrc = ImgDot, children, alert}: Readonly<Props>) {
+export default function ({href, prefix, imgSrc = ImgDot, children, alert}: Readonly<Props>) {
 	const pathname = usePathname();
-	let active = pathname.includes(prefix);
+	let active = pathname.includes(prefix || href);
 
 	return (
 		<Link
