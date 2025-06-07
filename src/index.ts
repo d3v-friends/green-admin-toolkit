@@ -4,9 +4,9 @@ import {ReactNode} from "react";
 export {default as LayoutBody} from "@comp/layout/body";
 export {default as LayoutBase} from "@comp/layout/base";
 export {default as LayoutBlank} from "@comp/layout/blank";
-export {default as LayoutElementTitle} from "@comp/layout/base/title";
-export {default as LayoutElementNavItemLink} from "@comp/layout/base/nav-item-link";
-export {default as LayoutElementNavItemButton} from "@comp/layout/base/nav-item-button";
+export {default as LayoutTitle} from "@comp/layout/base/title";
+export {default as LayoutNavItemLink} from "@comp/layout/base/nav-item-link";
+export {default as LayoutNavItemButton} from "@comp/layout/base/nav-item-button";
 export {default as LayoutAsideAccordion} from "@comp/layout/base/aside-accordion";
 export {default as LayoutAsideAccordionLink} from "@comp/layout/base/aside-accordion-link";
 
@@ -26,14 +26,27 @@ export {default as Pager} from "@comp/widget/pager";
 export {default as ModalBase} from "@comp/modal/base";
 export {default as ModalToggler} from "@comp/modal/toggler";
 export {default as ModalBasic} from "@comp/modal/basic";
+export {default as ModalElement} from "@comp/modal/element";
 
 // form
 export {default as InputString} from "@comp/form/input-string";
 export {default as InputCheckbox} from "@comp/form/input-checkbox";
+export {default as InputDropdown} from "@comp/form/input-dropdown";
+export {default as InputTextarea} from "@comp/form/input-textarea";
+export {default as InputLabel} from "@comp/form/input-label";
+export {default as FormConfirm} from "@comp/form/form-confirm";
+export {default as fnFormConfirmModal} from "@comp/form/form-confirm/modal";
+export {default as Form} from "@comp/form/form";
 
 // @fn
 export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
 export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
+
+// action
+export {default as ActionErrorP} from "@comp/action/error-p";
+export {default as ActionLoadingBackdrop} from "@comp/action/loading-backdrop";
+export {default as ActionResponseModal} from "@comp/action/response-modal";
+export {default as fnActionResponseModal} from "@comp/action/response-modal/modal";
 
 // styles
 export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;

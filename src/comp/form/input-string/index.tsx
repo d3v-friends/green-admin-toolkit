@@ -4,10 +4,12 @@ import React, {
 	HTMLInputAutoCompleteAttribute,
 	HTMLInputTypeAttribute,
 	KeyboardEventHandler,
+	ReactNode,
 	useState,
 } from "react";
 import {FnBase, fnCss, HTMLInputModeAttribute, ImgSrc} from "nextjs-tools";
 import Image from "next/image";
+import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
 
 interface Props {
 	imgSrc?: ImgSrc;
@@ -24,6 +26,7 @@ interface Props {
 	inputMode?: HTMLInputModeAttribute;
 	type?: HTMLInputTypeAttribute;
 	required?: boolean;
+	label?: ReactNode;
 }
 
 export default function ({
@@ -41,6 +44,7 @@ export default function ({
 	inputMode,
 	type,
 	required,
+	label,
 }: Readonly<Props>) {
 	const [invalid, setInvalid] = useState(false);
 	const [value, setValue] = useState(defaultValue);
@@ -59,9 +63,10 @@ export default function ({
 
 	return (
 		<>
+			{label && <p className="mb-[-5px]">{label}</p>}
 			<div
 				className={fnCss.sum(
-					"flex items-center border-all rounded-sm h-[2.5rem]",
+					"flex items-center border-all rounded-md h-[2.5rem] overflow-hidden",
 					focus ? "border-(--primary)" : "",
 					invalid && value ? "border-(--danger)" : "",
 					className
@@ -69,7 +74,7 @@ export default function ({
 				{imgSrc && (
 					<div
 						className={fnCss.sum(
-							"border-right h-full flex items-center pl-2 pr-2",
+							"border-right h-full flex pl-2 pr-2",
 							disabled ? "bg-(--dark)" : "bg-(--primary)",
 							focus ? "border-(--primary)" : ""
 						)}>
@@ -87,16 +92,33 @@ export default function ({
 				)}
 				<div className="grow">
 					<input
-						{...{placeholder, disabled, name, defaultValue, autoComplete, inputMode, type, required}}
+						{...{placeholder, disabled, name, autoComplete, inputMode, type, required}}
 						onChange={onChangeHandler}
 						className="outline-none w-full pl-2 pr-2"
 						onKeyDown={onKeyDownHandler}
 						onFocus={() => setFocus(true)}
 						onBlur={() => setFocus(false)}
+						value={value}
+						pattern={regexp}
+						title={invalidMessage}
 					/>
 				</div>
+
+				{value && (
+					<Image
+						src={ImgCross}
+						alt="clear"
+						width={20}
+						height={20}
+						onClick={() => {
+							setValue("");
+							onChange("");
+						}}
+						className="no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
+					/>
+				)}
 			</div>
-			<div className="min-h-[1.5rem] text-(--danger) text-center">{invalid && invalidMessage}</div>
+			<div className="min-h-[1.5rem] pl-2 text-(--danger)">{invalid && invalidMessage}</div>
 		</>
 	);
 }

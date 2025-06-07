@@ -1,9 +1,9 @@
-import React from "react";
-import {ChildNode, fnCss} from "nextjs-tools";
+import React, {ReactNode} from "react";
+import {fnCss} from "nextjs-tools";
 
 interface Props {
 	className?: string;
-	children?: ChildNode;
+	children?: ReactNode;
 }
 
 export default function ({children, className = ""}: Readonly<Props>) {

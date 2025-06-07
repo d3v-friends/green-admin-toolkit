@@ -1,27 +1,16 @@
-"use client";
-import React, {useState} from "react";
+"use server";
+import React from "react";
 import {NextPageProps} from "nextjs-tools";
-import {Button, ModalBasic, Panel} from "@app/index";
+import {Panel} from "@app/index";
+import BasicModal from "./_basic";
 
-export default function ({}: NextPageProps) {
-	const [basic, setBasic] = useState(false);
-
+// todo *.md 파일 읽어오는 기능 알아보기.
+// https://nextjs.org/docs/pages/guides/mdx
+export default async function ({}: NextPageProps) {
 	return (
 		<>
 			<Panel>
-				<h4>Modal</h4>
-				<Button
-					className="w-20"
-					onClick={() => setBasic(true)}>
-					Basic
-				</Button>
-
-				<ModalBasic
-					open={basic}
-					onChange={setBasic}
-					header="Baisc modal">
-					<div>Hello world</div>
-				</ModalBasic>
+				<BasicModal />
 			</Panel>
 		</>
 	);

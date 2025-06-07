@@ -1,12 +1,12 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import Link from "next/link";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import {fnCss, ImgSrc} from "nextjs-tools";
 
 import Image from "next/image";
 
 interface Props {
 	href: string;
-	children?: ChildNode;
+	children?: ReactNode;
 	imgSrc?: ImgSrc;
 	style?: "normal" | "alt";
 	alert?: number;

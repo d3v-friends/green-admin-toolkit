@@ -1,11 +1,11 @@
 "use client";
-import React, {MouseEventHandler, useState} from "react";
-import {ChildNode, FnBase, fnCss} from "nextjs-tools";
+import React, {MouseEventHandler, ReactNode, useState} from "react";
+import {FnBase, fnCss} from "nextjs-tools";
 import Image from "next/image";
 import ImgCheck from "web-asset/svg/regular/fi-rr-check.svg";
 
 interface Props {
-	children?: ChildNode;
+	children?: ReactNode;
 	defaultValue?: boolean;
 	onChange?: FnBase<boolean>;
 	className?: string;
@@ -21,6 +21,12 @@ export default function ({children, defaultValue = false, onChange = () => {}, c
 
 	return (
 		<>
+			<input
+				hidden
+				value={value ? "true" : "false"}
+				onChange={() => {}}
+			/>
+
 			<div
 				className={fnCss.sum("inline-flex items-center cursor-default no-drag", className)}
 				onClick={onClick}>
@@ -39,11 +45,6 @@ export default function ({children, defaultValue = false, onChange = () => {}, c
 				</div>
 				<div className={fnCss.sum("pl-2", value ? "text-(--text-3)" : "text-(--text-1)")}>{children}</div>
 			</div>
-			<input
-				hidden
-				value={value ? "true" : "false"}
-				onChange={() => {}}
-			/>
 		</>
 	);
 }

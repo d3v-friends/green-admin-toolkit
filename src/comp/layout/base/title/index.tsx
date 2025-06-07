@@ -1,11 +1,10 @@
-import React from "react";
-import {ChildNode} from "nextjs-tools";
+import React, {ReactNode} from "react";
 import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
 
 interface Props {
 	imgSrc?: string | StaticImageData;
-	children?: ChildNode;
+	children?: ReactNode;
 	href?: string;
 }
 

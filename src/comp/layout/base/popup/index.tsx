@@ -17,7 +17,7 @@ export default function ({children = () => ""}: Readonly<Props>) {
 		<>
 			<button
 				onClick={() => setOpen(!open)}
-				className="lg:hidden border-all rounded-md filter-(--border-color-filter)">
+				className="lg:hidden border-all rounded-md filter-(--text-2-filter) p-2">
 				<Image
 					src={ImgBurger}
 					alt="menu"
@@ -29,7 +29,7 @@ export default function ({children = () => ""}: Readonly<Props>) {
 			{open && (
 				<div
 					className={fnCss.sum(
-						"fixed w-full h-full z-5 left-0 top-0",
+						"fixed w-full h-full z-10 left-0 top-0",
 						"backdrop-blur-xs backdrop-grayscale-40",
 						"bg-[rgba(0,0,0,0.3)]"
 					)}

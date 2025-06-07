@@ -1,13 +1,13 @@
 "use client";
-import React, {useState} from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import React, {ReactNode, useState} from "react";
+import {fnCss, ImgSrc} from "nextjs-tools";
 import ImgUp from "web-asset/svg/solid/fi-sr-angle-up.svg";
 import ImgDown from "web-asset/svg/solid/fi-sr-angle-down.svg";
 import Image from "next/image";
 
 interface Props {
-	title?: ChildNode;
-	children?: ChildNode;
+	title?: ReactNode;
+	children?: ReactNode;
 	className?: string;
 	classNameTitle?: string;
 	classNameContent?: string;

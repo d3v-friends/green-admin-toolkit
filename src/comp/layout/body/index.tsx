@@ -14,7 +14,7 @@ export default async function ({lang = "ko", children}: Readonly<Props>) {
 		<html lang={lang}>
 			<body
 				className={fnCss.sum(
-					"bg-(--color-bg-body) min-h-screen",
+					"bg-(--bg-main) min-h-screen",
 					"text-[14px] lg:text-[18px] text-(--text-3) font-roboto"
 				)}>
 				{children}

@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import React, {ReactNode} from "react";
+import {fnCss, ImgSrc} from "nextjs-tools";
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
@@ -9,7 +9,7 @@ import ImgDot from "web-asset/svg/regular/fi-rr-bullet.svg";
 interface Props {
 	href: string;
 	prefix?: string;
-	children?: ChildNode;
+	children?: ReactNode;
 	imgSrc?: ImgSrc;
 	alert?: number;
 }

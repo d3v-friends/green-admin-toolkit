@@ -11,6 +11,7 @@ interface Props {
 	onClickBackdrop?: MouseEventHandler<HTMLDivElement>;
 }
 
+// todo 추후 엔터키 등록하기
 export default function ({open, onChange, children, disableEscapeKey, onClickBackdrop}: Readonly<Props>) {
 	const onEscPress = useCallback(
 		(e: KeyboardEvent) => {

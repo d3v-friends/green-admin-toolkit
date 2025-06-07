@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import React, {ReactNode} from "react";
+import {fnCss, ImgSrc} from "nextjs-tools";
 import {ColorStyle} from "@app/index";
 import Image from "next/image";
 import Link from "next/link";
 import "@asset/style/button.scss";
 
 interface Props {
-	children?: ChildNode;
+	children?: ReactNode;
 	style?: "solid" | "outlined" | "text";
 	color?: ColorStyle;
 	className?: string;
@@ -18,7 +18,7 @@ interface Props {
 export default function ({
 	children,
 	style = "solid",
-	className = "",
+	className = "w-full",
 	color = "primary",
 	imgSrc,
 	href = "/",
@@ -30,7 +30,7 @@ export default function ({
 				className,
 				color,
 				"button",
-				"flex items-center justify-center w-full min-h-[3rem] rounded-md",
+				"flex items-center justify-center min-h-[3rem] rounded-md",
 				"outline-none"
 			)}
 			href={href}>

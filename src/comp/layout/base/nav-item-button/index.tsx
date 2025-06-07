@@ -1,12 +1,11 @@
 "use client";
-import React, {MouseEventHandler} from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import React, {MouseEventHandler, ReactNode} from "react";
+import {fnCss, ImgSrc} from "nextjs-tools";
 
 import Image from "next/image";
 
 interface Props {
-	href: string;
-	children?: ChildNode;
+	children?: ReactNode;
 	imgSrc?: ImgSrc;
 	style?: "normal" | "alt";
 	alert?: number;
@@ -14,7 +13,7 @@ interface Props {
 	className?: string;
 }
 
-export default function ({href, children, imgSrc, style = "normal", alert, onClick, className = ""}: Readonly<Props>) {
+export default function ({children, imgSrc, style = "normal", alert, onClick, className = ""}: Readonly<Props>) {
 	return (
 		<button
 			onClick={onClick}
@@ -22,8 +21,7 @@ export default function ({href, children, imgSrc, style = "normal", alert, onCli
 				"relative nav-item break-keep p-2 rounded-sm font-bold flex items-center",
 				className,
 				style
-			)}
-			href={href}>
+			)}>
 			{imgSrc && (
 				<Image
 					className="mr-1 w-[0.9rem]"

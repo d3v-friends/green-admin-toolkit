@@ -1,15 +1,15 @@
 "use client";
 import React, {ReactNode, useState} from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import {fnCss, ImgSrc} from "nextjs-tools";
 import Image from "next/image";
 import ImgUp from "web-asset/svg/solid/fi-sr-angle-up.svg";
 import ImgDown from "web-asset/svg/solid/fi-sr-angle-down.svg";
 
 interface Props {
 	title?: ReactNode;
-	group?: ChildNode;
+	group?: ReactNode;
 	imgSrc?: ImgSrc;
-	children?: ChildNode;
+	children?: ReactNode;
 }
 
 export default function ({title, group, imgSrc, children}: Readonly<Props>) {

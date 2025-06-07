@@ -1,17 +1,19 @@
 "use client";
-import React, {MouseEventHandler} from "react";
-import {ChildNode, fnCss, ImgSrc} from "nextjs-tools";
+import React, {MouseEventHandler, ReactNode} from "react";
+import {FnBase, fnCss, ImgSrc} from "nextjs-tools";
 import {ColorStyle} from "@app/index";
 import Image from "next/image";
 import "@asset/style/button.scss";
 
-interface Props {
-	children?: ChildNode;
+export interface Props {
+	children?: ReactNode;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	style?: "solid" | "outlined" | "text";
 	color?: ColorStyle;
 	className?: string;
 	imgSrc?: ImgSrc;
+	onRef?: FnBase<HTMLButtonElement>;
+	type?: "button" | "submit" | "reset";
 }
 
 export default function ({
@@ -21,15 +23,19 @@ export default function ({
 	className = "w-full",
 	color = "primary",
 	imgSrc,
+	onRef,
+	type = "button",
 }: Readonly<Props>) {
 	return (
 		<button
+			type={type}
+			ref={onRef}
 			className={fnCss.sum(
 				style,
 				className,
 				color,
 				"button",
-				"flex items-center justify-center rounded-md min-h-[3rem]",
+				"inline-flex items-center justify-center rounded-md min-h-[3rem]",
 				"outline-none"
 			)}
 			onClick={onClick}>

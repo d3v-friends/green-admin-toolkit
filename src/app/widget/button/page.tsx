@@ -48,8 +48,8 @@ export default async function ({}: NextPageProps) {
 						<Button
 							imgSrc={ImgKey}
 							color={color}
-							key={i}
-							style="text">
+							style="text"
+							key={i}>
 							{color}
 						</Button>
 					))}

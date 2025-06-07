@@ -1,6 +1,4 @@
 #!/bin/zsh
-set -e
-
 rm -rf ./dist
 
 tsc -p tsconfig.export.json;

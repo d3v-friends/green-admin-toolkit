@@ -47,20 +47,20 @@ export default async function ({}: NextPageProps) {
 					<ButtonLink
 						href="/widget/button"
 						imgSrc={ImgKey}
-						className="mb-2">
+						className="mb-2 w-full">
 						Login
 					</ButtonLink>
 
 					<Button
 						imgSrc={ImgKey}
-						className="mb-2"
+						className="mb-2 w-full"
 						style="outlined">
 						Join
 					</Button>
 
 					<Button
 						imgSrc={ImgKey}
-						className="mb-2"
+						className="mb-2 w-full"
 						style="text">
 						Find password
 					</Button>
