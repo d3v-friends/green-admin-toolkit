@@ -17,10 +17,13 @@ export {default as ScreenCenter} from "@comp/widget/screen-center";
 export {default as Button} from "@comp/widget/button";
 export {default as ButtonLink} from "@comp/widget/button-link";
 export {default as Markdown} from "@comp/widget/markdown";
+
+// table
 export {default as TableClick} from "@comp/widget/table/click";
 export {default as TableLink} from "@comp/widget/table/link";
 export {default as TableList} from "@comp/widget/table/list";
 export {default as Pager} from "@comp/widget/pager";
+export {default as TableHeaderSorter} from "@comp/widget/table/header-sorter";
 
 // modal
 export {default as ModalBase} from "@comp/modal/base";
