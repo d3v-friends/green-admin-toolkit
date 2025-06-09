@@ -31,6 +31,7 @@ export { default as fnFormConfirmModal } from "./comp/form/form-confirm/modal";
 export { default as Form } from "./comp/form/form";
 export { default as ThemeToggler } from "./fn/wrap/theme-toggler";
 export { default as fnTheme } from "./fn/wrap/theme-toggler/fn";
+export { default as fnError } from "./fn/error";
 export { default as ActionErrorP } from "./comp/action/error-p";
 export { default as ActionErrorModal } from "./comp/action/error-modal";
 export { default as fnActionErrorModal } from "./comp/action/error-modal/modal";

@@ -41,6 +41,7 @@ export {default as Form} from "@comp/form/form";
 // @fn
 export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
 export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
+export {default as fnError} from "@fn/error";
 
 // action
 export {default as ActionErrorP} from "@comp/action/error-p";
