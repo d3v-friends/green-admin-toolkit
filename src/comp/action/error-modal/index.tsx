@@ -23,7 +23,7 @@ export default function ({state, children}: Readonly<Props>) {
 		setTime(state.time);
 	}, [state]);
 
-	if (state.err) return null;
+	if (!state.err) return null;
 	if (!children) return null;
 
 	return (
