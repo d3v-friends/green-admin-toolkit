@@ -99,7 +99,6 @@ export default function ({
 						onFocus={() => setFocus(true)}
 						onBlur={() => setFocus(false)}
 						value={value}
-						pattern={regexp}
 						title={invalidMessage}
 					/>
 				</div>
