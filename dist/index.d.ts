@@ -32,6 +32,8 @@ export { default as Form } from "./comp/form/form";
 export { default as ThemeToggler } from "./fn/wrap/theme-toggler";
 export { default as fnTheme } from "./fn/wrap/theme-toggler/fn";
 export { default as ActionErrorP } from "./comp/action/error-p";
+export { default as ActionErrorModal } from "./comp/action/error-modal";
+export { default as fnActionErrorModal } from "./comp/action/error-modal/modal";
 export { default as ActionLoadingBackdrop } from "./comp/action/loading-backdrop";
 export { default as ActionResponseModal } from "./comp/action/response-modal";
 export { default as fnActionResponseModal } from "./comp/action/response-modal/modal";
