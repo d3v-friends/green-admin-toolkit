@@ -38,6 +38,7 @@ export { default as fnActionErrorModal } from "./comp/action/error-modal/modal";
 export { default as ActionLoadingBackdrop } from "./comp/action/loading-backdrop";
 export { default as ActionResponseModal } from "./comp/action/response-modal";
 export { default as fnActionResponseModal } from "./comp/action/response-modal/modal";
+export { default as ActionResponseRedirect } from "./comp/action/response-redirect";
 export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;
 export type TableCol<T> = {
     name: ReactNode;
