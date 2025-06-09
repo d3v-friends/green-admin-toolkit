@@ -3,14 +3,14 @@ import React, {ReactNode, useEffect, useState} from "react";
 import {ActionState, FnBase} from "nextjs-tools";
 import {ModalToggler} from "@app/index";
 
-interface Props {
-	children: ResponseModalChildren;
-	state: ActionState<unknown, unknown>;
+interface Props<INPUT, RESPONSE> {
+	children: ResponseModalChildren<RESPONSE>;
+	state: ActionState<INPUT, RESPONSE>;
 }
 
-export type ResponseModalChildren = (onToggle: FnBase<boolean>) => ReactNode;
+export type ResponseModalChildren<RESPONSE> = (onToggle: FnBase<boolean>, state: RESPONSE) => ReactNode;
 
-export default function ({state, children}: Readonly<Props>) {
+export default function <INPUT, RESPONSE>({state, children}: Readonly<Props<INPUT, RESPONSE>>) {
 	const [open, setOpen] = useState(false);
 	const [time, setTime] = useState(0);
 
@@ -24,12 +24,13 @@ export default function ({state, children}: Readonly<Props>) {
 
 	if (state.err) return null;
 	if (!children) return null;
+	if (!state.response) return null;
 
 	return (
 		<ModalToggler
 			open={open}
 			onChange={setOpen}>
-			{children(setOpen)}
+			{children(setOpen, state.response)}
 		</ModalToggler>
 	);
 }

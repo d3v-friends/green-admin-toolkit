@@ -5,5 +5,5 @@ interface Props {
     title?: ReactNode;
     content?: ReactNode;
 }
-export default function ({ ok, title, content }: Readonly<Props>): ResponseModalChildren;
+export default function <RESPONSE>({ ok, title, content }: Readonly<Props>): ResponseModalChildren<RESPONSE>;
 export {};

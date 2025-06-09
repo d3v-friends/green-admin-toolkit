@@ -10,8 +10,8 @@ interface Props {
 
 const {Body, Header, Content, Ok} = ModalElement;
 
-export default function ({ok, title, content}: Readonly<Props>): ResponseModalChildren {
-	return (onToggle) => (
+export default function <RESPONSE>({ok, title, content}: Readonly<Props>): ResponseModalChildren<RESPONSE> {
+	return (onToggle, state) => (
 		<Body className="min-w-[20rem]">
 			{title && <Header disableCloseButton>{title}</Header>}
 			<Content>{content}</Content>

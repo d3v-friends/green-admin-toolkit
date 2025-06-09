@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { ActionState, FnBase } from "nextjs-tools";
-interface Props {
-    children: ResponseModalChildren;
-    state: ActionState<unknown, unknown>;
+interface Props<INPUT, RESPONSE> {
+    children: ResponseModalChildren<RESPONSE>;
+    state: ActionState<INPUT, RESPONSE>;
 }
-export type ResponseModalChildren = (onToggle: FnBase<boolean>) => ReactNode;
-export default function ({ state, children }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | null;
+export type ResponseModalChildren<RESPONSE> = (onToggle: FnBase<boolean>, state: RESPONSE) => ReactNode;
+export default function <INPUT, RESPONSE>({ state, children }: Readonly<Props<INPUT, RESPONSE>>): import("react/jsx-runtime").JSX.Element | null;
 export {};
