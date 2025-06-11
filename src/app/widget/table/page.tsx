@@ -27,7 +27,7 @@ export default function ({}: NextPageProps) {
 							parser: (v) => v.name,
 						},
 						{name: "age", columnKey: "age", colClassName: "w-1/3", parser: (v) => v.age},
-						{name: "content", columnKey: "content", colClassName: "w-1/3", parser: (v) => v.content},
+						{name: "content", colClassName: "w-1/3", parser: (v) => v.content},
 					]}
 					onChangeSort={(column, sorter) => console.log(column, sorter)}
 				/>

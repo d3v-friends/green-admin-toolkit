@@ -29,17 +29,21 @@ export default function <T, S>({className, cols, list, empty, onClick, onChangeS
 						<th
 							className={fnCss.sum(v.headerClassName || "", "pt-2 pb-2")}
 							key={key}>
-							<Header
-								columnKey={v.columnKey}
-								activate={v.columnKey ? v.columnKey === columnKey : false}
-								onChange={(sorter) => {
-									if (!v.columnKey) return;
-									setColumnKey(v.columnKey || "");
-									setSorter(sorter);
-									onChangeSort(v.columnKey || "", sorter);
-								}}>
-								{v.name}
-							</Header>
+							{v.columnKey ? (
+								<Header
+									columnKey={v.columnKey}
+									activate={v.columnKey ? v.columnKey === columnKey : false}
+									onChange={(sorter) => {
+										if (!v.columnKey) return;
+										setColumnKey(v.columnKey || "");
+										setSorter(sorter);
+										onChangeSort(v.columnKey || "", sorter);
+									}}>
+									{v.name}
+								</Header>
+							) : (
+								<div className="text-(--text-2)">{v.name}</div>
+							)}
 						</th>
 					))}
 				</tr>
