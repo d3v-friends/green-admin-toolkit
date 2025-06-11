@@ -12,9 +12,9 @@ interface Props {
 
 export default function ({imgSrc, className = "", children, label}: Readonly<Props>) {
 	return (
-		<>
+		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
-			<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden", className)}>
+			<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden")}>
 				{imgSrc && (
 					<div className={fnCss.sum("border-right h-full flex pl-2 pr-2 bg-(--primary)")}>
 						<Image
@@ -29,6 +29,6 @@ export default function ({imgSrc, className = "", children, label}: Readonly<Pro
 				<div className="grow pl-2 pr-2">{children}</div>
 			</div>
 			<div className="min-h-[1.5rem]"></div>
-		</>
+		</div>
 	);
 }

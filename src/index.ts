@@ -22,8 +22,10 @@ export {default as Markdown} from "@comp/widget/markdown";
 export {default as TableClick} from "@comp/widget/table/click";
 export {default as TableLink} from "@comp/widget/table/link";
 export {default as TableList} from "@comp/widget/table/list";
+export {default as TableSorter} from "@comp/widget/table/sorter";
 export {default as Pager} from "@comp/widget/pager";
-export {default as TableHeaderSorter} from "@comp/widget/table/header-sorter";
+
+export type Sorter = "ASC" | "DESC" | "NONE";
 
 // modal
 export {default as ModalBase} from "@comp/modal/base";
@@ -61,6 +63,7 @@ export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning
 export type TableCol<T> = {
 	name: ReactNode;
 	parser: (v: T, i: number) => ReactNode;
+	columnKey?: string;
 	colClassName?: string;
 	headerClassName?: string;
 	cellClassName?: string;

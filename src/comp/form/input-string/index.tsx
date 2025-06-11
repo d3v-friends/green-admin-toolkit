@@ -62,14 +62,13 @@ export default function ({
 	};
 
 	return (
-		<>
+		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
 			<div
 				className={fnCss.sum(
 					"flex items-center border-all rounded-md h-[2.5rem] overflow-hidden",
 					focus ? "border-(--primary)" : "",
-					invalid && value ? "border-(--danger)" : "",
-					className
+					invalid && value ? "border-(--danger)" : ""
 				)}>
 				{imgSrc && (
 					<div
@@ -118,6 +117,6 @@ export default function ({
 				)}
 			</div>
 			<div className="min-h-[1.5rem] pl-2 text-(--danger)">{invalid && invalidMessage}</div>
-		</>
+		</div>
 	);
 }

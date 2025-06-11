@@ -11,7 +11,7 @@ function Header({ children, className = "", disableCloseButton = false, onChange
     return (_jsxs("div", { className: fnCss.sum(className, padding, "flex border-bottom text-lg"), children: [children, !disableCloseButton && (_jsx("div", { className: "grow text-right", children: _jsx("button", { className: "ml-2 no-drag", onClick: () => onChange(false), children: _jsx(Image, { className: "filter-(--text-1-filter) w-[1rem] hover:filter-(--primary-filter)", src: ImgCross, alt: "close", width: 20, height: 20 }) }) }))] }));
 }
 function Content({ className = "", children }) {
-    return _jsx("div", { className: fnCss.sum(className, padding, "min-h-[7rem]"), children: children });
+    return _jsx("div", { className: fnCss.sum(className, padding, "min-h-[3rem]"), children: children });
 }
 function Ok({ children = "확인", onClick, }) {
     return (_jsx("div", { className: fnCss.sum("text-right", padding), children: _jsx(Button, { className: "w-20", onClick: onClick, children: children }) }));

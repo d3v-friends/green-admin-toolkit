@@ -56,9 +56,9 @@ export default function ({
 	};
 
 	return (
-		<>
+		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
-			<div className={fnCss.sum("relative", className)}>
+			<div className={fnCss.sum("relative")}>
 				<textarea
 					className={fnCss.sum(
 						"outline-none w-full min-h-[2.5rem] p-2 border-all rounded-md",
@@ -87,6 +87,6 @@ export default function ({
 					/>
 				)}
 			</div>
-		</>
+		</div>
 	);
 }

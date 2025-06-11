@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode} from "react";
-import {ActionErrorP, ActionResponseModal, Button, fnActionResponseModal, Form, InputString} from "@app/index";
+import {ActionErrorP, ActionResponseModal, Button, fnActionResponseModal, FormBase, InputString} from "@app/index";
 import {useServerAction} from "nextjs-tools";
 import ActionForm from "./_form";
 import Action from "./_action";
@@ -16,7 +16,7 @@ export default function ({}: Readonly<Props>) {
 
 	return (
 		<>
-			<Form
+			<FormBase
 				form={ActionForm}
 				action={action}
 				pending={pending}>
@@ -38,7 +38,7 @@ export default function ({}: Readonly<Props>) {
 						<Button onClick={onSubmit}>제출</Button>
 					</>
 				)}
-			</Form>
+			</FormBase>
 
 			<ActionErrorP
 				state={state}

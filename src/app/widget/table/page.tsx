@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import {NextPageProps} from "nextjs-tools";
-import {Pager, Panel, TableHeaderSorter, TableList} from "@app/index";
+import {Pager, Panel, TableSorter} from "@app/index";
 
 const list: {name: string; age: number; content: string}[] = [
 	{name: "apple", age: 10, content: "content a"},
@@ -16,17 +16,20 @@ export default function ({}: NextPageProps) {
 		<>
 			<Panel>
 				<h4>Table</h4>
-				<TableList
+				<TableSorter
+					onClick={(e, col) => console.log(col)}
 					list={list}
 					cols={[
 						{
-							name: <TableHeaderSorter>이름</TableHeaderSorter>,
+							name: "이름",
 							colClassName: "w-1/3",
+							columnKey: "name",
 							parser: (v) => v.name,
 						},
-						{name: "age", colClassName: "w-1/3", parser: (v) => v.age},
-						{name: "content", colClassName: "w-1/3", parser: (v) => v.content},
+						{name: "age", columnKey: "age", colClassName: "w-1/3", parser: (v) => v.age},
+						{name: "content", columnKey: "content", colClassName: "w-1/3", parser: (v) => v.content},
 					]}
+					onChangeSort={(column, sorter) => console.log(column, sorter)}
 				/>
 
 				<Pager

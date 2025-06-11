@@ -50,7 +50,7 @@ function Header({
 }
 
 function Content({className = "", children}: Readonly<{children?: ReactNode; className?: string}>) {
-	return <div className={fnCss.sum(className, padding, "min-h-[7rem]")}>{children}</div>;
+	return <div className={fnCss.sum(className, padding, "min-h-[3rem]")}>{children}</div>;
 }
 
 function Ok({
