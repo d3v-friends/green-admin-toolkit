@@ -33,6 +33,7 @@ export default function <T, S>({className, cols, list, empty, onClick, onChangeS
 								columnKey={v.columnKey}
 								activate={v.columnKey === columnKey}
 								onChange={(sorter) => {
+									if (!v.columnKey) return;
 									setColumnKey(v.columnKey || "");
 									setSorter(sorter);
 									onChangeSort(v.columnKey || "", sorter);
