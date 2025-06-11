@@ -31,7 +31,7 @@ export default function <T, S>({className, cols, list, empty, onClick, onChangeS
 							key={key}>
 							<Header
 								columnKey={v.columnKey}
-								activate={v.columnKey === columnKey}
+								activate={v.columnKey ? v.columnKey === columnKey : false}
 								onChange={(sorter) => {
 									if (!v.columnKey) return;
 									setColumnKey(v.columnKey || "");
