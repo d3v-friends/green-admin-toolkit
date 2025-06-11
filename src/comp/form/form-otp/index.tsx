@@ -71,6 +71,7 @@ export default function <INPUT>({
 									name="otp"
 									regexp="^[0-9]{6}$"
 									invalidMessage="OTP 를 확인하여 주십시오"
+									onKeyEnter={onSubmit}
 								/>
 							</Content>
 							<OkCancel
