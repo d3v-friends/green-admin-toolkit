@@ -11,7 +11,7 @@ interface Props {}
 
 export default function ({}: Readonly<Props>) {
 	const [state, action, pending] = useServerAction(Action, Form);
-	
+
 	return (
 		<>
 			<FormConfirm
@@ -36,6 +36,11 @@ export default function ({}: Readonly<Props>) {
 							imgSrc={ImgKey}
 							placeholder="비밀번호"
 							required
+						/>
+						<input
+							name="otp"
+							defaultValue="123456"
+							hidden
 						/>
 						<Button onClick={() => onToggle(true)}>제출</Button>
 					</>

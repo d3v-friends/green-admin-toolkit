@@ -1,33 +1,32 @@
 "use client";
 import React, {ReactNode, useState} from "react";
-import {ActionForm, FnBase, fnServerAction, FnVoid, Nullable} from "nextjs-tools";
-import {ActionLoadingBackdrop, ModalToggler} from "@app/index";
+import {ActionForm, FnBase, fnServerAction, Nullable} from "nextjs-tools";
+import {ActionLoadingBackdrop, InputString, ModalElement, ModalToggler} from "@app/index";
 import {ModalBasicProps} from "@comp/modal/basic";
+import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 
 interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disableCloseButton" | "header"> {
-	children: FormConfirmChildren;
-	confirmModal: FormConfirmModalComponent;
+	children: FormOtpChildren;
 	beforeSubmit?: (payload: FormData) => boolean;
 	action: (payload: FormData) => void;
 	pending: boolean;
+	otpContent?: ReactNode;
 	form: ActionForm<INPUT>;
-	checkBeforeOpen?: boolean;
 }
 
-export type FormConfirmChildren = (onToggle: FnBase<boolean>) => ReactNode;
-export type FormConfirmModalComponent = (onSubmit: FnVoid, onCancel: FnVoid) => ReactNode;
+export type FormOtpChildren = (onToggle: FnBase<boolean>) => ReactNode;
+const {Body, Header, Content, OkCancel} = ModalElement;
 
 export default function <INPUT>({
 	children,
-	confirmModal,
 	action,
 	pending,
 	beforeSubmit,
 	disableCloseButton,
 	disableEscapeKey,
 	header,
+	otpContent,
 	form,
-	checkBeforeOpen = false,
 }: Readonly<Props<INPUT>>) {
 	const [open, setOpen] = useState(false);
 	const [formElement, setFormElement] = useState<Nullable<HTMLFormElement>>();
@@ -49,10 +48,6 @@ export default function <INPUT>({
 	const onToggle = (v: boolean) => {
 		if (!formElement) return;
 		if (!formElement.reportValidity()) return;
-		if (checkBeforeOpen) {
-			const {err} = fnServerAction.forms.value(new FormData(formElement), form);
-			if (err) return;
-		}
 		setOpen(v);
 	};
 
@@ -62,16 +57,32 @@ export default function <INPUT>({
 				action={action}
 				ref={setFormElement}>
 				{children(onToggle)}
+				{open && (
+					<ModalToggler
+						open={open}
+						onChange={setOpen}
+						{...{disableEscapeKey, disableCloseButton, header}}>
+						<Body className="min-w-[20rem]">
+							<Header disableCloseButton>OTP를 입력하여 주십시오.</Header>
+							<Content>
+								<div className="mb-4">{otpContent}</div>
+								<InputString
+									imgSrc={ImgOTP}
+									name="otp"
+									regexp="^[0-9]{6}$"
+									invalidMessage="OTP 를 확인하여 주십시오"
+								/>
+							</Content>
+							<OkCancel
+								ok="확인"
+								cancel="취소"
+								onClickOk={onSubmit}
+								onClickCancel={onCancel}
+							/>
+						</Body>
+					</ModalToggler>
+				)}
 			</form>
-
-			{open && (
-				<ModalToggler
-					open={open}
-					onChange={setOpen}
-					{...{disableEscapeKey, disableCloseButton, header}}>
-					{confirmModal(onSubmit, onCancel)}
-				</ModalToggler>
-			)}
 
 			<ActionLoadingBackdrop pending={pending} />
 		</>

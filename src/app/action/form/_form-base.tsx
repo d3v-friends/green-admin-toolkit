@@ -35,6 +35,12 @@ export default function ({}: Readonly<Props>) {
 							placeholder="비밀번호"
 							required
 						/>
+
+						<input
+							name="otp"
+							defaultValue="123456"
+							hidden
+						/>
 						<Button onClick={onSubmit}>제출</Button>
 					</>
 				)}

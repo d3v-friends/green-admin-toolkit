@@ -4,6 +4,7 @@ import {NextPageProps} from "nextjs-tools";
 import {Panel} from "@app/index";
 import FormConfirm from "./_form-confirm";
 import FormBase from "./_form-base";
+import FormOTP from "./_form-otp";
 
 export default async function ({}: NextPageProps) {
 	return (
@@ -17,6 +18,12 @@ export default async function ({}: NextPageProps) {
 				<h4>Form confirm</h4>
 				<p>Ask confirm before submit</p>
 				<FormConfirm />
+			</Panel>
+
+			<Panel>
+				<h4>Form otp</h4>
+				<p>Ask OTP before submit</p>
+				<FormOTP />
 			</Panel>
 		</>
 	);
