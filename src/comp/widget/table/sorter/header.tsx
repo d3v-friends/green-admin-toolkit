@@ -1,5 +1,5 @@
 "use client";
-import React, {MouseEventHandler, ReactNode, useState} from "react";
+import React, {MouseEventHandler, ReactNode} from "react";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";
 import ImgDesc from "web-asset/svg/regular/fi-rr-caret-down.svg";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
@@ -11,12 +11,10 @@ interface Props {
 	children?: ReactNode;
 	onChange?: FnBase<Sorter>;
 	columnKey?: string;
-	initValue?: Sorter;
+	value?: Sorter;
 }
 
-export default function ({children, onChange = () => {}, initValue = "NONE"}: Readonly<Props>) {
-	const [value, setValue] = useState<Sorter>(initValue);
-
+export default function ({children, onChange = () => {}, value = "NONE"}: Readonly<Props>) {
 	let color = "filter-(--text-3-filter)";
 	let img: StaticImageData = ImgDash;
 	switch (value) {
@@ -31,7 +29,6 @@ export default function ({children, onChange = () => {}, initValue = "NONE"}: Re
 	}
 
 	const onClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-		setValue(toggle(value));
 		onChange(toggle(value));
 	};
 

@@ -49,7 +49,7 @@ export default function <T, S>({
 									onChange={(sorter) => {
 										onChangeSort(v.columnKey!, sorter);
 									}}
-									initValue={v.columnKey === value?.columnKey ? value.sorter : "NONE"}>
+									value={v.columnKey === value?.columnKey ? value.sorter : "NONE"}>
 									{v.name}
 								</Header>
 							) : (
