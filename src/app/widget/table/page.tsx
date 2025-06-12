@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import {NextPageProps} from "nextjs-tools";
 import {Pager, Panel, TableSorter} from "@app/index";
+import {TableSorterValue} from "@comp/widget/table/sorter";
 
 const list: {name: string; age: number; content: string}[] = [
 	{name: "apple", age: 10, content: "content a"},
@@ -12,11 +13,16 @@ const list: {name: string; age: number; content: string}[] = [
 ];
 
 export default function ({}: NextPageProps) {
+	const [sort, setSort] = useState<TableSorterValue>({
+		columnKey: "name",
+		sorter: "NONE",
+	});
 	return (
 		<>
 			<Panel>
 				<h4>Table</h4>
 				<TableSorter
+					value={sort}
 					onClick={(e, col) => console.log(col)}
 					list={list}
 					cols={[

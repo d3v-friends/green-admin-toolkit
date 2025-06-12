@@ -1,5 +1,5 @@
 "use client";
-import React, {ReactNode, useState} from "react";
+import React, {ReactNode} from "react";
 import {Sorter, TableCol} from "@app/index";
 import Base from "../base";
 import {fnCss} from "nextjs-tools";
@@ -12,13 +12,15 @@ interface Props<T, S> {
 	list: T[];
 	onClick: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 	onChangeSort?: (columnKey: string, sorter: Sorter) => void;
-	initValue?: {
-		columnKey: string;
-		sorter: Sorter;
-	};
+	value?: TableSorterValue;
 }
 
 const {RowBuilder, Colgroup, Table, RowEmpty} = Base;
+
+export type TableSorterValue = {
+	columnKey: string;
+	sorter: Sorter;
+};
 
 export default function <T, S>({
 	className,
@@ -27,14 +29,11 @@ export default function <T, S>({
 	empty,
 	onClick,
 	onChangeSort = () => {},
-	initValue = {
+	value = {
 		columnKey: "",
 		sorter: "NONE",
 	},
 }: Props<T, S>) {
-	const [columnKey, setColumnKey] = useState(initValue.columnKey);
-	const [sorter, setSorter] = useState<Sorter>(initValue.sorter);
-
 	return (
 		<Table className={className}>
 			<Colgroup cols={cols} />
@@ -48,11 +47,9 @@ export default function <T, S>({
 								<Header
 									columnKey={v.columnKey}
 									onChange={(sorter) => {
-										setColumnKey(v.columnKey || "");
-										setSorter(sorter);
-										onChangeSort(v.columnKey || "", sorter);
+										onChangeSort(v.columnKey!, sorter);
 									}}
-									initValue={v.columnKey === columnKey ? sorter : "NONE"}>
+									initValue={v.columnKey === value?.columnKey ? value.sorter : "NONE"}>
 									{v.name}
 								</Header>
 							) : (
