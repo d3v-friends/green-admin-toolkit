@@ -17,6 +17,7 @@ export default function ({}: NextPageProps) {
 		columnKey: "name",
 		sorter: "NONE",
 	});
+
 	return (
 		<>
 			<Panel>

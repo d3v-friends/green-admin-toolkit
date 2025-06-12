@@ -41,6 +41,8 @@ export {default as InputTextarea} from "@comp/form/input-textarea";
 export {default as InputLabel} from "@comp/form/input-label";
 export {default as FormConfirm} from "@comp/form/form-confirm";
 export {default as fnFormConfirmModal} from "@comp/form/form-confirm/modal";
+export {default as InputDate} from "@comp/form/input-date";
+export {default as InputDatePeriod} from "@comp/form/input-date-period";
 export {default as FormBase} from "@comp/form/form-base";
 export {default as FormOTP} from "@comp/form/form-otp";
 export {default as fnFormOTPModal} from "@comp/form/form-otp/modal";
