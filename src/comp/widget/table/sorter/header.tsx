@@ -1,5 +1,5 @@
 "use client";
-import React, {MouseEventHandler, ReactNode, useEffect, useState} from "react";
+import React, {MouseEventHandler, ReactNode, useState} from "react";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";
 import ImgDesc from "web-asset/svg/regular/fi-rr-caret-down.svg";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
@@ -11,15 +11,11 @@ interface Props {
 	children?: ReactNode;
 	onChange?: FnBase<Sorter>;
 	columnKey?: string;
-	activate?: boolean;
+	initValue?: Sorter;
 }
 
-export default function ({children, onChange = () => {}, activate = false}: Readonly<Props>) {
-	const [value, setValue] = useState<Sorter>("NONE");
-
-	useEffect(() => {
-		if (!activate) setValue("NONE");
-	}, [activate]);
+export default function ({children, onChange = () => {}, initValue = "NONE"}: Readonly<Props>) {
+	const [value, setValue] = useState<Sorter>(initValue);
 
 	let color = "filter-(--text-3-filter)";
 	let img: StaticImageData = ImgDash;

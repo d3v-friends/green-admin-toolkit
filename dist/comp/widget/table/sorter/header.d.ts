@@ -5,7 +5,7 @@ interface Props {
     children?: ReactNode;
     onChange?: FnBase<Sorter>;
     columnKey?: string;
-    activate?: boolean;
+    initValue?: Sorter;
 }
-export default function ({ children, onChange, activate }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ children, onChange, initValue }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

@@ -12,13 +12,28 @@ interface Props<T, S> {
 	list: T[];
 	onClick: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 	onChangeSort?: (columnKey: string, sorter: Sorter) => void;
+	initValue?: {
+		columnKey: string;
+		sorter: Sorter;
+	};
 }
 
 const {RowBuilder, Colgroup, Table, RowEmpty} = Base;
 
-export default function <T, S>({className, cols, list, empty, onClick, onChangeSort = () => {}}: Props<T, S>) {
-	const [columnKey, setColumnKey] = useState("");
-	const [sorter, setSorter] = useState<Sorter>("NONE");
+export default function <T, S>({
+	className,
+	cols,
+	list,
+	empty,
+	onClick,
+	onChangeSort = () => {},
+	initValue = {
+		columnKey: "",
+		sorter: "NONE",
+	},
+}: Props<T, S>) {
+	const [columnKey, setColumnKey] = useState(initValue.columnKey);
+	const [sorter, setSorter] = useState<Sorter>(initValue.sorter);
 
 	return (
 		<Table className={className}>
@@ -32,13 +47,12 @@ export default function <T, S>({className, cols, list, empty, onClick, onChangeS
 							{v.columnKey ? (
 								<Header
 									columnKey={v.columnKey}
-									activate={v.columnKey ? v.columnKey === columnKey : false}
 									onChange={(sorter) => {
-										if (!v.columnKey) return;
 										setColumnKey(v.columnKey || "");
 										setSorter(sorter);
 										onChangeSort(v.columnKey || "", sorter);
-									}}>
+									}}
+									initValue={v.columnKey === columnKey ? sorter : "NONE"}>
 									{v.name}
 								</Header>
 							) : (
