@@ -5,6 +5,7 @@ import React, {
 	HTMLInputTypeAttribute,
 	KeyboardEventHandler,
 	ReactNode,
+	useEffect,
 	useState,
 } from "react";
 import {FnBase, fnCss, HTMLInputModeAttribute, ImgSrc} from "nextjs-tools";
@@ -49,6 +50,10 @@ export default function ({
 	const [invalid, setInvalid] = useState(false);
 	const [value, setValue] = useState(defaultValue);
 	const [focus, setFocus] = useState(false);
+
+	useEffect(() => {
+		setValue(defaultValue);
+	}, [defaultValue]);
 
 	const onKeyDownHandler: KeyboardEventHandler<HTMLInputElement> = (e) => {
 		if (e.key !== "Enter") return;
