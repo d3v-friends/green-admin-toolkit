@@ -8,6 +8,7 @@ interface Props {
     className?: string;
     label?: ReactNode;
     timezone?: string;
+    name?: string;
 }
-export default function ({ className, label, imgSrc, value, onChange, timezone, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ className, label, imgSrc, value, onChange, timezone, name, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

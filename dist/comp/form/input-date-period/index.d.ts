@@ -8,10 +8,14 @@ interface Props {
     className?: string;
     label?: ReactNode;
     timezone?: string;
+    name?: {
+        start: string;
+        end: string;
+    };
 }
 export type InputDatePeriodValue = Partial<{
     start: Date;
     end: Date;
 }>;
-export default function ({ className, label, imgSrc, value, onChange, timezone, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ className, label, imgSrc, value, onChange, timezone, name, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

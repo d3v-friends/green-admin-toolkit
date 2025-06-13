@@ -15,6 +15,10 @@ interface Props {
 	className?: string;
 	label?: ReactNode;
 	timezone?: string;
+	name?: {
+		start: string;
+		end: string;
+	};
 }
 
 export type InputDatePeriodValue = Partial<{
@@ -29,6 +33,7 @@ export default function ({
 	value = {},
 	onChange = () => {},
 	timezone = "Asia/Seoul",
+	name,
 }: Readonly<Props>) {
 	const [start, setStart] = useState(false);
 	const [end, setEnd] = useState(false);
@@ -39,7 +44,7 @@ export default function ({
 	return (
 		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
-			<div className="grid grid-cols-2 gap-2 lg:gap-4">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4">
 				<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden")}>
 					{imgSrc && (
 						<div className={fnCss.sum("border-right h-full flex pl-2 pr-2 bg-(--primary)")}>
@@ -53,6 +58,12 @@ export default function ({
 						</div>
 					)}
 					<div className="grow pl-2 pr-2">
+						<input
+							name={name?.start}
+							value={value?.start?.toISOString()}
+							hidden
+							onChange={() => {}}
+						/>
 						<button
 							className="hover:underline"
 							onClick={() => setStart(true)}>
@@ -74,6 +85,13 @@ export default function ({
 				</div>
 
 				<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden pl-2")}>
+					<input
+						name={name?.end}
+						value={value?.end?.toISOString()}
+						hidden
+						onChange={() => {}}
+					/>
+
 					<button
 						className="hover:underline"
 						onClick={() => setEnd(true)}>

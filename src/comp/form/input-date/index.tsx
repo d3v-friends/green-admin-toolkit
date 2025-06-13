@@ -15,6 +15,7 @@ interface Props {
 	className?: string;
 	label?: ReactNode;
 	timezone?: string;
+	name?: string;
 }
 
 export default function ({
@@ -24,6 +25,7 @@ export default function ({
 	value,
 	onChange = () => {},
 	timezone = "Asia/Seoul",
+	name,
 }: Readonly<Props>) {
 	const [open, setOpen] = useState(false);
 	const dateStr = value ? DateTime.fromISO(value.toISOString()).setZone(timezone).toFormat("yyyy.MM.dd") : "미정";
@@ -44,6 +46,12 @@ export default function ({
 						</div>
 					)}
 					<div className="grow pl-2 pr-2">
+						<input
+							hidden
+							name={name}
+							value={value?.toISOString()}
+							onChange={() => {}}
+						/>
 						<button
 							className="hover:underline"
 							onClick={() => setOpen(true)}>

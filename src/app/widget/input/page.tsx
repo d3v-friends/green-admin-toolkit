@@ -49,7 +49,7 @@ export default function ({}: NextPageProps) {
 				<InputCheckbox className="mb-4">Checkbox</InputCheckbox>
 
 				<p>Dropdown</p>
-				<div className="grid gap-2 lg:gap-4 grid-cols-4">
+				<div className="grid gap-2 lg:gap-4 grid-cols-2 lg:grid-cols-4">
 					<InputDropdown
 						textAlign="text-left"
 						className="mb-4"

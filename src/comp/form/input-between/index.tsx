@@ -24,7 +24,7 @@ export default function ({label, className, imgSrc, value, onChange, name = {}, 
 	return (
 		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
-			<div className="grid grid-cols-2 gap-2 lg:gap-4">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4">
 				<Input
 					name={name?.before}
 					imgSrc={imgSrc}
