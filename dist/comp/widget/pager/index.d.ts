@@ -4,8 +4,9 @@ interface Props {
     page: number;
     size: number;
     total: number;
-    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, page: number) => void;
+    onClick: OnPageMouseEvent;
     className?: string;
 }
+export type OnPageMouseEvent = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, page: number) => void;
 export default function ({ buttons, page, size, total, onClick, className }: Props): import("react/jsx-runtime").JSX.Element | null;
 export {};

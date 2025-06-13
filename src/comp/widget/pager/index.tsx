@@ -11,9 +11,11 @@ interface Props {
 	page: number;
 	size: number;
 	total: number;
-	onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, page: number) => void;
+	onClick: OnPageMouseEvent;
 	className?: string;
 }
+
+export type OnPageMouseEvent = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, page: number) => void;
 
 export default function ({buttons = 3, page, size, total, onClick, className = "lg:pt-4 lg:pb-4 pt-2 pb-2"}: Props) {
 	if (total === 0) return null;
@@ -42,7 +44,7 @@ export default function ({buttons = 3, page, size, total, onClick, className = "
 				hover
 				activate={false}
 				disabled={page === 0}
-				onClick={(e) => {
+				onMouseUp={(e) => {
 					if (page === 0) return;
 					onClick(e, page - 1);
 				}}>
@@ -60,7 +62,7 @@ export default function ({buttons = 3, page, size, total, onClick, className = "
 					<Item
 						hover
 						activate={false}
-						onClick={(e) => {
+						onMouseUp={(e) => {
 							onClick(e, 0);
 						}}>
 						1
@@ -74,7 +76,7 @@ export default function ({buttons = 3, page, size, total, onClick, className = "
 					key={key}
 					hover
 					activate={page === i}
-					onClick={(e) => {
+					onMouseUp={(e) => {
 						if (page === i) return;
 						onClick(e, i);
 					}}>
@@ -88,7 +90,7 @@ export default function ({buttons = 3, page, size, total, onClick, className = "
 					<Item
 						hover
 						activate={false}
-						onClick={(e) => {
+						onMouseUp={(e) => {
 							onClick(e, last);
 						}}>
 						{last + 1}
@@ -100,7 +102,7 @@ export default function ({buttons = 3, page, size, total, onClick, className = "
 				hover
 				activate={false}
 				disabled={page === 0}
-				onClick={(e) => {
+				onMouseUp={(e) => {
 					if (page === last) return;
 					onClick(e, page + 1);
 				}}>
@@ -122,14 +124,14 @@ function Item({
 	activate = false,
 	hover = false,
 	disabled = false,
-	onClick,
+	onMouseUp,
 }: Readonly<{
 	children?: ReactNode;
 	className?: string;
 	activate?: boolean;
 	hover?: boolean;
 	disabled?: boolean;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
+	onMouseUp?: MouseEventHandler<HTMLButtonElement>;
 }>) {
 	return (
 		<button
@@ -142,7 +144,7 @@ function Item({
 				hover ? "hover:border-(--primary) hover:text-(--primary-alt) hover:filter-(--primary-filter)" : "",
 				disabled ? "cursor-not-allowed" : ""
 			)}
-			onClick={onClick}>
+			onMouseUp={onMouseUp}>
 			{children}
 		</button>
 	);
