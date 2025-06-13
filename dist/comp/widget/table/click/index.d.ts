@@ -5,7 +5,10 @@ interface Props<T> {
     empty?: ReactNode;
     cols: TableCol<T>[];
     list: T[];
-    onClick: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+    onClick: OnClickTable<T>;
+    onMouseDown?: OnClickTable<T>;
+    onMouseUp?: OnClickTable<T>;
 }
-export default function <T>({ className, cols, list, empty, onClick }: Props<T>): import("react/jsx-runtime").JSX.Element;
+export type OnClickTable<T> = (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+export default function <T>({ className, cols, list, empty, onClick, onMouseUp, onMouseDown, }: Props<T>): import("react/jsx-runtime").JSX.Element;
 export {};
