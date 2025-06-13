@@ -19,6 +19,7 @@ export type OnPageMouseEvent = (e: React.MouseEvent<HTMLButtonElement, MouseEven
 
 export default function ({buttons = 3, page, size, total, onClick, className = "lg:pt-4 lg:pb-4 pt-2 pb-2"}: Props) {
 	if (total === 0) return null;
+	if (size === 0) return null;
 
 	const last = Math.floor(total / size) + (0 < total % size ? 1 : 0) - 1;
 	const left: number[] = [];
