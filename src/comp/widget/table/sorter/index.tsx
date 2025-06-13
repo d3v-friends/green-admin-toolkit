@@ -11,6 +11,7 @@ interface Props<T, S> {
 	cols: TableCol<T>[];
 	list: T[];
 	onClick: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+	onMouseDown: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 	onChangeSort?: (columnKey: string, sorter: Sorter) => void;
 	value?: TableSorterValue;
 }
@@ -28,6 +29,7 @@ export default function <T, S>({
 	list,
 	empty,
 	onClick,
+	onMouseDown,
 	onChangeSort = () => {},
 	value = {
 		columnKey: "",
@@ -64,7 +66,8 @@ export default function <T, S>({
 					<tr
 						className="hover:bg-(--color-table-hover) h-14"
 						key={key}
-						onClick={(e) => onClick(e, row)}>
+						onClick={(e) => onClick(e, row)}
+						onMouseDown={(e) => onMouseDown(e, row)}>
 						<RowBuilder
 							cols={cols}
 							value={row}
