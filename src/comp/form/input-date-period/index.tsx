@@ -60,7 +60,7 @@ export default function ({
 					<div className="grow pl-2 pr-2">
 						<input
 							name={name?.start}
-							value={value?.start?.toISOString()}
+							value={value?.start?.toISOString() ?? ""}
 							hidden
 							onChange={() => {}}
 						/>
@@ -87,7 +87,7 @@ export default function ({
 				<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden pl-2")}>
 					<input
 						name={name?.end}
-						value={value?.end?.toISOString()}
+						value={value?.end?.toISOString() ?? ""}
 						hidden
 						onChange={() => {}}
 					/>

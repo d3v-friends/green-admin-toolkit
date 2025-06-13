@@ -49,7 +49,7 @@ export default function ({
 						<input
 							hidden
 							name={name}
-							value={value?.toISOString()}
+							value={value?.toISOString() ?? ""}
 							onChange={() => {}}
 						/>
 						<button
