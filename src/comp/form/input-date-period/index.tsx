@@ -35,6 +35,7 @@ export default function ({
 	const strStart = value.start ? DateTime.fromJSDate(value.start).setZone(timezone).toFormat("yyyy.MM.dd") : "미정";
 	const strEnd = value.end ? DateTime.fromJSDate(value.end).setZone(timezone).toFormat("yyyy.MM.dd") : "미정";
 
+	// todo 추후 start, end 날짜순서 체크하는 기능 추가하기
 	return (
 		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
@@ -97,31 +98,47 @@ export default function ({
 
 			<div className="min-h-[1.5rem]" />
 
-			<ModalToggler
+			<Modal
+				value={value?.start}
 				open={start}
-				onChange={setStart}>
-				<Calendar
-					locale={"ko-kr"}
-					onChange={(date, event) => {
-						if (!(date instanceof Date)) return;
-						onChange({...value, start: new Date(date.setHours(0, 0, 0, 0))});
-						setStart(false);
-					}}
-				/>
-			</ModalToggler>
+				onChangeOpen={setStart}
+				onChange={(start) => onChange({...value, start})}
+			/>
 
-			<ModalToggler
+			<Modal
+				value={value?.end}
 				open={end}
-				onChange={setEnd}>
-				<Calendar
-					locale={"ko-kr"}
-					onChange={(date, event) => {
-						if (!(date instanceof Date)) return;
-						onChange({...value, end: new Date(date.setHours(0, 0, 0, 0))});
-						setEnd(false);
-					}}
-				/>
-			</ModalToggler>
+				onChangeOpen={setEnd}
+				onChange={(end) => onChange({...value, end})}
+			/>
 		</div>
+	);
+}
+
+function Modal({
+	value,
+	onChange,
+	open,
+	onChangeOpen,
+}: Readonly<{
+	value?: Date;
+	onChange: FnBase<Date>;
+	open: boolean;
+	onChangeOpen: FnBase<boolean>;
+}>) {
+	return (
+		<ModalToggler
+			open={open}
+			onChange={onChangeOpen}>
+			<Calendar
+				locale={"ko-kr"}
+				value={value}
+				onChange={(date, event) => {
+					if (!(date instanceof Date)) return;
+					onChange(new Date(date.setHours(0, 0, 0, 0)));
+					onChangeOpen(false);
+				}}
+			/>
+		</ModalToggler>
 	);
 }

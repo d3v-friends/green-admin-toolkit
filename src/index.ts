@@ -46,11 +46,13 @@ export {default as InputDatePeriod} from "@comp/form/input-date-period";
 export {default as FormBase} from "@comp/form/form-base";
 export {default as FormOTP} from "@comp/form/form-otp";
 export {default as fnFormOTPModal} from "@comp/form/form-otp/modal";
+export {default as InputBetween} from "@comp/form/input-between";
 
 // @fn
 export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
 export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
 export {default as fnError} from "@fn/error";
+export {default as fnInput} from "@fn/input";
 
 // action
 export {default as ActionErrorP} from "@comp/action/error-p";

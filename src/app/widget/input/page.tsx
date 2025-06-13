@@ -2,6 +2,8 @@
 import React, {useState} from "react";
 import {NextPageProps, Nullable} from "nextjs-tools";
 import {
+	fnInput,
+	InputBetween,
 	InputCheckbox,
 	InputDate,
 	InputDatePeriod,
@@ -15,10 +17,13 @@ import ImgAuth from "web-asset/svg/regular/fi-rr-circle-user.svg";
 import ImgFruit from "web-asset/svg/regular/fi-rr-kiwi-fruit.svg";
 import ImgDate from "web-asset/svg/regular/fi-rr-calendar.svg";
 import {InputDatePeriodValue} from "@comp/form/input-date-period";
+import {InputBetweenValue} from "@comp/form/input-between";
+import ImgMoney from "web-asset/svg/regular/fi-rr-money-bill-transfer.svg";
 
 export default function ({}: NextPageProps) {
 	const [date, setDate] = useState<Nullable<Date>>();
 	const [period, setPeriod] = useState<InputDatePeriodValue>({});
+	const [between, setBetween] = useState<InputBetweenValue>({});
 
 	return (
 		<>
@@ -68,6 +73,14 @@ export default function ({}: NextPageProps) {
 					value={period}
 					onChange={setPeriod}
 					imgSrc={ImgDate}
+				/>
+
+				<InputBetween
+					imgSrc={ImgMoney}
+					label="Input between"
+					value={between}
+					onChange={setBetween}
+					inputParser={fnInput.onChangeNumber}
 				/>
 			</Panel>
 		</>
