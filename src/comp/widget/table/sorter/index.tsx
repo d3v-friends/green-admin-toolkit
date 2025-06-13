@@ -10,8 +10,8 @@ interface Props<T, S> {
 	empty?: ReactNode;
 	cols: TableCol<T>[];
 	list: T[];
-	onClick: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
-	onMouseDown: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+	onClick?: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+	onMouseDown?: (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 	onChangeSort?: (columnKey: string, sorter: Sorter) => void;
 	value?: TableSorterValue;
 }
@@ -28,8 +28,8 @@ export default function <T, S>({
 	cols,
 	list,
 	empty,
-	onClick,
-	onMouseDown,
+	onClick = () => {},
+	onMouseDown = () => {},
 	onChangeSort = () => {},
 	value = {
 		columnKey: "",
