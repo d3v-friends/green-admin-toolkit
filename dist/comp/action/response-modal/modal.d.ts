@@ -1,9 +1,10 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 import { ResponseModalChildren } from "./index";
 interface Props {
     ok?: ReactNode;
     title?: ReactNode;
     content?: ReactNode;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
 }
-export default function <RESPONSE>({ ok, title, content }: Readonly<Props>): ResponseModalChildren<RESPONSE>;
+export default function <RESPONSE>({ ok, title, content, onClick, }: Readonly<Props>): ResponseModalChildren<RESPONSE>;
 export {};
