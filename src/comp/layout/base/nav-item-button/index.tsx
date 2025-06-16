@@ -32,7 +32,7 @@ export default function ({children, imgSrc, style = "normal", alert, onClick, cl
 				/>
 			)}
 			{children}
-			{alert && (
+			{alert && alert !== 0 && (
 				<div
 					className={fnCss.sum(
 						"absolute right-[-0.3rem] top-[-0.3rem] bg-(--danger) rounded-full ",
