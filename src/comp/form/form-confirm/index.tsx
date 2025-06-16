@@ -35,9 +35,16 @@ export default function <INPUT>({
 	const onSubmit = () => {
 		if (pending) return;
 		if (!formElement) return;
-		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) return;
+		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) {
+			console.error("beforeSubmit return false");
+			return;
+		}
 		const {err} = fnServerAction.forms.value(new FormData(formElement), form);
-		if (err) return;
+		if (err) {
+			console.error(err);
+			return;
+		}
+
 		formElement.requestSubmit();
 		setOpen(false);
 	};

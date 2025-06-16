@@ -21,10 +21,14 @@ export default function <INPUT>({children, action, pending, beforeSubmit, form}:
 		if (!formElement) return;
 
 		const {err} = fnServerAction.forms.value(new FormData(formElement), form);
-		if (err) return;
-
-		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) return;
-
+		if (err) {
+			console.error(err);
+			return;
+		}
+		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) {
+			console.error("beforeSubmit return false");
+			return;
+		}
 		formElement.requestSubmit();
 	};
 
