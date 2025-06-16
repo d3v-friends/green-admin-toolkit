@@ -13,7 +13,7 @@ interface Props {
 	className?: string;
 }
 
-export default function ({children, imgSrc, style = "normal", alert, onClick, className = ""}: Readonly<Props>) {
+export default function ({children, imgSrc, style = "normal", alert = 0, onClick, className = ""}: Readonly<Props>) {
 	return (
 		<button
 			onClick={onClick}
@@ -32,7 +32,7 @@ export default function ({children, imgSrc, style = "normal", alert, onClick, cl
 				/>
 			)}
 			{children}
-			{alert && alert !== 0 && (
+			{alert !== 0 && (
 				<div
 					className={fnCss.sum(
 						"absolute right-[-0.3rem] top-[-0.3rem] bg-(--danger) rounded-full ",
