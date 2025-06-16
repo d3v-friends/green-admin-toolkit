@@ -119,6 +119,7 @@ export default function ({
 				)}>
 				{items.map((value, i) => (
 					<button
+						type="button"
 						className="block w-full"
 						key={i}
 						onClick={() => {
