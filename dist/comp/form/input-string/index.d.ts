@@ -1,5 +1,6 @@
 import { HTMLInputAutoCompleteAttribute, HTMLInputTypeAttribute, ReactNode } from "react";
 import { FnBase, HTMLInputModeAttribute, ImgSrc } from "nextjs-tools";
+import { InputParser } from "../../../fn/input";
 interface Props {
     imgSrc?: ImgSrc;
     placeholder?: string;
@@ -16,6 +17,7 @@ interface Props {
     type?: HTMLInputTypeAttribute;
     required?: boolean;
     label?: ReactNode;
+    inputParser?: InputParser;
 }
-export default function ({ placeholder, imgSrc, regexp, invalidMessage, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, label, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ placeholder, imgSrc, regexp, invalidMessage, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, label, inputParser, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

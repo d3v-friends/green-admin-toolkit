@@ -11,6 +11,7 @@ import React, {
 import {FnBase, fnCss, HTMLInputModeAttribute, ImgSrc} from "nextjs-tools";
 import Image from "next/image";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
+import {InputParser} from "@fn/input";
 
 interface Props {
 	imgSrc?: ImgSrc;
@@ -28,6 +29,7 @@ interface Props {
 	type?: HTMLInputTypeAttribute;
 	required?: boolean;
 	label?: ReactNode;
+	inputParser?: InputParser;
 }
 
 export default function ({
@@ -46,6 +48,7 @@ export default function ({
 	type,
 	required,
 	label,
+	inputParser = (e) => e.target.value,
 }: Readonly<Props>) {
 	const [invalid, setInvalid] = useState(false);
 	const [value, setValue] = useState(defaultValue);
@@ -61,9 +64,10 @@ export default function ({
 	};
 
 	const onChangeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
-		onChange(e.target.value);
-		setValue(e.target.value);
-		setInvalid(!new RegExp(regexp || "").test(e.target.value));
+		const str = inputParser(e);
+		onChange(str);
+		setValue(str);
+		setInvalid(!new RegExp(regexp || "").test(str));
 	};
 
 	return (
