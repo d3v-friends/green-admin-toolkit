@@ -62,6 +62,7 @@ export default function ({
 
 			<div className={fnCss.sum("group", className)}>
 				<button
+					type="button"
 					ref={setButton}
 					onClick={() => setOpen(!open)}
 					className={fnCss.sum(
