@@ -15,5 +15,5 @@ export interface DropdownItem {
     imgSrc?: ImgSrc;
     label?: ReactNode;
 }
-export default function ({ items, imgSrc, initIndex, onSelect, className, textAlign, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | "items is empty";
+export default function ({ items, imgSrc, initIndex, onSelect, className, textAlign, name, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | "items is empty";
 export {};

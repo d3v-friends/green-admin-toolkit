@@ -29,6 +29,7 @@ export default function ({
 	onSelect = () => {},
 	className = "",
 	textAlign = "text-center",
+	name,
 }: Readonly<Props>) {
 	if (items.length === 0) return "items is empty";
 
@@ -58,6 +59,7 @@ export default function ({
 				hidden
 				value={value.value}
 				onChange={() => {}}
+				name={name}
 			/>
 
 			<div className={fnCss.sum("group", className)}>
