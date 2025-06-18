@@ -9,8 +9,9 @@ interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disab
     pending: boolean;
     form: ActionForm<INPUT>;
     checkBeforeOpen?: boolean;
+    onError?: FnBase<Error>;
 }
 export type FormConfirmChildren = (onToggle: FnBase<boolean>) => ReactNode;
 export type FormConfirmModalComponent = (onSubmit: FnVoid, onCancel: FnVoid) => ReactNode;
-export default function <INPUT>({ children, confirmModal, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header, form, checkBeforeOpen, }: Readonly<Props<INPUT>>): import("react/jsx-runtime").JSX.Element;
+export default function <INPUT>({ children, confirmModal, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header, form, checkBeforeOpen, onError, }: Readonly<Props<INPUT>>): import("react/jsx-runtime").JSX.Element;
 export {};

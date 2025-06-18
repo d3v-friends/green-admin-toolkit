@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode, useState} from "react";
-import {ActionForm, fnServerAction, FnVoid, Nullable} from "nextjs-tools";
+import {ActionForm, FnBase, fnServerAction, FnVoid, Nullable} from "nextjs-tools";
 import {ActionLoadingBackdrop} from "@app/index";
 
 interface Props<INPUT> {
@@ -9,11 +9,19 @@ interface Props<INPUT> {
 	action: (payload: FormData) => void;
 	pending: boolean;
 	form: ActionForm<INPUT>;
+	onError?: FnBase<Error>;
 }
 
 export type FormConfirmChildren = (onSubmit: FnVoid) => ReactNode;
 
-export default function <INPUT>({children, action, pending, beforeSubmit, form}: Readonly<Props<INPUT>>) {
+export default function <INPUT>({
+	children,
+	action,
+	pending,
+	beforeSubmit,
+	form,
+	onError = () => {},
+}: Readonly<Props<INPUT>>) {
 	const [formElement, setFormElement] = useState<Nullable<HTMLFormElement>>();
 
 	const onSubmit = () => {
@@ -22,11 +30,11 @@ export default function <INPUT>({children, action, pending, beforeSubmit, form}:
 
 		const {err} = fnServerAction.forms.value(new FormData(formElement), form);
 		if (err) {
-			console.error(err);
+			onError(new Error(err));
 			return;
 		}
 		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) {
-			console.error("beforeSubmit return false");
+			onError(new Error("beforeSubmit return false"));
 			return;
 		}
 		formElement.requestSubmit();

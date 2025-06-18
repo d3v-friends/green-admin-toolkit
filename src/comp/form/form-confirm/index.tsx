@@ -12,6 +12,7 @@ interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disab
 	pending: boolean;
 	form: ActionForm<INPUT>;
 	checkBeforeOpen?: boolean;
+	onError?: FnBase<Error>;
 }
 
 export type FormConfirmChildren = (onToggle: FnBase<boolean>) => ReactNode;
@@ -28,6 +29,7 @@ export default function <INPUT>({
 	header,
 	form,
 	checkBeforeOpen = false,
+	onError = () => {},
 }: Readonly<Props<INPUT>>) {
 	const [open, setOpen] = useState(false);
 	const [formElement, setFormElement] = useState<Nullable<HTMLFormElement>>();
@@ -36,12 +38,12 @@ export default function <INPUT>({
 		if (pending) return;
 		if (!formElement) return;
 		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) {
-			console.error("beforeSubmit return false");
+			onError(new Error("beforeSubmit return false"));
 			return;
 		}
 		const {err} = fnServerAction.forms.value(new FormData(formElement), form);
 		if (err) {
-			console.error(err);
+			onError(new Error(err));
 			return;
 		}
 
