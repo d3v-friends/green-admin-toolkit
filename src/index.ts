@@ -17,6 +17,8 @@ export {default as ScreenCenter} from "@comp/widget/screen-center";
 export {default as Button} from "@comp/widget/button";
 export {default as ButtonLink} from "@comp/widget/button-link";
 export {default as Markdown} from "@comp/widget/markdown";
+export {default as PanelPager} from "@comp/widget/panel-pager";
+export {default as Chart} from "@comp/widget/chart";
 
 // table
 export {default as TableClick} from "@comp/widget/table/click";
