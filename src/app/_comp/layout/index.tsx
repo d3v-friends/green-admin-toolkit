@@ -4,7 +4,8 @@ import ImgLogo from "@asset/png/icon.png";
 import ImgButton from "web-asset/svg/regular/fi-rr-tip-button-hand.svg";
 import ImgPowerOff from "web-asset/svg/regular/fi-rr-power.svg";
 import ImgForm from "web-asset/svg/regular/fi-rr-form.svg";
-import ImgDoc from "web-asset/svg/regular/fi-rr-document.svg";
+import ImgDoc from "web-asset/svg/regular/fi-rr-a.svg";
+import ImgControl from "web-asset/svg/regular/fi-rr-console-controller.svg";
 
 interface Props {
 	children?: ReactNode;
@@ -62,6 +63,12 @@ function Aside({}: Readonly<{children?: ReactNode}>) {
 				imgSrc={ImgDoc}
 				group="Typography">
 				<LayoutAsideAccordionLink href="/typography/paragraph">Paragraph</LayoutAsideAccordionLink>
+			</LayoutAsideAccordion>
+
+			<LayoutAsideAccordion
+				imgSrc={ImgControl}
+				group="Control">
+				<LayoutAsideAccordionLink href="/control/mouse">Mouse</LayoutAsideAccordionLink>
 			</LayoutAsideAccordion>
 		</>
 	);
