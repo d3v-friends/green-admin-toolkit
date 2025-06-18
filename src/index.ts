@@ -35,6 +35,7 @@ export {default as ModalBase} from "@comp/modal/base";
 export {default as ModalToggler} from "@comp/modal/toggler";
 export {default as ModalBasic} from "@comp/modal/basic";
 export {default as ModalElement} from "@comp/modal/element";
+export {default as ModalContextMenu} from "@comp/modal/context-menu";
 
 // form
 export {default as InputString} from "@comp/form/input-string";

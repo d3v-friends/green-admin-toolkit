@@ -56,23 +56,6 @@ export default function ({}: NextPageProps) {
 				<TableMenu
 					list={list}
 					cols={cols}
-					onMouseUp={(e, row) => console.log(row)}
-					menu={[
-						{label: "test1", onClick: (e, row) => console.log(row.name, "test1")},
-						{
-							label: "test2",
-							onClick: (e, row) => console.log(row.name, "test2"),
-						},
-					]}
-				/>
-			</Panel>
-
-			<Panel>
-				<h4>Right button menu</h4>
-				<TableMenu
-					list={list}
-					cols={cols}
-					onMouseUp={(e, row) => console.log(row)}
 					menu={[
 						{label: "test1", onClick: (e, row) => console.log(row.name, "test1")},
 						{

@@ -1,29 +1,24 @@
 "use client";
 import React, {ReactNode, useEffect, useRef, useState} from "react";
-import {TableCol} from "@app/index";
+import {ModalContextMenu, TableCol} from "@app/index";
 import Base from "../base";
-import {fnCss, Nullable} from "nextjs-tools";
+import {Nullable} from "nextjs-tools";
+import {ContextMenu} from "@comp/modal/context-menu";
 
 interface Props<T> {
 	className?: string;
 	empty?: ReactNode;
 	cols: TableCol<T>[];
 	list: T[];
-	onMouseUp: OnClickTable<T>;
-	menu: RightButtonMenuItem<T>[];
+	onMouseUp?: OnClickTable<T>;
+	menu: ContextMenu<T>[];
 }
 
 const {RowBuilder, Colgroup, Thead, Table, RowEmpty} = Base;
 
 export type OnClickTable<T> = (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 
-export type RightButtonMenuItem<T> = {
-	label: ReactNode;
-	onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, row: T) => void;
-	borderTop?: boolean;
-};
-
-export default function <T>({className, cols, list, empty, onMouseUp, menu}: Props<T>) {
+export default function <T>({className, cols, list, empty, onMouseUp = () => {}, menu}: Props<T>) {
 	const [coordinate, setCoordinate] = useState<{top: number; left: number}>({
 		top: 0,
 		left: 0,
@@ -101,46 +96,12 @@ export default function <T>({className, cols, list, empty, onMouseUp, menu}: Pro
 			</Table>
 
 			{row && (
-				<Menu
+				<ModalContextMenu
 					value={row}
 					menu={menu}
 					{...coordinate}
 				/>
 			)}
-		</div>
-	);
-}
-
-function Menu<T>({
-	menu,
-	top,
-	left,
-	value,
-}: Readonly<{
-	value: T;
-	menu: RightButtonMenuItem<T>[];
-	top: number;
-	left: number;
-}>) {
-	return (
-		<div
-			className="fixed z-5 bg-(--bg-panel) shadow-2xl rounded-md p-1 shadow-(--color-shadow) min-w-[8rem]"
-			style={{top, left}}>
-			{menu.map(({label, onClick, borderTop}, i) => (
-				<button
-					key={i}
-					type="button"
-					className={fnCss.sum(
-						"p-2 block hover:bg-(--primary) hover:text-(--primary-alt) w-full",
-						"text-left",
-						borderTop ? "border-top" : ""
-					)}
-					onMouseUp={(e) => {
-						onClick(e, value);
-					}}>
-					{label}
-				</button>
-			))}
 		</div>
 	);
 }

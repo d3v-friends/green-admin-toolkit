@@ -1,0 +1,8 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import { fnCss } from "nextjs-tools";
+export default function ({ menu, top, left, value }) {
+    return (_jsx("div", { className: "fixed z-5 bg-(--bg-panel) shadow-2xl rounded-md p-2 shadow-(--color-shadow) min-w-[8rem] border-all", style: { top, left }, children: menu.map(({ label, onClick, borderTop }, i) => (_jsx("button", { type: "button", className: fnCss.sum("p-2 block hover:bg-(--primary) hover:text-(--primary-alt) w-full", "text-left", borderTop ? "border-top" : ""), onMouseUp: (e) => {
+                onClick(e, value);
+            }, children: label }, i))) }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29tcC9tb2RhbC9jb250ZXh0LW1lbnUvaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxPQUFPLEVBQUMsS0FBSyxFQUFDLE1BQU0sY0FBYyxDQUFDO0FBZW5DLE1BQU0sQ0FBQyxPQUFPLFdBQWMsRUFBQyxJQUFJLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBRSxLQUFLLEVBQXFCO0lBQ3ZFLE9BQU8sQ0FDTixjQUNDLFNBQVMsRUFBQyxxR0FBcUcsRUFDL0csS0FBSyxFQUFFLEVBQUMsR0FBRyxFQUFFLElBQUksRUFBQyxZQUNqQixJQUFJLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBQyxLQUFLLEVBQUUsT0FBTyxFQUFFLFNBQVMsRUFBQyxFQUFFLENBQUMsRUFBRSxFQUFFLENBQUMsQ0FDN0MsaUJBRUMsSUFBSSxFQUFDLFFBQVEsRUFDYixTQUFTLEVBQUUsS0FBSyxDQUFDLEdBQUcsQ0FDbkIsa0VBQWtFLEVBQ2xFLFdBQVcsRUFDWCxTQUFTLENBQUMsQ0FBQyxDQUFDLFlBQVksQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUM3QixFQUNELFNBQVMsRUFBRSxDQUFDLENBQUMsRUFBRSxFQUFFO2dCQUNoQixPQUFPLENBQUMsQ0FBQyxFQUFFLEtBQUssQ0FBQyxDQUFDO1lBQ25CLENBQUMsWUFDQSxLQUFLLElBVkQsQ0FBQyxDQVdFLENBQ1QsQ0FBQyxHQUNHLENBQ04sQ0FBQztBQUNILENBQUMifQ==
