@@ -18,6 +18,7 @@ export { default as Chart } from "./comp/widget/chart";
 export { default as TableClick } from "./comp/widget/table/click";
 export { default as TableLink } from "./comp/widget/table/link";
 export { default as TableList } from "./comp/widget/table/list";
+export { default as TableMenu } from "./comp/widget/table/menu";
 export { default as TableSorter } from "./comp/widget/table/sorter";
 export { default as Pager } from "./comp/widget/pager";
 export type Sorter = "ASC" | "DESC" | "NONE";

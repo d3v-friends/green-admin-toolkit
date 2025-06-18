@@ -1,0 +1,146 @@
+"use client";
+import React, {ReactNode, useEffect, useRef, useState} from "react";
+import {TableCol} from "@app/index";
+import Base from "../base";
+import {fnCss, Nullable} from "nextjs-tools";
+
+interface Props<T> {
+	className?: string;
+	empty?: ReactNode;
+	cols: TableCol<T>[];
+	list: T[];
+	onMouseUp: OnClickTable<T>;
+	menu: RightButtonMenuItem<T>[];
+}
+
+const {RowBuilder, Colgroup, Thead, Table, RowEmpty} = Base;
+
+export type OnClickTable<T> = (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
+
+export type RightButtonMenuItem<T> = {
+	label: ReactNode;
+	onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, row: T) => void;
+	borderTop?: boolean;
+};
+
+export default function <T>({className, cols, list, empty, onMouseUp, menu}: Props<T>) {
+	const [coordinate, setCoordinate] = useState<{top: number; left: number}>({
+		top: 0,
+		left: 0,
+	});
+	const [row, setRow] = useState<Nullable<T>>();
+	const refSetRow = useRef(setRow);
+	const [touchDuration, setTouchDuration] = useState(0);
+
+	useEffect(() => {
+		const onScroll = () => {
+			refSetRow.current(null);
+		};
+
+		const onMouseUp = (e: MouseEvent) => {
+			if (e.button === 2) return;
+			refSetRow.current(null);
+		};
+
+		window.addEventListener("mouseup", onMouseUp);
+		window.addEventListener("scroll", onScroll);
+
+		return () => {
+			window.removeEventListener("mouseup", onMouseUp);
+			window.removeEventListener("scroll", onScroll);
+		};
+	}, []);
+
+	return (
+		<div
+			className={className}
+			onMouseLeave={() => setRow(null)}>
+			<Table>
+				<Colgroup cols={cols} />
+				<Thead cols={cols} />
+				<tbody>
+					{list.map((row, key) => (
+						<tr
+							style={{
+								userSelect: "none",
+								WebkitUserSelect: "none",
+								WebkitTouchCallout: "none",
+							}}
+							className="hover:bg-(--color-table-hover) h-14"
+							key={key}
+							onMouseUp={(e) => onMouseUp(e, row)}
+							onContextMenu={(e) => {
+								e.preventDefault();
+								setCoordinate({
+									top: e.clientY,
+									left: e.clientX,
+								});
+								setRow(row);
+							}}
+							onTouchStart={(e) => {
+								setTouchDuration(Date.now());
+							}}
+							onTouchEnd={(e) => {
+								const duration = Date.now() - touchDuration;
+								if (!(2000 < duration && duration < 5000)) return;
+								setRow(row);
+							}}
+							onTouchMove={(e) => {
+								setTouchDuration(0);
+								setRow(null);
+							}}>
+							<RowBuilder
+								cols={cols}
+								value={row}
+								index={key}
+							/>
+						</tr>
+					))}
+					{list.length === 0 && <RowEmpty cols={cols}>{empty}</RowEmpty>}
+				</tbody>
+			</Table>
+
+			{row && (
+				<Menu
+					value={row}
+					menu={menu}
+					{...coordinate}
+				/>
+			)}
+		</div>
+	);
+}
+
+function Menu<T>({
+	menu,
+	top,
+	left,
+	value,
+}: Readonly<{
+	value: T;
+	menu: RightButtonMenuItem<T>[];
+	top: number;
+	left: number;
+}>) {
+	return (
+		<div
+			className="fixed z-5 bg-(--bg-panel) shadow-2xl rounded-md p-1 shadow-(--color-shadow) min-w-[8rem]"
+			style={{top, left}}>
+			{menu.map(({label, onClick, borderTop}, i) => (
+				<button
+					key={i}
+					type="button"
+					className={fnCss.sum(
+						"p-2 block hover:bg-(--primary) hover:text-(--primary-alt) w-full",
+						"text-left",
+						borderTop ? "border-top" : ""
+					)}
+					onMouseUp={(e) => {
+						onClick(e, value);
+					}}>
+					{label}
+				</button>
+			))}
+		</div>
+	);
+}

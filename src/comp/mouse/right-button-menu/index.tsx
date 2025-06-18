@@ -24,10 +24,9 @@ export default function ({className, children, menu}: Readonly<Props>) {
 		left: 0,
 	});
 	const refSetOpen = useRef(setOpen);
-
 	useEffect(() => {
 		const onMouseUp = (e: MouseEvent) => {
-			if (e.button !== 0) return;
+			if (e.button === 2) return;
 			refSetOpen.current(false);
 		};
 
