@@ -26,6 +26,8 @@ interface Props {
 	type?: HTMLInputTypeAttribute;
 	required?: boolean;
 	resize?: boolean;
+	children?: ReactNode;
+	textareaClassName?: string;
 }
 
 export default function ({
@@ -42,6 +44,8 @@ export default function ({
 	type,
 	required,
 	resize = false,
+	children,
+	textareaClassName = "min-h-[2.5rem]",
 }: Readonly<Props>) {
 	const [value, setValue] = useState(defaultValue);
 	const [focus, setFocus] = useState(false);
@@ -66,9 +70,10 @@ export default function ({
 			<div className={fnCss.sum("relative")}>
 				<textarea
 					className={fnCss.sum(
-						"outline-none w-full min-h-[2.5rem] p-2 border-all rounded-md",
+						"outline-none w-full p-2 border-all rounded-md",
 						focus ? "border-(--primary)" : "",
-						resize ? "resize-y" : "resize-none"
+						resize ? "resize-y" : "resize-none",
+						textareaClassName
 					)}
 					{...{placeholder, disabled, name, autoComplete, inputMode, type, required}}
 					onChange={onChangeHandler}
@@ -91,6 +96,7 @@ export default function ({
 						className="absolute right-0 top-4 no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
 					/>
 				)}
+				{children}
 			</div>
 		</div>
 	);

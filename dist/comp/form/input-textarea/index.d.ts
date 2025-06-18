@@ -14,6 +14,8 @@ interface Props {
     type?: HTMLInputTypeAttribute;
     required?: boolean;
     resize?: boolean;
+    children?: ReactNode;
+    textareaClassName?: string;
 }
-export default function ({ label, placeholder, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, resize, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ label, placeholder, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, resize, children, textareaClassName, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

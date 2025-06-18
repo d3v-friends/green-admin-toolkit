@@ -8,7 +8,7 @@ import FormOTP from "./_form-otp";
 
 export default async function ({}: NextPageProps) {
 	return (
-		<>
+		<div className="grid grid-cols-1 gap-2 lg:gap-4">
 			<Panel>
 				<h4>Form base</h4>
 				<FormBase />
@@ -25,6 +25,6 @@ export default async function ({}: NextPageProps) {
 				<p>Ask OTP before submit</p>
 				<FormOTP />
 			</Panel>
-		</>
+		</div>
 	);
 }
