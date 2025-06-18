@@ -70,6 +70,7 @@ export default function ({className, children, menu}: Readonly<Props>) {
 					{menu.map(({label, onClick, borderTop}, i) => (
 						<button
 							key={i}
+							type="button"
 							className={fnCss.sum(
 								"p-2 block hover:bg-(--primary) hover:text-(--primary-alt) w-full",
 								"text-left",
