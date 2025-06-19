@@ -46,9 +46,10 @@ function Aside({}: Readonly<{children?: ReactNode}>) {
 				<LayoutAsideAccordionLink href="/widget/table">Table</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/widget/modal">Modal</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/widget/chart">Chart</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/widget/progress-bar">Progress bar</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink
-					href="/widget/tab/t-01"
-					prefix="/widget/tab">
+					href="/widget/tabs/t-01"
+					prefix="/widget/tabs">
 					Tab
 				</LayoutAsideAccordionLink>
 			</LayoutAsideAccordion>

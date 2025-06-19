@@ -19,6 +19,8 @@ export {default as ButtonLink} from "@comp/widget/button-link";
 export {default as Markdown} from "@comp/widget/markdown";
 export {default as PanelPager} from "@comp/widget/panel-pager";
 export {default as Chart} from "@comp/widget/chart";
+export {default as ProgressBar} from "@comp/widget/progress-bar";
+export {default as LoadingBar} from "@comp/widget/loading-bar";
 
 // table
 export {default as TableClick} from "@comp/widget/table/click";
