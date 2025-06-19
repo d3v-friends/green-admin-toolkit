@@ -54,12 +54,12 @@ export default function ({}: NextPageProps) {
 
 				<ProgressBar
 					label="simple"
-					value={value % 100}
+					value={value % 110}
 					max={100}
 				/>
 
 				<LoadingBar
-					value={value % 100}
+					value={value % 110}
 					max={100}
 				/>
 			</Panel>
