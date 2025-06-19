@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import {NextPageProps, Nullable} from "nextjs-tools";
 import {
+	Button,
 	fnInput,
 	InputBetween,
 	InputCheckbox,
@@ -37,6 +38,12 @@ export default function ({}: NextPageProps) {
 					imgSrc={ImgAuth}
 					placeholder="img text"
 				/>
+
+				<InputString
+					imgSrc={ImgAuth}
+					placeholder="img text">
+					<Button>Confirm</Button>
+				</InputString>
 
 				<InputLabel label="input style label">Hello</InputLabel>
 

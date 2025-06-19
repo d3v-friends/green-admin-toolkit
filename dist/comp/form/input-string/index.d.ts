@@ -18,6 +18,7 @@ interface Props {
     required?: boolean;
     label?: ReactNode;
     inputParser?: InputParser;
+    children?: ReactNode | ReactNode[];
 }
-export default function ({ placeholder, imgSrc, regexp, invalidMessage, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, label, inputParser, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ placeholder, imgSrc, regexp, invalidMessage, defaultValue, onChange, onKeyEnter, name, disabled, className, autoComplete, inputMode, type, required, label, inputParser, children, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

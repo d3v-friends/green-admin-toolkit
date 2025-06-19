@@ -35,7 +35,7 @@ export default function ({
 				className,
 				color,
 				"button",
-				"inline-flex items-center justify-center rounded-md min-h-[3rem]",
+				"inline-flex items-center justify-center rounded-md min-h-[2.5rem] pl-2 pr-2",
 				"outline-none"
 			)}
 			onClick={onClick}>

@@ -30,6 +30,7 @@ interface Props {
 	required?: boolean;
 	label?: ReactNode;
 	inputParser?: InputParser;
+	children?: ReactNode | ReactNode[];
 }
 
 export default function ({
@@ -49,6 +50,7 @@ export default function ({
 	required,
 	label,
 	inputParser = (e) => e.target.value,
+	children,
 }: Readonly<Props>) {
 	const [invalid, setInvalid] = useState(false);
 	const [value, setValue] = useState(defaultValue);
@@ -73,58 +75,62 @@ export default function ({
 	return (
 		<div className={className}>
 			{label && <p className="mb-[-5px]">{label}</p>}
-			<div
-				className={fnCss.sum(
-					"flex items-center border-all rounded-md h-[2.5rem] overflow-hidden",
-					focus ? "border-(--primary)" : "",
-					invalid && value ? "border-(--danger)" : ""
-				)}>
-				{imgSrc && (
-					<div
-						className={fnCss.sum(
-							"border-right h-full flex pl-2 pr-2",
-							disabled ? "bg-(--dark)" : "bg-(--primary)",
-							focus ? "border-(--primary)" : ""
-						)}>
-						<Image
+			<div className="flex w-full items-top">
+				<div
+					className={fnCss.sum(
+						"flex items-center border-all rounded-md h-[2.5rem] overflow-hidden",
+						"grow",
+						focus ? "border-(--primary)" : "",
+						invalid && value ? "border-(--danger)" : ""
+					)}>
+					{imgSrc && (
+						<div
 							className={fnCss.sum(
-								"no-drag",
-								disabled ? "filter-(--dark-alt-filter)" : "filter-(--primary-alt-filter)"
-							)}
-							src={imgSrc}
-							alt="icon"
-							width={25}
-							height={25}
-						/>
-					</div>
-				)}
-				<div className="grow">
+								"border-right h-full flex pl-2 pr-2",
+								disabled ? "bg-(--dark)" : "bg-(--primary)",
+								focus ? "border-(--primary)" : ""
+							)}>
+							<Image
+								className={fnCss.sum(
+									"no-drag",
+									disabled ? "filter-(--dark-alt-filter)" : "filter-(--primary-alt-filter)"
+								)}
+								src={imgSrc}
+								alt="icon"
+								width={25}
+								height={25}
+							/>
+						</div>
+					)}
+
 					<input
 						{...{placeholder, disabled, name, autoComplete, inputMode, type, required}}
 						onChange={onChangeHandler}
-						className="outline-none w-full pl-2 pr-2"
+						className="outline-none w-full pl-2 pr-2 grow"
 						onKeyDown={onKeyDownHandler}
 						onFocus={() => setFocus(true)}
 						onBlur={() => setFocus(false)}
 						value={value}
 						title={invalidMessage}
 					/>
-				</div>
 
-				{value && (
-					<Image
-						src={ImgCross}
-						alt="clear"
-						width={20}
-						height={20}
-						onClick={() => {
-							setValue("");
-							onChange("");
-						}}
-						className="no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
-					/>
-				)}
+					{value && (
+						<Image
+							src={ImgCross}
+							alt="clear"
+							width={20}
+							height={20}
+							onClick={() => {
+								setValue("");
+								onChange("");
+							}}
+							className="no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
+						/>
+					)}
+				</div>
+				{children && <div className="ml-2">{children}</div>}
 			</div>
+
 			<div className="min-h-[1.5rem] pl-2 text-(--danger)">{invalid && invalidMessage}</div>
 		</div>
 	);

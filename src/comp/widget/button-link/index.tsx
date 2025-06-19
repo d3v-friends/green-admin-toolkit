@@ -30,7 +30,7 @@ export default function ({
 				className,
 				color,
 				"button",
-				"flex items-center justify-center min-h-[3rem] rounded-md",
+				"flex items-center justify-center min-h-[2.5rem] pl-2 pr-2 rounded-md",
 				"outline-none"
 			)}
 			href={href}>
