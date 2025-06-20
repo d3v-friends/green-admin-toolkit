@@ -16,6 +16,7 @@ interface Props {
 	label?: ReactNode;
 	timezone?: string;
 	name?: string;
+	hiddenInitButton?: boolean;
 }
 
 export default function ({
@@ -26,6 +27,7 @@ export default function ({
 	onChange = () => {},
 	timezone = "Asia/Seoul",
 	name,
+	hiddenInitButton = false,
 }: Readonly<Props>) {
 	const [open, setOpen] = useState(false);
 	const dateStr = value ? DateTime.fromISO(value.toISOString()).setZone(timezone).toFormat("yyyy.MM.dd") : "미정";
@@ -58,7 +60,7 @@ export default function ({
 							{dateStr}
 						</button>
 					</div>
-					{value && (
+					{value && !hiddenInitButton && (
 						<button onClick={() => onChange(null)}>
 							<Image
 								src={ImgCross}

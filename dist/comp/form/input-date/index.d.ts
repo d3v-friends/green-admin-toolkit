@@ -9,6 +9,7 @@ interface Props {
     label?: ReactNode;
     timezone?: string;
     name?: string;
+    hiddenInitButton?: boolean;
 }
-export default function ({ className, label, imgSrc, value, onChange, timezone, name, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ className, label, imgSrc, value, onChange, timezone, name, hiddenInitButton, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

@@ -7,6 +7,7 @@ import {
 	InputBetween,
 	InputCheckbox,
 	InputDate,
+	InputDateMonth,
 	InputDatePeriod,
 	InputDropdown,
 	InputLabel,
@@ -25,6 +26,7 @@ export default function ({}: NextPageProps) {
 	const [date, setDate] = useState<Nullable<Date>>();
 	const [period, setPeriod] = useState<InputDatePeriodValue>({});
 	const [between, setBetween] = useState<InputBetweenValue>({});
+	const [month, setMonth] = useState(new Date());
 
 	return (
 		<>
@@ -75,6 +77,14 @@ export default function ({}: NextPageProps) {
 					onChange={setDate}
 				/>
 
+				<InputDate
+					label="hidden init button"
+					imgSrc={ImgDate}
+					value={date}
+					onChange={setDate}
+					hiddenInitButton
+				/>
+
 				<p>Period</p>
 				<InputDatePeriod
 					value={period}
@@ -88,6 +98,13 @@ export default function ({}: NextPageProps) {
 					value={between}
 					onChange={setBetween}
 					inputParser={fnInput.onChangeNumber}
+				/>
+
+				<InputDateMonth
+					imgSrc={ImgMoney}
+					label="Month"
+					value={month}
+					onChange={setMonth}
 				/>
 			</Panel>
 		</>
