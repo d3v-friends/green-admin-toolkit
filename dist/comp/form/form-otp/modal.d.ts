@@ -5,6 +5,7 @@ interface Props {
     cancel?: ReactNode;
     title?: ReactNode;
     content?: ReactNode;
+    className?: string;
 }
-export default function ({ ok, cancel, title, content }: Readonly<Props>): FormConfirmModalComponent;
+export default function ({ ok, cancel, title, content, className, }: Readonly<Props>): FormConfirmModalComponent;
 export {};

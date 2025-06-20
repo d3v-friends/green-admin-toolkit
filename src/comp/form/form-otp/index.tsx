@@ -12,6 +12,7 @@ interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disab
 	pending: boolean;
 	otpContent?: ReactNode;
 	form: ActionForm<INPUT>;
+	modalClassName?: string;
 }
 
 export type FormOtpChildren = (onToggle: FnBase<boolean>) => ReactNode;
@@ -27,6 +28,7 @@ export default function <INPUT>({
 	header = "OTP를 입력하여 주십시오",
 	otpContent,
 	form,
+	modalClassName = "w-[20rem]",
 }: Readonly<Props<INPUT>>) {
 	const [open, setOpen] = useState(false);
 	const [formElement, setFormElement] = useState<Nullable<HTMLFormElement>>();
@@ -62,7 +64,7 @@ export default function <INPUT>({
 						open={open}
 						onChange={setOpen}
 						{...{disableEscapeKey, disableCloseButton, header}}>
-						<Body className="min-w-[20rem]">
+						<Body className={modalClassName}>
 							<Header disableCloseButton>{header}</Header>
 							<Content>
 								<div className="mb-4">{otpContent}</div>

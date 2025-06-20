@@ -8,7 +8,8 @@ interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disab
     pending: boolean;
     otpContent?: ReactNode;
     form: ActionForm<INPUT>;
+    modalClassName?: string;
 }
 export type FormOtpChildren = (onToggle: FnBase<boolean>) => ReactNode;
-export default function <INPUT>({ children, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header, otpContent, form, }: Readonly<Props<INPUT>>): import("react/jsx-runtime").JSX.Element;
+export default function <INPUT>({ children, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header, otpContent, form, modalClassName, }: Readonly<Props<INPUT>>): import("react/jsx-runtime").JSX.Element;
 export {};

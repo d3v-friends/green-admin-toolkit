@@ -8,13 +8,20 @@ interface Props {
 	cancel?: ReactNode;
 	title?: ReactNode;
 	content?: ReactNode;
+	className?: string;
 }
 
 const {Body, Header, Content, OkCancel} = ModalElement;
 
-export default function ({ok, cancel, title, content}: Readonly<Props>): FormConfirmModalComponent {
+export default function ({
+	ok,
+	cancel,
+	title,
+	content,
+	className = "w-4/5 lg:w-[20rem]",
+}: Readonly<Props>): FormConfirmModalComponent {
 	return (onSubmit, onCancel) => (
-		<Body className="min-w-[20rem]">
+		<Body className={className}>
 			{title && <Header disableCloseButton>{title}</Header>}
 			<Content>
 				{content && <div>{content}</div>}
