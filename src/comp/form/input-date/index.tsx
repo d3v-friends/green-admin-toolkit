@@ -55,6 +55,7 @@ export default function ({
 							onChange={() => {}}
 						/>
 						<button
+							type="button"
 							className="hover:underline"
 							onClick={() => setOpen(true)}>
 							{dateStr}

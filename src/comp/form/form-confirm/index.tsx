@@ -71,16 +71,16 @@ export default function <INPUT>({
 				action={action}
 				ref={setFormElement}>
 				{children(onToggle)}
-			</form>
 
-			{open && (
-				<ModalToggler
-					open={open}
-					onChange={setOpen}
-					{...{disableEscapeKey, disableCloseButton, header}}>
-					{confirmModal(onSubmit, onCancel)}
-				</ModalToggler>
-			)}
+				{open && (
+					<ModalToggler
+						open={open}
+						onChange={setOpen}
+						{...{disableEscapeKey, disableCloseButton, header}}>
+						{confirmModal(onSubmit, onCancel)}
+					</ModalToggler>
+				)}
+			</form>
 
 			<ActionLoadingBackdrop pending={pending} />
 		</>

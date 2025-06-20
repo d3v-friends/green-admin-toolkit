@@ -86,12 +86,17 @@ function OkCancel({
 		<div className="flex justify-end">
 			<div className={fnCss.sum("grid grid-cols-2 gap-2 w-[15rem]", padding)}>
 				<Button
+					type="button"
 					className="mr-2"
 					style="text"
 					onClick={onClickCancel}>
 					{cancel}
 				</Button>
-				<Button onClick={onClickOk}>{ok}</Button>
+				<Button
+					type="button"
+					onClick={onClickOk}>
+					{ok}
+				</Button>
 			</div>
 		</div>
 	);

@@ -4,7 +4,6 @@ import {FnBase, fnCss, ImgSrc} from "nextjs-tools";
 import {ModalElement, ModalToggler} from "@app/index";
 import Image, {StaticImageData} from "next/image";
 import {DateTime} from "luxon";
-import "@asset/style/react-calendar.scss";
 import ImgPrev from "web-asset/svg/regular/fi-rr-angle-left.svg";
 import ImgNext from "web-asset/svg/regular/fi-rr-angle-right.svg";
 
