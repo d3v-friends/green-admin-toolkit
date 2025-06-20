@@ -54,6 +54,7 @@ export { default as ActionLoadingBackdrop } from "./comp/action/loading-backdrop
 export { default as ActionResponseModal } from "./comp/action/response-modal";
 export { default as fnActionResponseModal } from "./comp/action/response-modal/modal";
 export { default as ActionResponseRedirect } from "./comp/action/response-redirect";
+export { default as ErrorParser } from "./comp/action/error-parser";
 export { default as MouseRightButtonMenu } from "./comp/mouse/right-button-menu";
 export { default as TouchRightClick } from "./comp/touch/right-click";
 export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;

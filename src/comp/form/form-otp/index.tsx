@@ -24,7 +24,7 @@ export default function <INPUT>({
 	beforeSubmit,
 	disableCloseButton,
 	disableEscapeKey,
-	header,
+	header = "OTP를 입력하여 주십시오",
 	otpContent,
 	form,
 }: Readonly<Props<INPUT>>) {
@@ -63,7 +63,7 @@ export default function <INPUT>({
 						onChange={setOpen}
 						{...{disableEscapeKey, disableCloseButton, header}}>
 						<Body className="min-w-[20rem]">
-							<Header disableCloseButton>OTP를 입력하여 주십시오.</Header>
+							<Header disableCloseButton>{header}</Header>
 							<Content>
 								<div className="mb-4">{otpContent}</div>
 								<InputString
