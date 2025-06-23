@@ -98,7 +98,7 @@ function HeaderButton({
 }
 
 function toggle(sorter: Sorter): Sorter {
-	const list: Sorter[] = ["ASC", "DESC"];
+	const list: Sorter[] = ["ASC", "DESC", "NONE"];
 	const idx = list.findIndex((v) => v === sorter);
 	return list[(idx + 1) % list.length];
 }
