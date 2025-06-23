@@ -78,6 +78,7 @@ export default function ({
 			<div className="flex w-full items-top">
 				<div
 					className={fnCss.sum(
+						"relative",
 						"flex items-center border-all rounded-md h-[2.5rem] overflow-hidden",
 						"grow",
 						focus ? "border-(--primary)" : "",
@@ -124,7 +125,7 @@ export default function ({
 								setValue("");
 								onChange("");
 							}}
-							className="no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
+							className="absolute right-0 top-0 h-[2.5rem] no-drag mr-2 filter-(--text-2-filter) hover:filter-(--primary-filter)"
 						/>
 					)}
 				</div>

@@ -46,7 +46,10 @@ export default function ({
 		<>
 			<div className={className}>
 				{label && <p className="mb-[-5px]">{label}</p>}
-				<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden")}>
+				<div
+					className={fnCss.sum(
+						"relative flex items-center border-all rounded-md h-[2.5rem] overflow-hidden"
+					)}>
 					{imgSrc && (
 						<div className={fnCss.sum("border-right h-full flex pl-2 pr-2 bg-(--primary)")}>
 							<Image

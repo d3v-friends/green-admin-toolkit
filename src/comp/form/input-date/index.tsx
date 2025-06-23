@@ -35,7 +35,10 @@ export default function ({
 		<>
 			<div className={className}>
 				{label && <p className="mb-[-5px]">{label}</p>}
-				<div className={fnCss.sum("flex items-center border-all rounded-md h-[2.5rem] overflow-hidden")}>
+				<div
+					className={fnCss.sum(
+						"relative flex items-center border-all rounded-md h-[2.5rem] overflow-hidden"
+					)}>
 					{imgSrc && (
 						<div className={fnCss.sum("border-right h-full flex pl-2 pr-2 bg-(--primary)")}>
 							<Image
@@ -68,7 +71,7 @@ export default function ({
 								alt="clear"
 								width={20}
 								height={20}
-								className="no-drag mr-2 w-[0.7rem] filter-(--text-2-filter) hover:filter-(--primary-filter)"
+								className="absolute right-0 top-0 h-[2.5rem] no-drag mr-2 filter-(--text-2-filter) hover:filter-(--primary-filter)"
 							/>
 						</button>
 					)}
