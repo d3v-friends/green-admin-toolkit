@@ -62,6 +62,7 @@ export default function ({
 					)}
 					<div className="grow pl-2 pr-2">
 						<input
+							className="w-full"
 							name={name?.start}
 							value={value?.start?.toISOString() ?? ""}
 							hidden

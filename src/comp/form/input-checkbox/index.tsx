@@ -1,5 +1,5 @@
 "use client";
-import React, {MouseEventHandler, ReactNode, useState} from "react";
+import React, {MouseEventHandler, ReactNode, useEffect, useState} from "react";
 import {FnBase, fnCss} from "nextjs-tools";
 import Image from "next/image";
 import ImgCheck from "web-asset/svg/regular/fi-rr-check.svg";
@@ -18,6 +18,10 @@ export default function ({children, defaultValue = false, onChange = () => {}, c
 		setValue(!value);
 		onChange(!value);
 	};
+
+	useEffect(() => {
+		setValue(defaultValue);
+	}, [defaultValue]);
 
 	return (
 		<>

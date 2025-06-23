@@ -60,7 +60,7 @@ function Input({
 	return (
 		<div className={fnCss.sum("relative flex items-center border-all rounded-md h-[2.5rem] overflow-hidden")}>
 			{imgSrc && (
-				<div className={fnCss.sum("border-right h-full flex pl-2 pr-2 bg-(--primary)")}>
+				<div className={fnCss.sum("border-right flex pl-2 pr-2 bg-(--primary) h-[2.5rem] w-[2.5rem]")}>
 					<Image
 						className={fnCss.sum("no-drag filter-(--primary-alt-filter)")}
 						src={imgSrc}
@@ -70,12 +70,14 @@ function Input({
 					/>
 				</div>
 			)}
-			<input
-				name={name}
-				className="grow pl-2 pr-2 outline-none"
-				value={value || ""}
-				onChange={(e) => onChange(inputParser(e))}
-			/>
+			<div className="grow relative">
+				<input
+					name={name}
+					className="w-full pl-2 pr-2 outline-none overflow-hidden"
+					value={value || ""}
+					onChange={(e) => onChange(inputParser(e))}
+				/>
+			</div>
 
 			{value && (
 				<button onClick={() => onChange("")}>
