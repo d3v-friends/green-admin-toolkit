@@ -17,7 +17,7 @@ interface Props<T> {
 	onChangeSorter?: OnChangeTheadSorter;
 }
 
-const {RowBuilder, Colgroup, Thead, Table, RowEmpty, TheadSorter} = Base;
+const {RowBuilder, Colgroup, Table, RowEmpty, TheadSorter} = Base;
 
 export type OnClickTable<T> = (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 
@@ -28,11 +28,8 @@ export default function <T>({
 	empty,
 	onMouseUp = () => {},
 	menu,
-	sorter = {
-		columnKey: "",
-		sorter: "NONE",
-	},
-	onChangeSorter = () => {},
+	sorter,
+	onChangeSorter,
 }: Props<T>) {
 	const [coordinate, setCoordinate] = useState<{top: number; left: number}>({
 		top: 0,

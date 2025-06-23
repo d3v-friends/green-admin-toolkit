@@ -20,7 +20,14 @@ export type TableSorterValue = {
 	sorter: Sorter;
 };
 
-export default function <T>({cols, onChange = () => {}, value}: Readonly<Props<T>>) {
+export default function <T>({
+	cols,
+	onChange = () => {},
+	value = {
+		columnKey: "",
+		sorter: "NONE",
+	},
+}: Readonly<Props<T>>) {
 	return (
 		<thead>
 			<tr className="border-top">

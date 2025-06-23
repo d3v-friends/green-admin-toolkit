@@ -9,5 +9,5 @@ export type TableSorterValue = {
     columnKey: string;
     sorter: Sorter;
 };
-export default function <T>({ cols, onChange, value }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
+export default function <T>({ cols, onChange, value, }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
 export {};
