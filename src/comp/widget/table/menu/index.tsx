@@ -4,6 +4,7 @@ import {ModalContextMenu, TableCol} from "@app/index";
 import Base from "../base";
 import {Nullable} from "nextjs-tools";
 import {ContextMenu} from "@comp/modal/context-menu";
+import {OnChangeTheadSorter, TableSorterValue} from "@comp/widget/table/base/thead-sorter";
 
 interface Props<T> {
 	className?: string;
@@ -12,13 +13,27 @@ interface Props<T> {
 	list: T[];
 	onMouseUp?: OnClickTable<T>;
 	menu: ContextMenu<T>[];
+	sorter?: TableSorterValue;
+	onChangeSorter?: OnChangeTheadSorter;
 }
 
-const {RowBuilder, Colgroup, Thead, Table, RowEmpty} = Base;
+const {RowBuilder, Colgroup, Thead, Table, RowEmpty, TheadSorter} = Base;
 
 export type OnClickTable<T> = (e: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: T) => void;
 
-export default function <T>({className, cols, list, empty, onMouseUp = () => {}, menu}: Props<T>) {
+export default function <T>({
+	className,
+	cols,
+	list,
+	empty,
+	onMouseUp = () => {},
+	menu,
+	sorter = {
+		columnKey: "",
+		sorter: "NONE",
+	},
+	onChangeSorter = () => {},
+}: Props<T>) {
 	const [coordinate, setCoordinate] = useState<{top: number; left: number}>({
 		top: 0,
 		left: 0,
@@ -52,7 +67,11 @@ export default function <T>({className, cols, list, empty, onMouseUp = () => {},
 			onMouseLeave={() => setRow(null)}>
 			<Table>
 				<Colgroup cols={cols} />
-				<Thead cols={cols} />
+				<TheadSorter
+					cols={cols}
+					value={sorter}
+					onChange={onChangeSorter}
+				/>
 				<tbody>
 					{list.map((row, key) => (
 						<tr

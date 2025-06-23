@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import {NextPageProps} from "nextjs-tools";
 import {Pager, Panel, TableCol, TableMenu, TableSorter} from "@app/index";
-import {TableSorterValue} from "@comp/widget/table/sorter";
+import {TableSorterValue} from "@comp/widget/table/base/thead-sorter";
 
 type Data = {name: string; age: number; content: string};
 
@@ -40,7 +40,7 @@ export default function ({}: NextPageProps) {
 					onClick={(e, col) => console.log(col)}
 					list={list}
 					cols={cols}
-					onChangeSort={(column, sorter) => console.log(column, sorter)}
+					onChangeSort={(columnKey, sorter) => setSort({columnKey, sorter})}
 				/>
 
 				<Pager
@@ -63,8 +63,14 @@ export default function ({}: NextPageProps) {
 							onClick: (e, row) => console.log(row.name, "test2"),
 						},
 					]}
+					sorter={sort}
+					onChangeSorter={(columnKey, sorter) => setSort({columnKey, sorter})}
 				/>
 			</Panel>
 		</div>
 	);
 }
+
+/*
+columnKey 입력해야 sorter 기능이 추가된다.
+ */
