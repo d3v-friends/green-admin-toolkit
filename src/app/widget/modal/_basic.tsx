@@ -8,7 +8,6 @@ export default function ({}: Readonly<Props>) {
 	const [basic, setBasic] = useState(false);
 	return (
 		<>
-			<h4>Modal basic</h4>
 			<Button
 				className="w-20"
 				onClick={() => setBasic(true)}>

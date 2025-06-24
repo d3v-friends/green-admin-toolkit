@@ -29,6 +29,7 @@ export { default as ModalToggler } from "./comp/modal/toggler";
 export { default as ModalBasic } from "./comp/modal/basic";
 export { default as ModalElement } from "./comp/modal/element";
 export { default as ModalContextMenu } from "./comp/modal/context-menu";
+export { default as ModalAlert } from "./comp/modal/alert";
 export { default as InputString } from "./comp/form/input-string";
 export { default as InputCheckbox } from "./comp/form/input-checkbox";
 export { default as InputDropdown } from "./comp/form/input-dropdown";

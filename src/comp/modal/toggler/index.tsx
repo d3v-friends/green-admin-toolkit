@@ -9,10 +9,18 @@ interface Props {
 	onChange: FnBase<boolean>;
 	disableEscapeKey?: boolean;
 	onClickBackdrop?: MouseEventHandler<HTMLDivElement>;
+	backdropClassName?: string;
 }
 
 // todo 추후 엔터키 등록하기
-export default function ({open, onChange, children, disableEscapeKey, onClickBackdrop}: Readonly<Props>) {
+export default function ({
+	open,
+	onChange,
+	children,
+	disableEscapeKey,
+	onClickBackdrop,
+	backdropClassName,
+}: Readonly<Props>) {
 	const onEscPress = useCallback(
 		(e: KeyboardEvent) => {
 			if (e.key == "Escape") {
@@ -42,5 +50,11 @@ export default function ({open, onChange, children, disableEscapeKey, onClickBac
 
 	if (!children) return null;
 
-	return <Base onClick={onClickBackdrop}>{children}</Base>;
+	return (
+		<Base
+			onClick={onClickBackdrop}
+			backdropClassName={backdropClassName}>
+			{children}
+		</Base>
+	);
 }

@@ -6,6 +6,7 @@ interface Props {
     onChange: FnBase<boolean>;
     disableEscapeKey?: boolean;
     onClickBackdrop?: MouseEventHandler<HTMLDivElement>;
+    backdropClassName?: string;
 }
-export default function ({ open, onChange, children, disableEscapeKey, onClickBackdrop }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | null;
+export default function ({ open, onChange, children, disableEscapeKey, onClickBackdrop, backdropClassName, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | null;
 export {};
