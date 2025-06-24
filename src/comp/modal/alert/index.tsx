@@ -35,12 +35,14 @@ export default function ({value, className = ""}: Readonly<Props>) {
 			onChange={setOpen}>
 			<div
 				className={fnCss.sum(
-					"w-[20rem] lg:w-[30rem] bg-(--bg-panel) p-2 lg:p-4 rounded-md shadow-2xl shadow-[rgba(0,0,0,0.07)]",
+					"border-all",
+					"w-[20rem] lg:w-[30rem] bg-(--bg-panel) p-2 lg:p-4 rounded-md",
+					"shadow-2xl shadow-[rgba(0,0,0,0.07)]",
 					className
 				)}>
 				{value.content}
 
-				<div className="pt-2 lg:pt-4 text-right">
+				<div className={fnCss.sum("pt-2 lg:pt-4 text-right")}>
 					<Button
 						className="w-20"
 						style="outlined"
