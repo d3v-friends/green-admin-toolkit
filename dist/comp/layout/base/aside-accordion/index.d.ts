@@ -5,6 +5,7 @@ interface Props {
     group?: ReactNode;
     imgSrc?: ImgSrc;
     children?: ReactNode;
+    isCollapsed?: boolean;
 }
-export default function ({ title, group, imgSrc, children }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
+export default function ({ title, group, imgSrc, children, isCollapsed }: Readonly<Props>): import("react/jsx-runtime").JSX.Element;
 export {};

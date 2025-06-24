@@ -10,10 +10,11 @@ interface Props {
 	group?: ReactNode;
 	imgSrc?: ImgSrc;
 	children?: ReactNode;
+	isCollapsed?: boolean;
 }
 
-export default function ({title, group, imgSrc, children}: Readonly<Props>) {
-	const [open, setOpen] = useState(true);
+export default function ({title, group, imgSrc, children, isCollapsed = false}: Readonly<Props>) {
+	const [open, setOpen] = useState(isCollapsed);
 
 	return (
 		<>

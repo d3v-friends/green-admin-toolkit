@@ -19,6 +19,7 @@ export default function ({children = () => ""}: Readonly<Props>) {
 				onClick={() => setOpen(!open)}
 				className="lg:hidden border-all rounded-md filter-(--text-2-filter) p-2">
 				<Image
+					className="no-drag"
 					src={ImgBurger}
 					alt="menu"
 					width={28}
