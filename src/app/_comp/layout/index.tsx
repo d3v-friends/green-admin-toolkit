@@ -23,13 +23,14 @@ export default function ({children}: Readonly<Props>) {
 
 function Nav({}: Readonly<{children?: ReactNode}>) {
 	return (
-		<>
+		<div>
 			<LayoutNavItemLink
+				className="w-20"
 				imgSrc={ImgPowerOff}
 				href="/">
 				로그아웃
 			</LayoutNavItemLink>
-		</>
+		</div>
 	);
 }
 

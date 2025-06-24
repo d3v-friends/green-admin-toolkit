@@ -16,7 +16,7 @@ export default async function ({children, footer, aside, asideMobile, title, nav
 	return (
 		<>
 			<main className={fnCss.sum("bg-(--bg-main) min-h-screen", "lg:pl-[15rem] pt-[3.5rem]")}>
-				{children && <section className="p-2 lg:p-5">{children}</section>}
+				{children && <section className="p-2 lg:p-5 max-w-[1440px] m-auto">{children}</section>}
 				{footer && <footer>{footer}</footer>}
 			</main>
 
@@ -35,10 +35,9 @@ export default async function ({children, footer, aside, asideMobile, title, nav
 					"left-0 lg:left-[15rem]",
 					"w-full lg:w-[calc(100%-15rem)]",
 					"bg-(--bg-nav)",
-					"shadow-2xl shadow-[rgba(0,0,0,0.1)]",
-					"flex items-center justify-end"
+					"shadow-2xl shadow-[rgba(0,0,0,0.1)]"
 				)}>
-				<div className="hidden lg:block">{nav}</div>
+				<div className="hidden lg:block m-auto max-w-[1440px] pl-2 pr-2 lg:pl-5 lg:pr-5">{nav}</div>
 				<Popup>{asideMobile}</Popup>
 			</nav>
 		</>

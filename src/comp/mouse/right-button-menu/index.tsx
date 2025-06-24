@@ -18,7 +18,7 @@ export type RightButtonMenuItem = {
 // 목표
 // 추후 2단 메뉴 추가하기
 export default function ({className, children, menu}: Readonly<Props>) {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 	const [coordinate, setCoordinate] = useState<{top: number; left: number}>({
 		top: 0,
 		left: 0,
