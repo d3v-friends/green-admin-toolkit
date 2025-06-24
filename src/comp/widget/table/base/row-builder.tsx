@@ -12,7 +12,7 @@ export default function <T>({cols, value, index}: Readonly<Props<T>>) {
 	return cols.map((v, key) => (
 		<td
 			key={key}
-			className={fnCss.sum("border-top", v.cellClassName || "pt-2 pb-2")}>
+			className={fnCss.sum("border-top pt-2 pb-2", v.cellClassName || "text-center")}>
 			{v.parser(value, index)}
 		</td>
 	));
