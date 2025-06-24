@@ -1,18 +1,16 @@
 "use server";
 import React, {ReactNode} from "react";
 import {fnCss} from "nextjs-tools";
-import Popup, {AsideChildrenComponent} from "./popup";
 
 interface Props {
 	children?: ReactNode;
 	nav?: ReactNode;
 	footer?: ReactNode;
 	aside?: ReactNode;
-	asideMobile?: AsideChildrenComponent;
 	title?: ReactNode;
 }
 
-export default async function ({children, footer, aside, asideMobile, title, nav}: Readonly<Props>) {
+export default async function ({children, footer, aside, title, nav}: Readonly<Props>) {
 	return (
 		<>
 			<main className={fnCss.sum("bg-(--bg-main) min-h-screen", "lg:pl-[15rem] pt-[3.5rem]")}>
@@ -38,7 +36,6 @@ export default async function ({children, footer, aside, asideMobile, title, nav
 					"shadow-2xl shadow-[rgba(0,0,0,0.1)]"
 				)}>
 				<div className="hidden lg:block m-auto max-w-[1440px] pl-2 pr-2 lg:pl-5 lg:pr-5">{nav}</div>
-				<Popup>{asideMobile}</Popup>
 			</nav>
 		</>
 	);

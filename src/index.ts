@@ -9,6 +9,7 @@ export {default as LayoutNavItemLink} from "@comp/layout/base/nav-item-link";
 export {default as LayoutNavItemButton} from "@comp/layout/base/nav-item-button";
 export {default as LayoutAsideAccordion} from "@comp/layout/base/aside-accordion";
 export {default as LayoutAsideAccordionLink} from "@comp/layout/base/aside-accordion-link";
+export {default as LayoutNavMobileMenuButton} from "@comp/layout/base/popup";
 
 // widget
 export {default as Panel} from "@comp/widget/panel";
