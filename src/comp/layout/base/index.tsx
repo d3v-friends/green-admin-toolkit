@@ -35,7 +35,7 @@ export default async function ({children, footer, aside, title, nav}: Readonly<P
 					"bg-(--bg-nav)",
 					"shadow-2xl shadow-[rgba(0,0,0,0.1)]"
 				)}>
-				<div className="hidden lg:block m-auto max-w-[1440px] pl-2 pr-2 lg:pl-5 lg:pr-5">{nav}</div>
+				<div className="m-auto max-w-[1440px] pl-2 pr-2 lg:pl-5 lg:pr-5">{nav}</div>
 			</nav>
 		</>
 	);
