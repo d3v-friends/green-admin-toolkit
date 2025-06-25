@@ -14,6 +14,7 @@ interface Props {
 	initIndex?: number;
 	className?: string;
 	textAlign?: "text-center" | "text-left" | "text-right";
+	label?: ReactNode;
 }
 
 export interface DropdownItem {
@@ -30,6 +31,7 @@ export default function ({
 	className = "",
 	textAlign = "text-center",
 	name,
+	label,
 }: Readonly<Props>) {
 	if (items.length === 0) return "items is empty";
 
@@ -54,86 +56,89 @@ export default function ({
 	}, [button]);
 
 	return (
-		<div className="relative">
-			<input
-				hidden
-				value={value.value}
-				onChange={() => {}}
-				name={name}
-			/>
+		<>
+			{label && <p>{label}</p>}
+			<div className="relative">
+				<input
+					hidden
+					value={value.value}
+					onChange={() => {}}
+					name={name}
+				/>
 
-			<div className={fnCss.sum("group", className)}>
-				<button
-					type="button"
-					ref={setButton}
-					onClick={() => setOpen(!open)}
-					className={fnCss.sum(
-						"border-all h-[2.5rem] w-full",
-						"rounded-md overflow-hidden",
-						"flex items-center",
-						"text-(--primary)",
-						"group-hover:border-(--primary)",
-						"outline-none",
-						open ? "border-(--primary)" : "border-(--border)"
-					)}>
-					{imgSrc && (
-						<div
-							className={fnCss.sum(
-								"border-right h-full flex items-center pl-2 pr-2 bg-(--primary)",
-								open ? "border-(--primary)" : ""
-							)}>
-							<Image
-								className={fnCss.sum("no-drag filter-(--primary-alt-filter)")}
-								src={imgSrc}
-								alt="icon"
-								width={25}
-								height={25}
-							/>
-						</div>
-					)}
-					<div
-						className={fnCss.sum(
-							"grow pl-2 pr-2 overflow-hidden",
-							"group-hover:underline group-hover:font-bold",
-							textAlign
-						)}>
-						{value.label ? value.label : value.value}
-					</div>
-
-					<Image
-						src={open ? ImgUp : ImgDown}
-						alt="arrow"
-						height={16}
-						width={16}
-						className={fnCss.sum("filter-(--primary-filter) mr-2")}
-					/>
-				</button>
-			</div>
-
-			<div
-				style={{minWidth: pos.width, top: pos.top + pos.height}}
-				className={fnCss.sum(
-					open ? "block" : "hidden",
-					"z-5",
-					"mt-2 p-2 bg-(--bg-modal) rounded-md shadow-2xl",
-					"absolute",
-					"border-all"
-				)}>
-				{items.map((value, i) => (
+				<div className={fnCss.sum("group", className)}>
 					<button
 						type="button"
-						className="block w-full"
-						key={i}
-						onClick={() => {
-							onSelect(value.value);
-							setValue(value);
-							setOpen(false);
-						}}>
-						<Label>{value}</Label>
+						ref={setButton}
+						onClick={() => setOpen(!open)}
+						className={fnCss.sum(
+							"border-all h-[2.5rem] w-full",
+							"rounded-md overflow-hidden",
+							"flex items-center",
+							"text-(--primary)",
+							"group-hover:border-(--primary)",
+							"outline-none",
+							open ? "border-(--primary)" : "border-(--border)"
+						)}>
+						{imgSrc && (
+							<div
+								className={fnCss.sum(
+									"border-right h-full flex items-center pl-2 pr-2 bg-(--primary)",
+									open ? "border-(--primary)" : ""
+								)}>
+								<Image
+									className={fnCss.sum("no-drag filter-(--primary-alt-filter)")}
+									src={imgSrc}
+									alt="icon"
+									width={25}
+									height={25}
+								/>
+							</div>
+						)}
+						<div
+							className={fnCss.sum(
+								"grow pl-2 pr-2 overflow-hidden",
+								"group-hover:underline group-hover:font-bold",
+								textAlign
+							)}>
+							{value.label ? value.label : value.value}
+						</div>
+
+						<Image
+							src={open ? ImgUp : ImgDown}
+							alt="arrow"
+							height={16}
+							width={16}
+							className={fnCss.sum("filter-(--primary-filter) mr-2")}
+						/>
 					</button>
-				))}
+				</div>
+
+				<div
+					style={{minWidth: pos.width, top: pos.top + pos.height}}
+					className={fnCss.sum(
+						open ? "block" : "hidden",
+						"z-5",
+						"mt-2 p-2 bg-(--bg-modal) rounded-md shadow-2xl",
+						"absolute",
+						"border-all"
+					)}>
+					{items.map((value, i) => (
+						<button
+							type="button"
+							className="block w-full"
+							key={i}
+							onClick={() => {
+								onSelect(value.value);
+								setValue(value);
+								setOpen(false);
+							}}>
+							<Label>{value}</Label>
+						</button>
+					))}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

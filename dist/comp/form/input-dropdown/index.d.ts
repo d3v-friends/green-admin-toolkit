@@ -9,11 +9,12 @@ interface Props {
     initIndex?: number;
     className?: string;
     textAlign?: "text-center" | "text-left" | "text-right";
+    label?: ReactNode;
 }
 export interface DropdownItem {
     value: string;
     imgSrc?: ImgSrc;
     label?: ReactNode;
 }
-export default function ({ items, imgSrc, initIndex, onSelect, className, textAlign, name, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | "items is empty";
+export default function ({ items, imgSrc, initIndex, onSelect, className, textAlign, name, label, }: Readonly<Props>): import("react/jsx-runtime").JSX.Element | "items is empty";
 export {};
