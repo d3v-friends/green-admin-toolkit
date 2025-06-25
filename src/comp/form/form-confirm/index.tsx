@@ -60,7 +60,10 @@ export default function <INPUT>({
 		if (!formElement.reportValidity()) return;
 		if (checkBeforeOpen) {
 			const {err} = fnServerAction.forms.value(new FormData(formElement), form);
-			if (err) return;
+			if (err) {
+				onError(new Error(err));
+				return;
+			}
 		}
 		setOpen(v);
 	};

@@ -13,6 +13,7 @@ interface Props {
 	isCollapsed?: boolean;
 }
 
+// todo localStorage 에 저장해서 자동으로 기존 값 불러오는 기능 추가하기
 export default function ({title, group, imgSrc, children, isCollapsed = false}: Readonly<Props>) {
 	const [open, setOpen] = useState(isCollapsed);
 
