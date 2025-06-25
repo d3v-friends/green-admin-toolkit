@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {fnCss} from "nextjs-tools";
 import Decimal from "decimal.js";
 
@@ -10,6 +10,13 @@ interface Props {
 }
 
 export default function ({max, value, position = "top-0"}: Readonly<Props>) {
+	const [init, setInit] = useState(false);
+
+	useEffect(() => {
+		setInit(true);
+	}, []);
+
+	if (!init) return null;
 	let width = new Decimal(value).mul(100).divToInt(max);
 	if (width.gt(100)) width = new Decimal(100);
 	return (

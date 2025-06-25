@@ -73,6 +73,9 @@ export {default as fnActionResponseModal} from "@comp/action/response-modal/moda
 export {default as ActionResponseRedirect} from "@comp/action/response-redirect";
 export {default as ErrorParser} from "@comp/action/error-parser";
 
+// editor
+export {default as EditorTiptap} from "@comp/editor/tiptap";
+
 // mouse
 export {default as MouseRightButtonMenu} from "@comp/mouse/right-button-menu";
 
