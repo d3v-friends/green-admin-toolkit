@@ -56,7 +56,7 @@ export default function ({
 	}, [button]);
 
 	return (
-		<>
+		<div>
 			{label && <p>{label}</p>}
 			<div className="relative">
 				<input
@@ -138,7 +138,7 @@ export default function ({
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
