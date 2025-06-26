@@ -248,7 +248,7 @@ function TheadButton<T>({
 
 function Cell({
 	className,
-	cellPaddingClassName = "pb-3 pt-2",
+	cellPaddingClassName = "pb-2 pt-2",
 	children,
 	colSpan,
 }: Readonly<{
