@@ -82,6 +82,10 @@ export {default as MouseRightButtonMenu} from "@comp/mouse/right-button-menu";
 // touch
 export {default as TouchRightClick} from "@comp/touch/right-click";
 
+// table
+export {default as Table} from "./comp/table/base";
+export {default as TableNumber} from "./comp/table/number";
+
 // styles
 export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;
 
@@ -93,3 +97,31 @@ export type TableCol<T> = {
 	headerClassName?: string;
 	cellClassName?: string;
 };
+
+export type Component<T> = (v: T) => ReactNode;
+
+export type Coordinate = {
+	top: number;
+	left: number;
+};
+
+export const InitCoordinate: Coordinate = {
+	top: 0,
+	left: 0,
+};
+
+export type Position = {
+	top: number;
+	left: number;
+	width: number;
+	height: number;
+};
+
+export const InitPosition: Position = {
+	top: 0,
+	left: 0,
+	width: 0,
+	height: 0,
+};
+
+export const InitFunction = () => {};

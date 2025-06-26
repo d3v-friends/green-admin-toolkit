@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 interface Props<T> {
-    value: T;
+    value?: T;
     menu: ContextMenu<T>[];
     top: number;
     left: number;
@@ -10,5 +10,5 @@ export type ContextMenu<T> = {
     onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, row: T) => void;
     borderTop?: boolean;
 };
-export default function <T>({ menu, top, left, value }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
+export default function <T>({ menu, top, left, value }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element | null;
 export {};

@@ -60,6 +60,8 @@ export { default as ErrorParser } from "./comp/action/error-parser";
 export { default as EditorTiptap } from "./comp/editor/tiptap";
 export { default as MouseRightButtonMenu } from "./comp/mouse/right-button-menu";
 export { default as TouchRightClick } from "./comp/touch/right-click";
+export { default as Table } from "./comp/table/base";
+export { default as TableNumber } from "./comp/table/number";
 export type ColorStyle = "primary" | "secondary" | "success" | "info" | "warning" | "danger" | "dark" | string;
 export type TableCol<T> = {
     name: ReactNode;
@@ -69,3 +71,17 @@ export type TableCol<T> = {
     headerClassName?: string;
     cellClassName?: string;
 };
+export type Component<T> = (v: T) => ReactNode;
+export type Coordinate = {
+    top: number;
+    left: number;
+};
+export declare const InitCoordinate: Coordinate;
+export type Position = {
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+};
+export declare const InitPosition: Position;
+export declare const InitFunction: () => void;

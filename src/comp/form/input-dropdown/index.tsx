@@ -46,6 +46,7 @@ export default function ({
 	});
 
 	useEffect(() => {
+		// todo resize 될때 사이즈
 		if (!button) return;
 		setPos({
 			left: button.offsetLeft,
@@ -54,6 +55,10 @@ export default function ({
 			height: button.offsetHeight,
 		});
 	}, [button]);
+
+	useEffect(() => {
+		setValue(items[initIndex]);
+	}, [initIndex]);
 
 	return (
 		<div>
