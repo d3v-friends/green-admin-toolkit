@@ -11,13 +11,13 @@ interface Props<T> {
     emptyLabel?: ReactNode;
     onChangeSort?: OnChangeTableSort;
     sort?: TableSortValue;
+    cellPaddingClassName?: string;
 }
 export type TableColumn<T> = {
     label: ReactNode;
     className: string;
     parser: Component<T>;
     column?: string;
-    cellPaddingClassName?: string;
 };
 export type OnChangeTableSort = (e: React.MouseEvent, column: string, sorter: Sorter) => void;
 export type OnClickTableEventHandler<T> = (e: React.MouseEvent, row: T) => void;
@@ -25,5 +25,5 @@ export type TableSortValue = {
     column: string;
     sorter: Sorter;
 };
-export default function <T>({ className, cols, list, onClick, onMiddleClick, onChangeSort, contextMenu, emptyLabel, sort, }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
+export default function <T>({ className, cols, list, onClick, onMiddleClick, onChangeSort, contextMenu, emptyLabel, sort, cellPaddingClassName, }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
 export {};

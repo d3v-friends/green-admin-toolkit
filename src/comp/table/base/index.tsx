@@ -18,6 +18,7 @@ interface Props<T> {
 	emptyLabel?: ReactNode;
 	onChangeSort?: OnChangeTableSort;
 	sort?: TableSortValue;
+	cellPaddingClassName?: string;
 }
 
 export type TableColumn<T> = {
@@ -25,7 +26,6 @@ export type TableColumn<T> = {
 	className: string;
 	parser: Component<T>;
 	column?: string;
-	cellPaddingClassName?: string;
 };
 
 export type OnChangeTableSort = (e: React.MouseEvent, column: string, sorter: Sorter) => void;
@@ -44,6 +44,7 @@ export default function <T>({
 	contextMenu = [],
 	emptyLabel = <div className="text-center">내용이 없습니다.</div>,
 	sort = {column: "", sorter: "NONE"},
+	cellPaddingClassName = "pb-2 pt-2 lg:pb-4 lg:pt-4",
 }: Readonly<Props<T>>) {
 	const [touchDuration, setTouchDuration] = useState(0);
 	const [row, setRow] = useState<T | undefined>();
@@ -123,6 +124,7 @@ export default function <T>({
 						{cols.map((col, key) => (
 							<TheadButton
 								{...col}
+								cellPaddingClassName={cellPaddingClassName}
 								onChangeSort={onChangeSort}
 								key={key}
 								sort={col.column === sort.column ? sort.sorter : "NONE"}
@@ -134,6 +136,7 @@ export default function <T>({
 					{list.length === 0 && (
 						<tr className="border-top">
 							<Cell
+								cellPaddingClassName={cellPaddingClassName}
 								colSpan={cols.length}
 								className={""}>
 								{emptyLabel}
@@ -152,7 +155,7 @@ export default function <T>({
 							onTouchMove={onTouchMove}>
 							{cols.map((col, i2) => (
 								<Cell
-									cellPaddingClassName={col.cellPaddingClassName}
+									cellPaddingClassName={cellPaddingClassName}
 									className={col.className}
 									key={i2}>
 									{col.parser(row)}
@@ -188,6 +191,7 @@ function TheadButton<T>({
 	TableColumn<T> & {
 		onChangeSort: OnChangeTableSort;
 		sort: Sorter;
+		cellPaddingClassName: string;
 	}
 >) {
 	if (!column) {
@@ -248,12 +252,12 @@ function TheadButton<T>({
 
 function Cell({
 	className,
-	cellPaddingClassName = "pb-2 pt-2",
+	cellPaddingClassName,
 	children,
 	colSpan,
 }: Readonly<{
 	className: string;
-	cellPaddingClassName?: string;
+	cellPaddingClassName: string;
 	children: ReactNode;
 	colSpan?: number;
 }>) {

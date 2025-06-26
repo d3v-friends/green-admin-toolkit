@@ -2,7 +2,6 @@
 import React, {ReactNode} from "react";
 import "@asset/style/index.scss";
 import localFont from "next/font/local";
-import {fnCss} from "nextjs-tools";
 
 interface Props {
 	children?: ReactNode | ReactNode[];
@@ -12,11 +11,7 @@ interface Props {
 export default async function ({lang = "ko", children}: Readonly<Props>) {
 	return (
 		<html lang={lang}>
-			<body
-				className={fnCss.sum(
-					"bg-(--bg-main) min-h-screen",
-					"text-[14px] lg:text-[18px] text-(--text-3) font-roboto"
-				)}>
+			<body className="bg-(--bg-main) min-h-screen text-[14px] lg:text-[18px] text-(--text-3) font-roboto">
 				{children}
 			</body>
 		</html>
