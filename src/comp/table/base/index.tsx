@@ -25,6 +25,7 @@ export type TableColumn<T> = {
 	className: string;
 	parser: Component<T>;
 	column?: string;
+	cellPaddingClassName?: string;
 };
 
 export type OnChangeTableSort = (e: React.MouseEvent, column: string, sorter: Sorter) => void;
@@ -33,7 +34,6 @@ export type OnClickTableEventHandler<T> = (e: React.MouseEvent, row: T) => void;
 
 export type TableSortValue = {column: string; sorter: Sorter};
 
-const cellPadding = "pt-2 pb-2 lg:pt-4 lg:pb-4";
 export default function <T>({
 	className = "w-full border-bottom",
 	cols,
@@ -117,7 +117,7 @@ export default function <T>({
 		<>
 			<table
 				onMouseLeave={() => setRow(undefined)}
-				className={fnCss.sum("w-full border-bottom", className)}>
+				className={fnCss.sum("w-full border-bottom border-top", className)}>
 				<thead>
 					<tr className="no-drag">
 						{cols.map((col, key) => (
@@ -133,11 +133,11 @@ export default function <T>({
 				<tbody className="no-drag">
 					{list.length === 0 && (
 						<tr className="border-top">
-							<td
+							<Cell
 								colSpan={cols.length}
-								className={cellPadding}>
+								className={""}>
 								{emptyLabel}
-							</td>
+							</Cell>
 						</tr>
 					)}
 
@@ -151,11 +151,12 @@ export default function <T>({
 							onTouchEnd={onTouchEnd(row)}
 							onTouchMove={onTouchMove}>
 							{cols.map((col, i2) => (
-								<td
-									className={fnCss.sum(cellPadding, col.className)}
+								<Cell
+									cellPaddingClassName={col.cellPaddingClassName}
+									className={col.className}
 									key={i2}>
 									{col.parser(row)}
-								</td>
+								</Cell>
 							))}
 						</tr>
 					))}
@@ -182,13 +183,22 @@ function TheadButton<T>({
 	column,
 	onChangeSort,
 	sort,
+	cellPaddingClassName,
 }: Readonly<
 	TableColumn<T> & {
 		onChangeSort: OnChangeTableSort;
 		sort: Sorter;
 	}
 >) {
-	if (!column) return <td className={fnCss.sum(cellPadding, "font-bold", className)}>{label}</td>;
+	if (!column) {
+		return (
+			<Cell
+				className={fnCss.sum(className, "font-bold")}
+				cellPaddingClassName={cellPaddingClassName}>
+				{label}
+			</Cell>
+		);
+	}
 
 	let color: string;
 	let img: StaticImageData;
@@ -217,7 +227,9 @@ function TheadButton<T>({
 	};
 
 	return (
-		<td className={fnCss.sum(cellPadding, className)}>
+		<Cell
+			className={className}
+			cellPaddingClassName={cellPaddingClassName}>
 			<button
 				className="inline-flex items-baseline justify-center cursor-default"
 				onClick={onClick}>
@@ -230,6 +242,26 @@ function TheadButton<T>({
 				/>
 				<div className={fnCss.sum(sort === "NONE" ? "text-(--text-2)" : "text-(--text-5)")}>{label}</div>
 			</button>
+		</Cell>
+	);
+}
+
+function Cell({
+	className,
+	cellPaddingClassName = "pb-3 pt-2",
+	children,
+	colSpan,
+}: Readonly<{
+	className: string;
+	cellPaddingClassName?: string;
+	children: ReactNode;
+	colSpan?: number;
+}>) {
+	return (
+		<td
+			colSpan={colSpan}
+			className={fnCss.sum(className, cellPaddingClassName)}>
+			{children}
 		</td>
 	);
 }

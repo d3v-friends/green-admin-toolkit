@@ -17,6 +17,7 @@ export type TableColumn<T> = {
     className: string;
     parser: Component<T>;
     column?: string;
+    cellPaddingClassName?: string;
 };
 export type OnChangeTableSort = (e: React.MouseEvent, column: string, sorter: Sorter) => void;
 export type OnClickTableEventHandler<T> = (e: React.MouseEvent, row: T) => void;
