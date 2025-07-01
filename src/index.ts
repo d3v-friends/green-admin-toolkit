@@ -1,8 +1,6 @@
 // @comp
 import {ReactNode} from "react";
 
-export * from "./v2";
-
 export {default as LayoutBody} from "@comp/layout/body";
 export {default as LayoutBase} from "@comp/layout/base";
 export {default as LayoutBlank} from "@comp/layout/blank";

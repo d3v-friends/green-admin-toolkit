@@ -84,8 +84,6 @@ export default function <T>({
 
 	const onContextMenu = (row: T): MouseEventHandler<HTMLTableRowElement> => {
 		return (e) => {
-			e.preventDefault();
-			e.stopPropagation();
 			setCoordinate({
 				top: e.clientY,
 				left: e.clientX,
@@ -95,15 +93,11 @@ export default function <T>({
 	};
 
 	const onTouchStart: TouchEventHandler<HTMLTableRowElement> = (e) => {
-		e.preventDefault();
-		e.stopPropagation();
 		setTouchDuration(Date.now());
 	};
 
 	const onTouchEnd = (row: T): TouchEventHandler<HTMLTableRowElement> => {
 		return (e) => {
-			e.preventDefault();
-			e.stopPropagation();
 			const duration = Date.now() - touchDuration;
 			if (!(2000 < duration && duration < 5000)) return;
 			setRow(row);
