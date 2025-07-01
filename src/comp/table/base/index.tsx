@@ -84,6 +84,7 @@ export default function <T>({
 
 	const onContextMenu = (row: T): MouseEventHandler<HTMLTableRowElement> => {
 		return (e) => {
+			e.preventDefault();
 			setCoordinate({
 				top: e.clientY,
 				left: e.clientX,
