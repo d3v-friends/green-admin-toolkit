@@ -1,6 +1,6 @@
 "use client";
 import React, {MouseEventHandler, ReactNode} from "react";
-import {FnBase, fnCss, ImgSrc} from "nextjs-tools";
+import {concat, FnBase, ImgSrc} from "nextjs-tools";
 import {
 	ColorBorder,
 	ColorFilter,
@@ -48,7 +48,7 @@ export default function ({
 		<button
 			type={type}
 			ref={ref}
-			className={fnCss.sum(
+			className={concat(
 				className,
 				ColorText[color],
 				ColorBorder[color],
@@ -62,19 +62,15 @@ export default function ({
 			<div className="flex items-center justify-center">
 				{imgSrc && (
 					<Image
-						className={fnCss.sum(ColorFilter[color], ColorGroupHoverFilterAlt[color], "mr-2 w-[0.8rem]")}
+						className={concat(ColorFilter[color], ColorGroupHoverFilterAlt[color], "mr-2 w-[0.8rem]")}
 						src={imgSrc}
 						alt="icon"
 						width={20}
 						height={20}
 					/>
 				)}
-				<span className={fnCss.sum(imgSrc ? "pr-4" : "")}>{children}</span>
+				<span className={concat(imgSrc ? "pr-4" : "")}>{children}</span>
 			</div>
 		</button>
 	);
-}
-
-function Solid({}: Readonly<{children?: ReactNode}>) {
-	return <>{}</>;
 }

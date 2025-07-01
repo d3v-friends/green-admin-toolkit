@@ -1,6 +1,6 @@
 {
   "name": "green-admin-toolkit",
-  "version": "0.0.71",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
@@ -19,7 +19,7 @@
     "decimal.js": "10.5.0",
     "luxon": "3.6.1",
     "next": "15.3.3",
-    "nextjs-tools": "github:d3v-friends/nextjs-tools#0.1.73",
+    "nextjs-tools": "github:d3v-friends/nextjs-tools#1.0.1",
     "prismjs": "1.30.0",
     "react": "19.1.0",
     "react-apexcharts": "1.7.0",

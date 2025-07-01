@@ -1,0 +1,9 @@
+"use client";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { fnCss } from "nextjs-tools";
+import Image from "next/image";
+import "../../../../asset/style/button.scss";
+export default function ({ children, onClick, style = "solid", className = "w-full", color = "primary", imgSrc, onRef, type = "button", }) {
+    return (_jsxs("button", { type: type, ref: onRef, className: fnCss.sum(style, className, color, "button", "inline-flex items-center justify-center rounded-md min-h-[2.5rem] pl-2 pr-2", "outline-none"), onClick: onClick, children: [imgSrc && (_jsx(Image, { className: "mr-2 w-[0.8rem]", src: imgSrc, alt: "icon", width: 20, height: 20 })), _jsx("span", { className: fnCss.sum(imgSrc ? "pr-4" : ""), children: children })] }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvdjEvd2lkZ2V0L2J1dHRvbi9pbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWSxDQUFDOztBQUViLE9BQU8sRUFBUyxLQUFLLEVBQVMsTUFBTSxjQUFjLENBQUM7QUFFbkQsT0FBTyxLQUFLLE1BQU0sWUFBWSxDQUFDO0FBQy9CLE9BQU8sMEJBQTBCLENBQUM7QUFhbEMsTUFBTSxDQUFDLE9BQU8sV0FBVyxFQUN4QixRQUFRLEVBQ1IsT0FBTyxFQUNQLEtBQUssR0FBRyxPQUFPLEVBQ2YsU0FBUyxHQUFHLFFBQVEsRUFDcEIsS0FBSyxHQUFHLFNBQVMsRUFDakIsTUFBTSxFQUNOLEtBQUssRUFDTCxJQUFJLEdBQUcsUUFBUSxHQUNFO0lBQ2pCLE9BQU8sQ0FDTixrQkFDQyxJQUFJLEVBQUUsSUFBSSxFQUNWLEdBQUcsRUFBRSxLQUFLLEVBQ1YsU0FBUyxFQUFFLEtBQUssQ0FBQyxHQUFHLENBQ25CLEtBQUssRUFDTCxTQUFTLEVBQ1QsS0FBSyxFQUNMLFFBQVEsRUFDUiw2RUFBNkUsRUFDN0UsY0FBYyxDQUNkLEVBQ0QsT0FBTyxFQUFFLE9BQU8sYUFDZixNQUFNLElBQUksQ0FDVixLQUFDLEtBQUssSUFDTCxTQUFTLEVBQUMsaUJBQWlCLEVBQzNCLEdBQUcsRUFBRSxNQUFNLEVBQ1gsR0FBRyxFQUFDLE1BQU0sRUFDVixLQUFLLEVBQUUsRUFBRSxFQUNULE1BQU0sRUFBRSxFQUFFLEdBQ1QsQ0FDRixFQUNELGVBQU0sU0FBUyxFQUFFLEtBQUssQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxZQUFHLFFBQVEsR0FBUSxJQUMzRCxDQUNULENBQUM7QUFDSCxDQUFDIn0=

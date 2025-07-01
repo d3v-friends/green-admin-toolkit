@@ -26,6 +26,9 @@
       "@app/*": [
         "./src/*"
       ],
+      "@root": [
+        "./src/index.ts"
+      ],
       "@page/*": [
         "./src/app/*"
       ],

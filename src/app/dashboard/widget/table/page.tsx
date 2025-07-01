@@ -1,8 +1,8 @@
 "use client";
 import React, {useState} from "react";
 import {NextPageProps} from "nextjs-tools";
-import {Panel, Table, TableCol, TableNumber} from "@app/index";
-import {TableSortValue} from "@app/v1/table/base";
+import {Panel, Table, ValueNumber} from "@app/index";
+import {TableSortValue} from "@v2/table/base";
 
 type Data = {name: string; age: number; content: string};
 
@@ -12,17 +12,6 @@ const list: Data[] = [
 	{name: "citron", age: 1200, content: "content c"},
 	{name: "donut", age: 1300, content: "content d"},
 	{name: "egg", age: 1400, content: "content e"},
-];
-
-const cols: TableCol<Data>[] = [
-	{
-		name: "이름",
-		colClassName: "w-1/3",
-		columnKey: "name",
-		parser: (v) => v.name,
-	},
-	{name: "age", columnKey: "age", colClassName: "w-1/3", parser: (v) => v.age},
-	{name: "content", colClassName: "w-1/3", parser: (v) => v.content},
 ];
 
 export default function ({}: NextPageProps) {
@@ -57,7 +46,7 @@ export default function ({}: NextPageProps) {
 						{
 							label: "나이",
 							className: "w-1/3 text-center",
-							parser: (v) => <TableNumber>{v.age}</TableNumber>,
+							parser: (v) => <ValueNumber symbol="살">{v.age}</ValueNumber>,
 							column: "age",
 						},
 						{

@@ -1,4 +1,6 @@
 // @comp
+import {ReactNode} from "react";
+
 export {default as LayoutBody} from "./layout/body";
 export {default as LayoutBase} from "./layout/base";
 export {default as LayoutBlank} from "./layout/blank";
@@ -78,6 +80,11 @@ export {default as MouseRightButtonMenu} from "./mouse/right-button-menu";
 // touch
 export {default as TouchRightClick} from "./touch/right-click";
 
-// table
-export {default as Table} from "./table/base";
-export {default as TableNumber} from "./table/number";
+export type TableCol<T> = {
+	name: ReactNode;
+	parser: (v: T, i: number) => ReactNode;
+	columnKey?: string;
+	colClassName?: string;
+	headerClassName?: string;
+	cellClassName?: string;
+};
