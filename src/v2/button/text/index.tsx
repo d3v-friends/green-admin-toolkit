@@ -1,7 +1,7 @@
 "use client";
 import React, {MouseEventHandler, ReactNode} from "react";
 import {concat, FnBase, ImgSrc} from "nextjs-tools";
-import {ColorFilter, ColorHoverBorder, ColorStyle, ColorText} from "@app/index";
+import {ColorFilter, ColorHoverBorder, ColorStyle, ColorText} from "@root";
 import Image from "next/image";
 
 export interface ButtonTextProps {

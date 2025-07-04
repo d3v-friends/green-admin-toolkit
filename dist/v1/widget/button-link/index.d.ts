@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { ImgSrc } from "nextjs-tools";
-import { ColorStyle } from "../../../index";
+import { ColorStyle } from "../../../index.js";
 import "../../../../asset/style/button.scss";
 interface Props {
     children?: ReactNode;

@@ -1,6 +1,6 @@
 import { MouseEventHandler, ReactNode } from "react";
 import { FnBase, ImgSrc } from "nextjs-tools";
-import { ColorStyle } from "../../../index";
+import { ColorStyle } from "../../../index.js";
 import "../../../../asset/style/button.scss";
 export interface Props {
     children?: ReactNode;

@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
-import {FormConfirmModalComponent} from "@app/v1/form/form-confirm";
-import {InputString, ModalElement} from "@app/index";
+import {FormConfirmModalComponent} from "@v1/form/form-confirm";
+import {InputString, ModalElement} from "@root";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 
 interface Props {

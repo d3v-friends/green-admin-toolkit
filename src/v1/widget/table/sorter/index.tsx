@@ -1,8 +1,8 @@
 "use client";
 import React, {ReactNode} from "react";
-import {TableCol} from "@app/index";
+import {TableCol} from "@root";
 import Base from "../base";
-import {OnChangeTheadSorter, TableSorterValue} from "@app/v1/widget/table/base/thead-sorter";
+import {OnChangeTheadSorter, TableSorterValue} from "@v1/widget/table/base/thead-sorter";
 
 interface Props<T, S> {
 	className?: string;

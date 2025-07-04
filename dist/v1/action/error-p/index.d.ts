@@ -1,5 +1,5 @@
 import { ActionState } from "nextjs-tools";
-import { ColorStyle } from "../../../index";
+import { ColorStyle } from "../../../types";
 interface Props {
     state: ActionState<unknown, unknown>;
     printer?: Record<string, string>;

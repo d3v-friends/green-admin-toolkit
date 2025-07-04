@@ -1,7 +1,7 @@
 "use client";
 import React, {ReactNode} from "react";
 import {fnCss, ImgSrc} from "nextjs-tools";
-import {ColorStyle} from "@app/index";
+import {ColorStyle} from "@root";
 import Image from "next/image";
 import Link from "next/link";
 import "@asset/style/button.scss";

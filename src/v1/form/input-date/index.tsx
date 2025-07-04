@@ -2,7 +2,7 @@
 import React, {ReactNode, useState} from "react";
 import {FnBase, fnCss, ImgSrc, Nullable} from "nextjs-tools";
 import Calendar from "react-calendar";
-import {ModalToggler} from "@app/index";
+import {ModalToggler} from "@root";
 import Image from "next/image";
 import {DateTime} from "luxon";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";

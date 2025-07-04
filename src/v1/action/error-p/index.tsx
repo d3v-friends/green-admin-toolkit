@@ -1,6 +1,6 @@
 import React from "react";
 import {ActionState, fnCss} from "nextjs-tools";
-import {ColorStyle} from "@app/index";
+import {ColorStyle} from "../../../types";
 
 interface Props {
 	state: ActionState<unknown, unknown>;

@@ -1,4 +1,4 @@
-import { ColorStyle } from "../../index";
+import { ColorStyle } from "../../index.js";
 export declare const ColorBg: Record<ColorStyle, string>;
 export declare const ColorHoverBg: Record<ColorStyle, string>;
 export declare const ColorText: Record<ColorStyle, string>;

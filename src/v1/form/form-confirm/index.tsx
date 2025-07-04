@@ -1,8 +1,8 @@
 "use client";
 import React, {ReactNode, useState} from "react";
 import {ActionForm, FnBase, fnServerAction, FnVoid, Nullable} from "nextjs-tools";
-import {ActionLoadingBackdrop, ModalToggler} from "@app/index";
-import {ModalBasicProps} from "@app/v1/modal/basic";
+import {ActionLoadingBackdrop, ModalToggler} from "@root";
+import {ModalBasicProps} from "@v1/modal/basic";
 
 interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disableCloseButton" | "header"> {
 	children: FormConfirmChildren;

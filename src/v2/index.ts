@@ -14,13 +14,8 @@ export {default as LinkOutline} from "./link/outline";
 export {default as LinkSolid} from "./link/solid";
 export {default as LinkText} from "./link/text";
 
-
 // table
 export {default as Table} from "./table/base";
 
-
 // value
 export {default as ValueNumber} from "./value/number";
-
-
-// input

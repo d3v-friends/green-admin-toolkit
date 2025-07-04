@@ -1,10 +1,10 @@
 "use client";
 import React, {ReactNode, useEffect, useRef, useState} from "react";
-import {ModalContextMenu, TableCol} from "@app/index";
+import {ModalContextMenu, TableCol} from "@root";
 import Base from "../base";
 import {Nullable} from "nextjs-tools";
-import {ContextMenu} from "@app/v1/modal/context-menu";
-import {OnChangeTheadSorter, TableSorterValue} from "@app/v1/widget/table/base/thead-sorter";
+import {ContextMenu} from "@v1/modal/context-menu";
+import {OnChangeTheadSorter, TableSorterValue} from "@v1/widget/table/base/thead-sorter";
 
 interface Props<T> {
 	className?: string;

@@ -1,12 +1,12 @@
 "use client";
 import React, {MouseEventHandler, ReactNode, TouchEventHandler, useEffect, useState} from "react";
-import {fnCss} from "nextjs-tools";
-import {Component, Coordinate, InitCoordinate, InitFunction, ModalContextMenu, Sorter} from "@app/index";
+import {Coordinate, FnComponent, fnCss, fnVoid, initCoordinate} from "nextjs-tools";
+import {ModalContextMenu, Sorter} from "@root";
 import Image, {StaticImageData} from "next/image";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";
 import ImgDesc from "web-asset/svg/regular/fi-rr-caret-down.svg";
-import {ContextMenu} from "@app/v1/modal/context-menu";
+import {ContextMenu} from "@v1/modal/context-menu";
 
 interface Props<T> {
 	className?: string;
@@ -24,7 +24,7 @@ interface Props<T> {
 export type TableColumn<T> = {
 	label: ReactNode;
 	className: string;
-	parser: Component<T>;
+	parser: FnComponent<T>;
 	column?: string;
 };
 
@@ -38,9 +38,9 @@ export default function <T>({
 	className = "w-full border-bottom",
 	cols,
 	list,
-	onClick = InitFunction,
-	onMiddleClick = InitFunction,
-	onChangeSort = InitFunction,
+	onClick = fnVoid,
+	onMiddleClick = fnVoid,
+	onChangeSort = fnVoid,
 	contextMenu = [],
 	emptyLabel = <div className="text-center">내용이 없습니다.</div>,
 	sort = {column: "", sorter: "NONE"},
@@ -48,7 +48,7 @@ export default function <T>({
 }: Readonly<Props<T>>) {
 	const [touchDuration, setTouchDuration] = useState(0);
 	const [row, setRow] = useState<T | undefined>();
-	const [coordinate, setCoordinate] = useState<Coordinate>(InitCoordinate);
+	const [coordinate, setCoordinate] = useState<Coordinate>(initCoordinate);
 
 	useEffect(() => {
 		const onScrollEventListener = () => {

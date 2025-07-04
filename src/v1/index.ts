@@ -58,7 +58,6 @@ export {default as InputBetween} from "./form/input-between";
 // @fn
 export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
 export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
-export {default as fnError} from "@fn/error";
 export {default as fnInput} from "@fn/input";
 
 // action

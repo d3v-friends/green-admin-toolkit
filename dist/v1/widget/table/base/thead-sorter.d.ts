@@ -1,4 +1,4 @@
-import { Sorter, TableCol } from "../../../../index";
+import { Sorter, TableCol } from "../../../../index.js";
 interface Props<T> {
     cols: TableCol<T>[];
     value?: TableSorterValue;

@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {TableCol} from "@app/index";
+import {TableCol} from "@root";
 import Base from "../base";
 import Row from "./row";
 

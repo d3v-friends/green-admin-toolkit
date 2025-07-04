@@ -1,6 +1,6 @@
 import { MouseEventHandler, ReactNode } from "react";
 import { FnBase, ImgSrc } from "nextjs-tools";
-import { ColorStyle } from "../../../index";
+import { ColorStyle } from "../../../index.js";
 export interface ButtonSolidProps {
     children?: ReactNode;
     onClick?: MouseEventHandler<HTMLButtonElement>;

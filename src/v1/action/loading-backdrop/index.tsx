@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {ModalBase} from "@app/index";
+import ModalBase from "../../modal/base";
 
 interface Props {
 	pending: boolean;

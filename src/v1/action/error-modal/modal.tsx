@@ -1,5 +1,5 @@
 import React, {MouseEventHandler, ReactNode} from "react";
-import {ModalElement} from "@app/index";
+import ModalElement from "../../modal/element";
 import {ErrorModalComponent} from ".";
 
 interface Props {

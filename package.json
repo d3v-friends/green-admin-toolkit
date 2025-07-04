@@ -1,12 +1,9 @@
 {
   "name": "green-admin-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@mdx-js/loader": "3.1.0",
-    "@mdx-js/react": "3.1.0",
-    "@next/mdx": "15.3.3",
     "@tiptap/extension-color": "2.22.3",
     "@tiptap/extension-heading": "2.22.3",
     "@tiptap/extension-image": "2.22.3",
@@ -19,7 +16,7 @@
     "decimal.js": "10.5.0",
     "luxon": "3.6.1",
     "next": "15.3.3",
-    "nextjs-tools": "github:d3v-friends/nextjs-tools#1.0.1",
+    "nextjs-tools": "github:d3v-friends/nextjs-tools#1.0.8",
     "prismjs": "1.30.0",
     "react": "19.1.0",
     "react-apexcharts": "1.7.0",
@@ -39,7 +36,6 @@
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.8",
     "@types/luxon": "3.6.2",
-    "@types/mdx": "2.0.13",
     "@types/node": "22.15.27",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",

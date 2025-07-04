@@ -1,7 +1,7 @@
 "use client";
 import React, {ReactNode, useEffect, useState} from "react";
 import {ActionState, FnBase} from "nextjs-tools";
-import {ModalToggler} from "@app/index";
+import ModalToggler from "../../modal/toggler";
 
 interface Props {
 	children: ErrorModalComponent;

@@ -1,6 +1,6 @@
 import React, {MouseEventHandler, ReactNode} from "react";
-import {ModalElement} from "@app/index";
-import {ResponseModalChildren} from "@app/v1/action/response-modal/index";
+import ModalElement from "../../modal/element";
+import {ResponseModalChildren} from "../../action/response-modal";
 
 interface Props {
 	ok?: ReactNode;

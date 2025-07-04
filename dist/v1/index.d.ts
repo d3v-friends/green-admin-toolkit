@@ -45,7 +45,6 @@ export { default as fnFormOTPModal } from "./form/form-otp/modal";
 export { default as InputBetween } from "./form/input-between";
 export { default as ThemeToggler } from "../fn/wrap/theme-toggler";
 export { default as fnTheme } from "../fn/wrap/theme-toggler/fn";
-export { default as fnError } from "../fn/error";
 export { default as fnInput } from "../fn/input";
 export { default as ActionErrorP } from "./action/error-p";
 export { default as ActionErrorModal } from "./action/error-modal";

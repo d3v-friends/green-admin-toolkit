@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ColorStyle } from "../../../index";
+import { ColorStyle } from "../../../index.js";
 interface Props {
     children?: ReactNode;
     color?: ColorStyle;

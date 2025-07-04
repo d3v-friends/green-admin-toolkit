@@ -1,7 +1,7 @@
 "use client";
 import React, {ReactNode, useState} from "react";
 import {ActionForm, FnBase, fnServerAction, FnVoid, Nullable} from "nextjs-tools";
-import {ActionLoadingBackdrop} from "@app/index";
+import {ActionLoadingBackdrop} from "@root";
 
 interface Props<INPUT> {
 	children: FormConfirmChildren;

@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@app/*": [
-        "./src/*"
+        "./app/*"
       ],
       "@root": [
         "./src/index.ts"
@@ -41,11 +41,11 @@
       "@fn/*": [
         "./src/fn/*"
       ],
-      "@v2/*": [
-        "./src/v2/*"
-      ],
       "@v1/*": [
         "./src/v1/*"
+      ],
+      "@v2/*": [
+        "./src/v2/*"
       ],
       "@var/*": [
         "./src/var/*"
@@ -55,7 +55,8 @@
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "./src/**/*"
+    "./src/**/*",
+    "./app/**/*"
   ],
   "exclude": [
     "node_modules"

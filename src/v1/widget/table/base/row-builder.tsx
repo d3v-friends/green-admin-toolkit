@@ -1,5 +1,5 @@
 import React from "react";
-import {TableCol} from "@app/index";
+import {TableCol} from "@root";
 import {fnCss} from "nextjs-tools";
 
 interface Props<T> {

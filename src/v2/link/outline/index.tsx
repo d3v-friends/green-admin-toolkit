@@ -2,7 +2,7 @@
 import React from "react";
 import {ButtonOutlineProps} from "@v2/button/outline";
 import {useRouter} from "next/navigation";
-import {ButtonOutline} from "@app/v2";
+import {ButtonOutline} from "@root";
 
 interface Props extends Omit<ButtonOutlineProps, "onClick" | "onMiddleClick"> {
 	href: string;

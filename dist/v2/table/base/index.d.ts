@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
-import { Component, Sorter } from "../../../index";
+import { FnComponent } from "nextjs-tools";
+import { Sorter } from "../../../index.js";
 import { ContextMenu } from "../../../v1/modal/context-menu";
 interface Props<T> {
     className?: string;
@@ -16,7 +17,7 @@ interface Props<T> {
 export type TableColumn<T> = {
     label: ReactNode;
     className: string;
-    parser: Component<T>;
+    parser: FnComponent<T>;
     column?: string;
 };
 export type OnChangeTableSort = (e: React.MouseEvent, column: string, sorter: Sorter) => void;
