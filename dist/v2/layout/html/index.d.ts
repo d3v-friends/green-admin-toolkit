@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "@asset/style/index.scss";
+import "../../../../style/index.scss";
 interface Props {
     children?: ReactNode | ReactNode[];
     lang?: string;
