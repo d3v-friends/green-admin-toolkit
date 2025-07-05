@@ -2,7 +2,7 @@
 import React from "react";
 import {ButtonSolidProps} from "../../button/solid";
 import {useRouter} from "next/navigation";
-import {ButtonSolid} from "@root";
+import {ButtonSolid} from "../..";
 
 interface Props extends Omit<ButtonSolidProps, "onClick" | "onMiddleClick"> {
 	href: string;

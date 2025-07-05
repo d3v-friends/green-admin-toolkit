@@ -1,7 +1,7 @@
 "use server";
 import React from "react";
 import {fnSearchParams, NextPageProps} from "nextjs-tools";
-import {Panel} from "@root";
+import {Panel} from "@app";
 import Editor from "./_editor";
 
 export default async function ({searchParams}: NextPageProps) {

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {Button, FormOTP, InputString} from "@root";
+import {Button, FormOTP, InputString} from "@app";
 import {useServerAction} from "nextjs-tools";
 import Action from "./_action";
 import Form from "./_form";

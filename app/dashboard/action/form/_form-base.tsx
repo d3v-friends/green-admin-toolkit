@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode} from "react";
-import {ActionErrorP, ActionResponseModal, Button, fnActionResponseModal, FormBase, InputString} from "@root";
+import {ActionErrorP, ActionResponseModal, Button, fnActionResponseModal, FormBase, InputString} from "@app";
 import {useServerAction} from "nextjs-tools";
 import ActionForm from "./_form";
 import Action from "./_action";

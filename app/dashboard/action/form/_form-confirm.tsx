@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {ActionErrorP, Button, fnFormConfirmModal, FormConfirm, InputString} from "@root";
+import {ActionErrorP, Button, fnFormConfirmModal, FormConfirm, InputString} from "@app";
 import {useServerAction} from "nextjs-tools";
 import Form from "./_form";
 import Action from "./_action";

@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode} from "react";
-import {TableCol} from "@root";
+import {TableCol} from "../../..";
 import Base from "../base";
 import {OnChangeTheadSorter, TableSorterValue} from "../../../widget/table/base/thead-sorter";
 

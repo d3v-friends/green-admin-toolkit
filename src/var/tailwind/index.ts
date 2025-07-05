@@ -1,4 +1,4 @@
-import {ColorStyle} from "@root";
+import {ColorStyle} from "../..";
 
 export const ColorBg: Record<ColorStyle, string> = {
 	primary: "bg-(--primary)",

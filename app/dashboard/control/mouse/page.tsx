@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {MouseRightButtonMenu, Panel} from "@root";
+import {MouseRightButtonMenu, Panel} from "@app";
 
 export default function () {
 	return (

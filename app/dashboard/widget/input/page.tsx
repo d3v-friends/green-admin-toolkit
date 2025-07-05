@@ -14,12 +14,12 @@ import {
 	InputString,
 	InputTextarea,
 	Panel,
-} from "@root";
+} from "@app";
 import ImgAuth from "web-asset/svg/regular/fi-rr-circle-user.svg";
 import ImgFruit from "web-asset/svg/regular/fi-rr-kiwi-fruit.svg";
 import ImgDate from "web-asset/svg/regular/fi-rr-calendar.svg";
-import {InputDatePeriodValue} from "@root/v1/form/input-date-period";
-import {InputBetweenValue} from "@root/v1/form/input-between";
+import {InputDatePeriodValue} from "../../../../src/v1/form/input-date-period";
+import {InputBetweenValue} from "../../../../src/v1/form/input-between";
 import ImgMoney from "web-asset/svg/regular/fi-rr-money-bill-transfer.svg";
 
 export default function () {

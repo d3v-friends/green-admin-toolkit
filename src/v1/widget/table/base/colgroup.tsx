@@ -1,5 +1,5 @@
 import React from "react";
-import {TableCol} from "@root";
+import {TableCol} from "../../..";
 
 interface Props<T> {
 	cols: TableCol<T>[];

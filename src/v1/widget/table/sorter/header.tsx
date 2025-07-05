@@ -5,7 +5,7 @@ import ImgDesc from "web-asset/svg/regular/fi-rr-caret-down.svg";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
 import Image, {StaticImageData} from "next/image";
 import {FnBase, fnCss} from "nextjs-tools";
-import {Sorter} from "@root";
+import {Sorter} from "../../..";
 
 interface Props {
 	children?: ReactNode;

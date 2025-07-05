@@ -1,6 +1,6 @@
 "use client";
 import React, {MouseEventHandler, ReactNode} from "react";
-import {Sorter, TableCol} from "@root";
+import {Sorter, TableCol} from "../../..";
 import {FnBase, fnCss} from "nextjs-tools";
 import Image, {StaticImageData} from "next/image";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";

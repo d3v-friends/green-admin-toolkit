@@ -1,7 +1,7 @@
 "use client";
 import React, {MouseEventHandler, ReactNode, TouchEventHandler, useEffect, useState} from "react";
 import {Coordinate, FnComponent, fnCss, fnVoid, initCoordinate} from "nextjs-tools";
-import {ModalContextMenu, Sorter} from "@root";
+import {ModalContextMenu, Sorter} from "../../..";
 import Image, {StaticImageData} from "next/image";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";

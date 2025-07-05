@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import {Panel} from "@root";
+import {Panel} from "@app";
 import FormConfirm from "./_form-confirm";
 import FormBase from "./_form-base";
 import FormOTP from "./_form-otp";

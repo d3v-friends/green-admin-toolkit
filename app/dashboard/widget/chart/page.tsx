@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {Chart, Panel} from "@root";
+import {Chart, Panel} from "@app";
 
 export default function () {
 	return (

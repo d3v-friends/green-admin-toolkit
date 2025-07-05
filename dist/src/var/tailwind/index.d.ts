@@ -1,0 +1,13 @@
+import { ColorStyle } from "../..";
+export declare const ColorBg: Record<ColorStyle, string>;
+export declare const ColorHoverBg: Record<ColorStyle, string>;
+export declare const ColorText: Record<ColorStyle, string>;
+export declare const ColorBorder: Record<ColorStyle, string>;
+export declare const ColorHoverBorder: Record<ColorStyle, string>;
+export declare const ColorTextAlt: Record<ColorStyle, string>;
+export declare const ColorHoverTextAlt: Record<ColorStyle, string>;
+export declare const ColorFilter: Record<ColorStyle, string>;
+export declare const ColorHoverFilter: Record<ColorStyle, string>;
+export declare const ColorFilterAlt: Record<ColorStyle, string>;
+export declare const ColorHoverFilterAlt: Record<ColorStyle, string>;
+export declare const ColorGroupHoverFilterAlt: Record<ColorStyle, string>;

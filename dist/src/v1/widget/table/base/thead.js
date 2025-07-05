@@ -1,0 +1,6 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import { fnCss } from "nextjs-tools";
+export default function ({ cols }) {
+    return (_jsx("thead", { children: _jsx("tr", { className: "border-top", children: cols.map((v, key) => (_jsx("th", { className: fnCss.sum(v.headerClassName || "", "pt-2 pb-2"), children: v.name }, key))) }) }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGhlYWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9zcmMvdjEvd2lkZ2V0L3RhYmxlL2Jhc2UvdGhlYWQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQSxPQUFPLEVBQUMsS0FBSyxFQUFDLE1BQU0sY0FBYyxDQUFDO0FBTW5DLE1BQU0sQ0FBQyxPQUFPLFdBQWMsRUFBQyxJQUFJLEVBQVc7SUFDM0MsT0FBTyxDQUNOLDBCQUNDLGFBQUksU0FBUyxFQUFDLFlBQVksWUFDeEIsSUFBSSxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsRUFBRSxHQUFHLEVBQUUsRUFBRSxDQUFDLENBQ3JCLGFBQ0MsU0FBUyxFQUFFLEtBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLGVBQWUsSUFBSSxFQUFFLEVBQUUsV0FBVyxDQUFDLFlBRXpELENBQUMsQ0FBQyxJQUFJLElBREYsR0FBRyxDQUVKLENBQ0wsQ0FBQyxHQUNFLEdBQ0UsQ0FDUixDQUFDO0FBQ0gsQ0FBQyJ9

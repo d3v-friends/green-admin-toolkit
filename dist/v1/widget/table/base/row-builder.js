@@ -1,6 +1,0 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { fnCss } from "nextjs-tools";
-export default function ({ cols, value, index }) {
-    return cols.map((v, key) => (_jsx("td", { className: fnCss.sum("border-top pt-2 pb-2", v.cellClassName || "text-center"), children: v.parser(value, index) }, key)));
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm93LWJ1aWxkZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvdjEvd2lkZ2V0L3RhYmxlL2Jhc2Uvcm93LWJ1aWxkZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQSxPQUFPLEVBQUMsS0FBSyxFQUFDLE1BQU0sY0FBYyxDQUFDO0FBUW5DLE1BQU0sQ0FBQyxPQUFPLFdBQWMsRUFBQyxJQUFJLEVBQUUsS0FBSyxFQUFFLEtBQUssRUFBcUI7SUFDbkUsT0FBTyxJQUFJLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQyxFQUFFLEdBQUcsRUFBRSxFQUFFLENBQUMsQ0FDM0IsYUFFQyxTQUFTLEVBQUUsS0FBSyxDQUFDLEdBQUcsQ0FBQyxzQkFBc0IsRUFBRSxDQUFDLENBQUMsYUFBYSxJQUFJLGFBQWEsQ0FBQyxZQUM3RSxDQUFDLENBQUMsTUFBTSxDQUFDLEtBQUssRUFBRSxLQUFLLENBQUMsSUFGbEIsR0FBRyxDQUdKLENBQ0wsQ0FBQyxDQUFDO0FBQ0osQ0FBQyJ9

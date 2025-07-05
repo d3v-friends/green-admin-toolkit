@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import {Panel} from "@root";
+import {Panel} from "@app";
 import BasicModal from "./_basic";
 import Alert from "./_alert";
 

@@ -2,7 +2,7 @@
 import React, {ReactNode, useState} from "react";
 import {Nullable} from "nextjs-tools";
 import {AlertModalValue} from "../../../../src/v1/modal/alert";
-import {Button, ModalAlert} from "@root";
+import {Button, ModalAlert} from "../../..";
 
 interface Props {
 	children?: ReactNode;

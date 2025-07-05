@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {TableCol} from "@root";
+import {TableCol} from "../../..";
 import Base from "../base";
 import {fnCss} from "nextjs-tools";
 

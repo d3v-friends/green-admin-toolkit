@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode, useEffect, useRef, useState} from "react";
-import {ModalContextMenu, TableCol} from "@root";
+import {ModalContextMenu, TableCol} from "../../..";
 import Base from "../base";
 import {Nullable} from "nextjs-tools";
 import {ContextMenu} from "../../../modal/context-menu";

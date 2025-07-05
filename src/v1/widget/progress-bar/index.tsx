@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode} from "react";
-import {ColorStyle} from "@root";
+import {ColorStyle} from "../../..";
 import {fnCss} from "nextjs-tools";
 import Decimal from "decimal.js";
 

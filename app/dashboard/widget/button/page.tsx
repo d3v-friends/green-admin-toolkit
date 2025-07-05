@@ -1,6 +1,6 @@
 "use server";
 import React, {ReactNode} from "react";
-import {ButtonOutline, ButtonSolid, ButtonText, Panel} from "@root";
+import {ButtonOutline, ButtonSolid, ButtonText, Panel} from "@app";
 import ImgKey from "web-asset/svg/solid/fi-sr-key.svg";
 
 export default async function () {

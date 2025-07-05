@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import {Panel} from "@root";
+import {Panel} from "@app";
 
 export default async function () {
 	return (

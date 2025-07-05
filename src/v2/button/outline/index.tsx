@@ -9,7 +9,7 @@ import {
 	ColorHoverTextAlt,
 	ColorStyle,
 	ColorText,
-} from "@root";
+} from "../../..";
 import Image from "next/image";
 
 export interface ButtonOutlineProps {

@@ -1,7 +1,7 @@
 "use client";
 import React, {MouseEventHandler, ReactNode, useEffect, useRef, useState} from "react";
 import {fnCss} from "nextjs-tools";
-import {TouchRightClick} from "@root";
+import {TouchRightClick} from "../..";
 
 interface Props {
 	children?: ReactNode;

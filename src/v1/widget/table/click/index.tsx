@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode} from "react";
-import {TableCol} from "@root";
+import {TableCol} from "../../..";
 import Base from "../base";
 
 interface Props<T> {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import {useRouter} from "next/navigation";
-import {ButtonText} from "@root";
+import {ButtonText} from "../..";
 import {ButtonTextProps} from "../../button/text";
 
 interface Props extends Omit<ButtonTextProps, "onClick" | "onMiddleClick"> {

@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import {Button, ModalBasic} from "@root";
+import {Button, ModalBasic} from "@app";
 
 interface Props {}
 

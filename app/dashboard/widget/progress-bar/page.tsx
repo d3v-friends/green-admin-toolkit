@@ -1,6 +1,6 @@
 "use client";
 import React, {useEffect, useRef, useState} from "react";
-import {LoadingBar, Panel, ProgressBar} from "@root";
+import {LoadingBar, Panel, ProgressBar} from "@app";
 
 export default function () {
 	const [value, setValue] = useState(0);

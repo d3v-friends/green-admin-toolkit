@@ -1,6 +1,6 @@
 "use server";
 import React, {ReactNode} from "react";
-import {HTML} from "@root";
+import {HTML} from "@app";
 
 export default async function ({children}: Readonly<{children?: ReactNode | ReactNode[]}>) {
 	return <HTML>{children}</HTML>;

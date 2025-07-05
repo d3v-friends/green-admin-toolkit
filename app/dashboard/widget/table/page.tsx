@@ -1,7 +1,7 @@
 "use client";
 import React, {useState} from "react";
-import {Panel, Table, ValueNumber} from "@root";
-import {TableSortValue} from "@root/v2/table/base";
+import {Panel, Table, ValueNumber} from "@app";
+import {TableSortValue} from "../../../../src/v2/table/base";
 
 type Data = {name: string; age: number; content: string};
 

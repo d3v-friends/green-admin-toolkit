@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import {EditorTiptap, fnInput} from "@root";
+import {EditorTiptap, fnInput} from "@app";
 
 interface Props {}
 
