@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { useRouter } from "next/navigation";
-import { ButtonSolid } from "../../index.js";
+import { ButtonSolid } from "../..";
 export default function (props) {
     const router = useRouter();
     return (_jsx(ButtonSolid, Object.assign({}, props, { onClick: (e) => {

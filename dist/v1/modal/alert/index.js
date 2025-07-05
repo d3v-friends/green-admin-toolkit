@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
-import { Button, ModalToggler } from "../../index.js";
+import { Button, ModalToggler } from "../..";
 import { fnCss } from "nextjs-tools";
 export default function ({ value, className = "" }) {
     const [time, setTime] = useState(0);

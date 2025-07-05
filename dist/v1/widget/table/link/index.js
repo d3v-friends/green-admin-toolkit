@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Base from "../base/index.js";
-import Row from "./row.js";
+import Base from "../base";
+import Row from "./row";
 const { RowBuilder, Colgroup, Thead, Table, RowEmpty } = Base;
 export default function ({ className, cols, list, linker, empty, trClassName = "hover:bg-(--color-table-hover)", }) {
     return (_jsxs(Table, { className: className, children: [_jsx(Colgroup, { cols: cols }), _jsx(Thead, { cols: cols }), _jsxs("tbody", { children: [list.map((row, key) => (_jsx(Row, { className: trClassName, href: linker(row), children: _jsx(RowBuilder, { cols: cols, value: row, index: key }) }, key))), list.length === 0 && _jsx(RowEmpty, { cols: cols, children: empty })] })] }));

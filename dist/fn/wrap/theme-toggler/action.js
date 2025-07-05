@@ -1,8 +1,8 @@
 "use server";
 import { cookies } from "next/headers";
 import { fnServerAction } from "nextjs-tools";
-import { default as fnTheme, THEME_KEY } from "./fn.js";
-import actionForm from "./form.js";
+import { default as fnTheme, THEME_KEY } from "./fn";
+import actionForm from "./form";
 export default async function (_, form) {
     return fnServerAction.parser(form, actionForm, async () => {
         var _a;

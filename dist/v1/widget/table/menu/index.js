@@ -1,8 +1,8 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
-import { ModalContextMenu } from "../../../index.js";
-import Base from "../base/index.js";
+import { ModalContextMenu } from "../../..";
+import Base from "../base";
 const { RowBuilder, Colgroup, Table, RowEmpty, TheadSorter } = Base;
 export default function ({ className, cols, list, empty, onMouseUp = () => { }, menu, sorter, onChangeSorter, }) {
     const [coordinate, setCoordinate] = useState({

@@ -3,7 +3,7 @@ import { createElement as _createElement } from "react";
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
 import { fnCss, fnVoid, initCoordinate } from "nextjs-tools";
-import { ModalContextMenu } from "../../../index.js";
+import { ModalContextMenu } from "../../..";
 import Image from "next/image";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { fnCss } from "nextjs-tools";
 import Image from "next/image";
 import Calendar from "react-calendar";
-import { ModalToggler } from "../../index.js";
+import { ModalToggler } from "../..";
 import { DateTime } from "luxon";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
 export default function ({ className, label, imgSrc, value = {}, onChange = () => { }, timezone = "Asia/Seoul", name, }) {

@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { fnCss } from "nextjs-tools";
 import Image from "next/image";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
-import { Button } from "../../../../app/index.js";
+import { Button } from "@app";
 const padding = "p-2 lg:pl-4 lg:pr-4";
 function Body({ children, className = "", }) {
     return _jsx("div", { className: fnCss.sum("bg-(--bg-modal) shadow-2xl rounded-md", className), children: children });

@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { ModalElement } from "../../index.js";
+import { ModalElement } from "../..";
 const { Body, Header, Content, OkCancel } = ModalElement;
 export default function ({ ok, cancel, title, content }) {
     return (onSubmit, onCancel) => (_jsxs(Body, { className: "min-w-[20rem]", children: [title && _jsx(Header, { disableCloseButton: true, children: title }), _jsx(Content, { children: content }), _jsx(OkCancel, { ok: ok, cancel: cancel, onClickOk: onSubmit, onClickCancel: onCancel })] }));

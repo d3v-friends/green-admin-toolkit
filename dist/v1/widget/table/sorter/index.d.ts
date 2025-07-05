@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { TableCol } from "../../..";
-import { OnChangeTheadSorter, TableSorterValue } from "../base/thead-sorter";
+import { OnChangeTheadSorter, TableSorterValue } from "../../../widget/table/base/thead-sorter";
 interface Props<T, S> {
     className?: string;
     empty?: ReactNode;

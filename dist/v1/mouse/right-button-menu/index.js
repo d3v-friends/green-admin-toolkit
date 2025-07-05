@@ -2,7 +2,7 @@
 import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
 import { fnCss } from "nextjs-tools";
-import { TouchRightClick } from "../../index.js";
+import { TouchRightClick } from "../..";
 export default function ({ className, children, menu }) {
     const [open, setOpen] = useState(false);
     const [coordinate, setCoordinate] = useState({

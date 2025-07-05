@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 import { fnServerAction } from "nextjs-tools";
-import { ActionLoadingBackdrop, ModalToggler } from "../../index.js";
+import { ActionLoadingBackdrop, ModalToggler } from "../..";
 export default function ({ children, confirmModal, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header, form, checkBeforeOpen = false, onError = () => { }, }) {
     const [open, setOpen] = useState(false);
     const [formElement, setFormElement] = useState();

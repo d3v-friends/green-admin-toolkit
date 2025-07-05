@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { useRouter } from "next/navigation";
-import { ButtonOutline } from "../../index.js";
+import { ButtonOutline } from "../..";
 export default function (props) {
     const router = useRouter();
     return (_jsx(ButtonOutline, Object.assign({}, props, { onClick: (e) => {

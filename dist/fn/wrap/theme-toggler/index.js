@@ -3,9 +3,9 @@ import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-run
 import { useRouter } from "next/navigation";
 import { useServerAction } from "nextjs-tools";
 import { useEffect, useState } from "react";
-import { default as fnTheme } from "./fn.js";
-import Action from "./action.js";
-import Form from "./form.js";
+import { default as fnTheme } from "./fn";
+import Action from "./action";
+import Form from "./form";
 export default function ({ children }) {
     const [time, setTime] = useState(0);
     const [state, action] = useServerAction(Action, Form);

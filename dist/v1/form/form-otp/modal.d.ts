@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FormConfirmModalComponent } from "../form-confirm";
+import { FormConfirmModalComponent } from "../../form/form-confirm";
 interface Props {
     ok?: ReactNode;
     cancel?: ReactNode;

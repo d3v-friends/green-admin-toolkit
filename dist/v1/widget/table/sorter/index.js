@@ -1,6 +1,6 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Base from "../base/index.js";
+import Base from "../base";
 const { RowBuilder, Colgroup, Table, RowEmpty, TheadSorter } = Base;
 export default function ({ className, cols, list, empty, onClick = () => { }, onMouseDown = () => { }, onChangeSort = () => { }, value = {
     columnKey: "",

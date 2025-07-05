@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Base from "../base/index.js";
+import Base from "../base";
 import { fnCss } from "nextjs-tools";
 const { RowBuilder, Colgroup, Thead, Table, RowEmpty } = Base;
 export default function ({ className, cols, list, empty, trClassName = "hover:bg-(--color-table-hover)" }) {

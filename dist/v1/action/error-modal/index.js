@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
-import ModalToggler from "../../modal/toggler/index.js";
+import ModalToggler from "../../modal/toggler";
 export default function ({ state, children }) {
     const [open, setOpen] = useState(false);
     const [time, setTime] = useState(0);

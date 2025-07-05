@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect } from "react";
-import Base from "../base/index.js";
+import Base from "../base";
 export default function ({ open, onChange, children, disableEscapeKey, onClickBackdrop, backdropClassName, }) {
     const onEscPress = useCallback((e) => {
         if (e.key == "Escape") {

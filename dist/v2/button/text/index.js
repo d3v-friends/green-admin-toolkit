@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { concat } from "nextjs-tools";
-import { ColorFilter, ColorHoverBorder, ColorText } from "../../../index.js";
+import { ColorFilter, ColorHoverBorder, ColorText } from "../../..";
 import Image from "next/image";
 export default function ({ children, onClick = () => { }, onMiddleClick = () => { }, className = "w-full", color = "primary", imgSrc, ref, type = "button", }) {
     const onMouseUp = (e) => {

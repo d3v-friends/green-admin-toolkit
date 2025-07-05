@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import ModalBase from "../../modal/base/index.js";
+import ModalBase from "../../modal/base";
 export default function ({ children, pending }) {
     if (!pending)
         return null;

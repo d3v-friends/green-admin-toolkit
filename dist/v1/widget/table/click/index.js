@@ -1,6 +1,6 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Base from "../base/index.js";
+import Base from "../base";
 const { RowBuilder, Colgroup, Thead, Table, RowEmpty } = Base;
 export default function ({ className, cols, list, empty, onClick, onMouseUp = () => { }, onMouseDown = () => { }, }) {
     return (_jsxs(Table, { className: className, children: [_jsx(Colgroup, { cols: cols }), _jsx(Thead, { cols: cols }), _jsxs("tbody", { children: [list.map((row, key) => (_jsx("tr", { className: "hover:bg-(--color-table-hover) h-14", onClick: (e) => onClick(e, row), onMouseUp: (e) => onMouseUp(e, row), onMouseDown: (e) => onMouseDown(e, row), children: _jsx(RowBuilder, { cols: cols, value: row, index: key }) }, key))), list.length === 0 && _jsx(RowEmpty, { cols: cols, children: empty })] })] }));

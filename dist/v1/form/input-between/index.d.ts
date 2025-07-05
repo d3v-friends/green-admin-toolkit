@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FnBase, ImgSrc } from "nextjs-tools";
-import { InputParser } from "../../../fn/input";
+import { InputParser } from "./../../../fn/input";
 interface Props {
     imgSrc?: ImgSrc;
     className?: string;

@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { InputString, ModalElement } from "../../index.js";
+import { InputString, ModalElement } from "../..";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 const { Body, Header, Content, OkCancel } = ModalElement;
 export default function ({ ok, cancel, title, content, className = "w-4/5 lg:w-[20rem]", }) {

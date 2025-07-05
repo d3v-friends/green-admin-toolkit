@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 import { fnServerAction } from "nextjs-tools";
-import { ActionLoadingBackdrop, InputString, ModalElement, ModalToggler } from "../../index.js";
+import { ActionLoadingBackdrop, InputString, ModalElement, ModalToggler } from "../..";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 const { Body, Header, Content, OkCancel } = ModalElement;
 export default function ({ children, action, pending, beforeSubmit, disableCloseButton, disableEscapeKey, header = "OTP를 입력하여 주십시오", otpContent, form, modalClassName = "w-[20rem]", }) {

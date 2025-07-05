@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Toggler from "../toggler/index.js";
-import Elem from "../element/index.js";
+import Toggler from "../toggler";
+import Elem from "../element";
 export default function ({ children, disableEscapeKey, disableCloseButton, header, open, onChange, className = "min-w-[20rem]", classNameHeader = "text-xl font-bold", classNameContent = "", }) {
     return (_jsx(Toggler, { onChange: onChange, open: open, disableEscapeKey: disableEscapeKey, children: _jsxs(Elem.Body, { className: className, children: [_jsx(Elem.Header, { className: classNameHeader, onChange: onChange, disableCloseButton: disableCloseButton, children: header }), _jsx(Elem.Content, { className: classNameContent, children: children })] }) }));
 }
