@@ -2,7 +2,7 @@
 import React from "react";
 import {useRouter} from "next/navigation";
 import {ButtonText} from "@root";
-import {ButtonTextProps} from "@v2/button/text";
+import {ButtonTextProps} from "../../button/text";
 
 interface Props extends Omit<ButtonTextProps, "onClick" | "onMiddleClick"> {
 	href: string;

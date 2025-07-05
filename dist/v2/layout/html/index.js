@@ -1,6 +1,6 @@
 "use server";
 import { jsx as _jsx } from "react/jsx-runtime";
-import "../../../../asset/style/index.scss";
+import "@asset/style/index.scss";
 import localFont from "next/font/local";
 export default async function ({ lang = "ko", children }) {
     return (_jsx("html", { lang: lang, children: _jsx("body", { className: "bg-(--bg-main) min-h-screen text-[14px] lg:text-[18px] text-(--text-3) font-roboto", children: children }) }));

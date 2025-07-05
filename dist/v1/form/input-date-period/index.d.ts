@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FnBase, ImgSrc } from "nextjs-tools";
-import "../../../../asset/style/react-calendar.scss";
+import "@asset/style/react-calendar.scss";
 interface Props {
     value?: InputDatePeriodValue;
     onChange?: FnBase<InputDatePeriodValue>;

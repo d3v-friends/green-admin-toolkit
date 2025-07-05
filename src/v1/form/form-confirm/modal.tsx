@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {FormConfirmModalComponent} from "@v1/form/form-confirm";
+import {FormConfirmModalComponent} from "../../form/form-confirm";
 import {ModalElement} from "@root";
 
 interface Props {

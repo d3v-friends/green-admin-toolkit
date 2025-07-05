@@ -1,7 +1,7 @@
 "use client";
 import React, {ReactNode, useState} from "react";
 import {Nullable} from "nextjs-tools";
-import {AlertModalValue} from "@v1/modal/alert";
+import {AlertModalValue} from "../../../../src/v1/modal/alert";
 import {Button, ModalAlert} from "@root";
 
 interface Props {

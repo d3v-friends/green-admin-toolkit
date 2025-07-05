@@ -6,7 +6,7 @@ import Image, {StaticImageData} from "next/image";
 import ImgDash from "web-asset/svg/regular/fi-rr-minus-small.svg";
 import ImgAsc from "web-asset/svg/regular/fi-rr-caret-up.svg";
 import ImgDesc from "web-asset/svg/regular/fi-rr-caret-down.svg";
-import {ContextMenu} from "@v1/modal/context-menu";
+import {ContextMenu} from "../../../v1/modal/context-menu";
 
 interface Props<T> {
 	className?: string;

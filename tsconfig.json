@@ -29,26 +29,8 @@
       "@root": [
         "./src/index.ts"
       ],
-      "@page/*": [
-        "./src/app/*"
-      ],
-      "@comp/*": [
-        "./src/comp/*"
-      ],
-      "@asset/*": [
-        "./asset/*"
-      ],
-      "@fn/*": [
-        "./src/fn/*"
-      ],
-      "@v1/*": [
-        "./src/v1/*"
-      ],
-      "@v2/*": [
-        "./src/v2/*"
-      ],
-      "@var/*": [
-        "./src/var/*"
+      "@root/*": [
+        "./src/*"
       ]
     }
   },

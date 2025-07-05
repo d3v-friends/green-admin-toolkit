@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {ButtonSolidProps} from "@v2/button/solid";
+import {ButtonSolidProps} from "../../button/solid";
 import {useRouter} from "next/navigation";
 import {ButtonSolid} from "@root";
 

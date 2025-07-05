@@ -7,7 +7,7 @@ import { ModalToggler } from "../../../index.js";
 import Image from "next/image";
 import { DateTime } from "luxon";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
-import "../../../../asset/style/react-calendar.scss";
+import "@asset/style/react-calendar.scss";
 export default function ({ className, label, imgSrc, value, onChange = () => { }, timezone = "Asia/Seoul", name, hiddenInitButton = false, }) {
     var _a;
     const [open, setOpen] = useState(false);

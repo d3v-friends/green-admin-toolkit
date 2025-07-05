@@ -11,7 +11,7 @@ import React, {
 import {FnBase, fnCss, HTMLInputModeAttribute, ImgSrc} from "nextjs-tools";
 import Image from "next/image";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
-import {InputParser} from "@fn/input";
+import {InputParser} from "../../../fn/input";
 
 interface Props {
 	imgSrc?: ImgSrc;

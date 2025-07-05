@@ -18,8 +18,8 @@ import {
 import ImgAuth from "web-asset/svg/regular/fi-rr-circle-user.svg";
 import ImgFruit from "web-asset/svg/regular/fi-rr-kiwi-fruit.svg";
 import ImgDate from "web-asset/svg/regular/fi-rr-calendar.svg";
-import {InputDatePeriodValue} from "@v1/form/input-date-period";
-import {InputBetweenValue} from "@v1/form/input-between";
+import {InputDatePeriodValue} from "@root/v1/form/input-date-period";
+import {InputBetweenValue} from "@root/v1/form/input-between";
 import ImgMoney from "web-asset/svg/regular/fi-rr-money-bill-transfer.svg";
 
 export default function () {

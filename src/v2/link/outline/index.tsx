@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {ButtonOutlineProps} from "@v2/button/outline";
+import {ButtonOutlineProps} from "../../button/outline";
 import {useRouter} from "next/navigation";
 import {ButtonOutline} from "@root";
 

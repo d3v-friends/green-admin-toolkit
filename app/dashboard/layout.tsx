@@ -6,7 +6,7 @@ import ImgButton from "web-asset/svg/regular/fi-rr-tip-button-hand.svg";
 import ImgForm from "web-asset/svg/regular/fi-rr-form.svg";
 import ImgDoc from "web-asset/svg/regular/fi-rr-a.svg";
 import ImgControl from "web-asset/svg/regular/fi-rr-console-controller.svg";
-import {LayoutAsideAccordion, LayoutAsideAccordionLink, LayoutBase, LayoutNavItemLink, LayoutTitle} from "@v1/index";
+import {LayoutAsideAccordion, LayoutAsideAccordionLink, LayoutBase, LayoutNavItemLink, LayoutTitle} from "../../src";
 
 export default async function ({children}: Readonly<{children?: ReactNode | ReactNode[]}>) {
 	return (

@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from "react";
 import { fnCss } from "nextjs-tools";
-import "../../../../asset/style/react-calendar.scss";
+import "@asset/style/react-calendar.scss";
 import Image from "next/image";
 import Calendar from "react-calendar";
 import { ModalToggler } from "../../../index.js";

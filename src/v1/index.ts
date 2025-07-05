@@ -56,9 +56,9 @@ export {default as fnFormOTPModal} from "./form/form-otp/modal";
 export {default as InputBetween} from "./form/input-between";
 
 // @fn
-export {default as ThemeToggler} from "@fn/wrap/theme-toggler";
-export {default as fnTheme} from "@fn/wrap/theme-toggler/fn";
-export {default as fnInput} from "@fn/input";
+export {default as ThemeToggler} from "../fn/wrap/theme-toggler";
+export {default as fnTheme} from "../fn/wrap/theme-toggler/fn";
+export {default as fnInput} from "../fn/input";
 
 // action
 export {default as ActionErrorP} from "./action/error-p";

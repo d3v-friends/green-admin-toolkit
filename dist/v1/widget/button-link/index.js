@@ -3,7 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { fnCss } from "nextjs-tools";
 import Image from "next/image";
 import Link from "next/link";
-import "../../../../asset/style/button.scss";
+import "@asset/style/button.scss";
 export default function ({ children, style = "solid", className = "w-full", color = "primary", imgSrc, href = "/", }) {
     return (_jsxs(Link, { className: fnCss.sum(style, className, color, "button", "flex items-center justify-center min-h-[2.5rem] pl-2 pr-2 rounded-md", "outline-none"), href: href, children: [imgSrc && (_jsx(Image, { className: "mr-2 w-[0.8rem]", src: imgSrc, alt: "icon", width: 20, height: 20 })), _jsx("span", { className: fnCss.sum(imgSrc ? "pr-4" : ""), children: children })] }));
 }

@@ -1,6 +1,6 @@
 "use client";
 import React, {ReactNode, useEffect, useState} from "react";
-import {Button, ModalToggler} from "@root";
+import {Button, ModalToggler} from "../..";
 import {fnCss, Nullable} from "nextjs-tools";
 
 interface Props {

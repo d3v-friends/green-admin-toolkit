@@ -1,8 +1,8 @@
 "use client";
 import React, {ReactNode, useState} from "react";
 import {ActionForm, FnBase, fnServerAction, Nullable} from "nextjs-tools";
-import {ActionLoadingBackdrop, InputString, ModalElement, ModalToggler} from "@root";
-import {ModalBasicProps} from "@v1/modal/basic";
+import {ActionLoadingBackdrop, InputString, ModalElement, ModalToggler} from "../..";
+import {ModalBasicProps} from "../../modal/basic";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 
 interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disableCloseButton" | "header"> {
