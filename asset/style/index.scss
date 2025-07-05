@@ -1,6 +1,8 @@
 @use "tailwindcss";
 @use "tags";
 @use "layout";
+@use "react-calendar";
+@use "tiptap";
 
 @layer base {
   html {

@@ -1,7 +1,7 @@
 "use client";
 import React, {MouseEventHandler, ReactNode, useState} from "react";
 import {FnBase, fnCss, ImgSrc} from "nextjs-tools";
-import {ModalElement, ModalToggler} from "@root";
+import {ModalElement, ModalToggler} from "../..";
 import Image, {StaticImageData} from "next/image";
 import {DateTime} from "luxon";
 import ImgPrev from "web-asset/svg/regular/fi-rr-angle-left.svg";

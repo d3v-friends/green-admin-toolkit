@@ -1,5 +1,4 @@
 import { FnBase } from "nextjs-tools";
-import "../../../../asset/style/tiptap.scss";
 interface Props {
     value: string;
     onChange: FnBase<string>;

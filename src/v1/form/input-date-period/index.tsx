@@ -1,10 +1,9 @@
 "use client";
 import React, {ReactNode, useState} from "react";
 import {FnBase, fnCss, ImgSrc} from "nextjs-tools";
-import "@asset/style/react-calendar.scss";
 import Image from "next/image";
 import Calendar from "react-calendar";
-import {ModalToggler} from "@root";
+import {ModalToggler} from "../..";
 import {DateTime} from "luxon";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
 

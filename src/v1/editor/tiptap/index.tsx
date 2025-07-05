@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import {EditorContent, useEditor} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import {FnBase, fnCss, FnVoid, Nullable} from "nextjs-tools";
-import "../../../../asset/style/tiptap.scss";
 import fnInput from "../../../fn/input";
 import ModalAlert, {AlertModalValue} from "../../modal/alert";
 import Button from "../../widget/button";

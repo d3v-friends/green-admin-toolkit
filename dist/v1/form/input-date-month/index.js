@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 import { fnCss } from "nextjs-tools";
-import { ModalElement, ModalToggler } from "../../../index.js";
+import { ModalElement, ModalToggler } from "../../index.js";
 import Image from "next/image";
 import { DateTime } from "luxon";
 import ImgPrev from "web-asset/svg/regular/fi-rr-angle-left.svg";

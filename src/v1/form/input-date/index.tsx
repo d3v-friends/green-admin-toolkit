@@ -2,11 +2,10 @@
 import React, {ReactNode, useState} from "react";
 import {FnBase, fnCss, ImgSrc, Nullable} from "nextjs-tools";
 import Calendar from "react-calendar";
-import {ModalToggler} from "@root";
+import {ModalToggler} from "../..";
 import Image from "next/image";
 import {DateTime} from "luxon";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
-import "@asset/style/react-calendar.scss";
 
 interface Props {
 	value: Nullable<Date>;
