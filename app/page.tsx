@@ -1,6 +1,6 @@
 "use server";
 import React from "react";
-import {LinkOutline, LinkSolid, LinkText, Panel, ScreenCenter, Section} from "@app";
+import {LinkOutline, LinkSolid, LinkText, Panel, ScreenCenter, Section} from "..";
 import ImgLogo from "@asset/png/icon.png";
 import Image from "next/image";
 import ImgKey from "web-asset/svg/solid/fi-sr-key.svg";

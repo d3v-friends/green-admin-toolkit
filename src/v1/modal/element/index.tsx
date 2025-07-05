@@ -2,7 +2,7 @@ import React, {MouseEventHandler, ReactNode} from "react";
 import {FnBase, fnCss} from "nextjs-tools";
 import Image from "next/image";
 import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
-import {Button} from "@app";
+import {Button} from "../..";
 
 const padding = "p-2 lg:pl-4 lg:pr-4";
 

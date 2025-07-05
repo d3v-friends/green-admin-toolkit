@@ -23,12 +23,6 @@
       }
     ],
     "paths": {
-      "@app/*": [
-        "./app/*"
-      ],
-      "@app": [
-        "./app/index.ts"
-      ]
     }
   },
   "include": [

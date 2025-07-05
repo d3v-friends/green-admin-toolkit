@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { TableCol } from "../../..";
 import { ContextMenu } from "../../../modal/context-menu";
-import { OnChangeTheadSorter, TableSorterValue } from "../../../widget/table/base/thead-sorter";
+import { OnChangeTheadSorter, TableSorterValue } from "../base/thead-sorter";
 interface Props<T> {
     className?: string;
     empty?: ReactNode;
