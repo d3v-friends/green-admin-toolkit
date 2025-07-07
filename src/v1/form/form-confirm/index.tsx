@@ -56,6 +56,10 @@ export default function <INPUT>({
 	};
 
 	const onToggle = (v: boolean) => {
+		if (!v) {
+			setOpen(v);
+		}
+
 		if (!formElement) return;
 		if (!formElement.reportValidity()) return;
 		if (checkBeforeOpen) {
