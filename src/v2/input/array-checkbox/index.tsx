@@ -1,5 +1,5 @@
 "use client";
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import {concat, FnBase, fnCss, fnCsv, fnVoid} from "nextjs-tools";
 import Image from "next/image";
 import ImgCheck from "web-asset/svg/regular/fi-rr-check.svg";
@@ -11,6 +11,7 @@ interface Props {
 	name?: string;
 	children?: InputArrayCheckboxChildren;
 	label?: ReactNode;
+	className?: string;
 }
 
 export type InputArrayCheckboxItem = {
@@ -20,13 +21,29 @@ export type InputArrayCheckboxItem = {
 
 export type InputArrayCheckboxChildren = (items: ReactNode[]) => ReactNode;
 
-export default function ({list, value = "", onChange = fnVoid, name, children = () => "", label}: Readonly<Props>) {
+export default function ({
+	list,
+	value: defaultValue = "",
+	onChange = fnVoid,
+	name,
+	children = () => "",
+	label,
+	className,
+}: Readonly<Props>) {
 	const onToggle = (item: string) => {
 		const next = fnCsv.has(value, item) ? fnCsv.pop(value, item) : fnCsv.push(value, item);
+		setValue(next);
 		onChange(next);
 	};
+
+	const [value, setValue] = useState(defaultValue);
+
+	useEffect(() => {
+		setValue(defaultValue);
+	}, [defaultValue]);
+
 	return (
-		<>
+		<div className={className}>
 			<input
 				hidden
 				value={value}
@@ -44,7 +61,7 @@ export default function ({list, value = "", onChange = fnVoid, name, children = 
 					/>
 				))
 			)}
-		</>
+		</div>
 	);
 }
 
@@ -59,6 +76,7 @@ function Checkbox({
 }>) {
 	return (
 		<button
+			type="button"
 			className={concat("inline-flex items-center cursor-default no-drag")}
 			onClick={() => onToggle(data.value)}>
 			<div
