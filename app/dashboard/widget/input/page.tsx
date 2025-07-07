@@ -21,13 +21,14 @@ import ImgDate from "web-asset/svg/regular/fi-rr-calendar.svg";
 import {InputDatePeriodValue} from "../../../../src/v1/form/input-date-period";
 import {InputBetweenValue} from "../../../../src/v1/form/input-between";
 import ImgMoney from "web-asset/svg/regular/fi-rr-money-bill-transfer.svg";
+import {InputArrayCheckbox} from "../../../../src";
 
 export default function () {
 	const [date, setDate] = useState<Nullable<Date>>();
 	const [period, setPeriod] = useState<InputDatePeriodValue>({});
 	const [between, setBetween] = useState<InputBetweenValue>({});
 	const [month, setMonth] = useState(new Date());
-
+	const [arrayCheckbox, setArrayCheckbox] = useState("apple");
 	return (
 		<>
 			<Panel>
@@ -106,6 +107,18 @@ export default function () {
 					value={month}
 					onChange={setMonth}
 				/>
+
+				<InputArrayCheckbox
+					label="Array checkbox"
+					list={[
+						{value: "apple", label: "apple"},
+						{value: "banana", label: "banana"},
+						{value: "citron", label: "citron"},
+					]}
+					value={arrayCheckbox}
+					onChange={setArrayCheckbox}>
+					{(items) => <div className="grid grid-cols-3 gap-2 lg:gap-4">{items}</div>}
+				</InputArrayCheckbox>
 			</Panel>
 		</>
 	);

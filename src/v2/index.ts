@@ -9,6 +9,9 @@ export {default as ButtonSolid} from "./button/solid";
 export {default as ButtonOutline} from "./button/outline";
 export {default as ButtonText} from "./button/text";
 
+// input
+export {default as InputArrayCheckbox} from "./input/array-checkbox";
+
 // link
 export {default as LinkOutline} from "./link/outline";
 export {default as LinkSolid} from "./link/solid";

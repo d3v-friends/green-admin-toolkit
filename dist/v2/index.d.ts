@@ -5,6 +5,7 @@ export { default as Panel } from "./layout/panel";
 export { default as ButtonSolid } from "./button/solid";
 export { default as ButtonOutline } from "./button/outline";
 export { default as ButtonText } from "./button/text";
+export { default as InputArrayCheckbox } from "./input/array-checkbox";
 export { default as LinkOutline } from "./link/outline";
 export { default as LinkSolid } from "./link/solid";
 export { default as LinkText } from "./link/text";

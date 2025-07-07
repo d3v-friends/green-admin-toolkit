@@ -1,7 +1,7 @@
 "use server";
 import React, {ReactNode} from "react";
 import ImgPowerOff from "web-asset/svg/regular/fi-rr-power.svg";
-import ImgLogo from "@asset/png/icon.png";
+import ImgLogo from "../../asset/png/icon.png";
 import ImgButton from "web-asset/svg/regular/fi-rr-tip-button-hand.svg";
 import ImgForm from "web-asset/svg/regular/fi-rr-form.svg";
 import ImgDoc from "web-asset/svg/regular/fi-rr-a.svg";
