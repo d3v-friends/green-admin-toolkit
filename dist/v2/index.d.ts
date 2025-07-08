@@ -1,3 +1,4 @@
+export { default as Wait } from "./action/wait";
 export { default as HTML } from "./layout/html";
 export { default as Section } from "./layout/section";
 export { default as ScreenCenter } from "./layout/screen-center";

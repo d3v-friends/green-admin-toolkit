@@ -13,6 +13,7 @@ export interface ButtonTextProps {
 	imgSrc?: ImgSrc;
 	ref?: FnBase<HTMLButtonElement>;
 	type?: "button" | "submit" | "reset";
+	disabled?: boolean;
 }
 
 export default function ({
@@ -24,6 +25,7 @@ export default function ({
 	imgSrc,
 	ref,
 	type = "button",
+	disabled = false,
 }: Readonly<ButtonTextProps>) {
 	const onMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
 		switch (e.button) {
@@ -46,7 +48,8 @@ export default function ({
 				"border-transparent",
 				"min-h-[2.5rem] pl-2 pr-2",
 				"rounded-md border-[1px] outline-none overflow-hidden",
-				"transition-all duration-100 group"
+				"transition-all duration-100 group",
+				disabled ? "cursor-not-allowed" : "cursor-pointer"
 			)}
 			onMouseUp={onMouseUp}>
 			<div className="flex items-center justify-center">

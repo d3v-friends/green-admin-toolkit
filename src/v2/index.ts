@@ -1,3 +1,6 @@
+// action
+export {default as Wait} from "./action/wait";
+
 // layout
 export {default as HTML} from "./layout/html";
 export {default as Section} from "./layout/section";

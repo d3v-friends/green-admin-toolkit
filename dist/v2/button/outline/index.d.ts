@@ -10,5 +10,6 @@ export interface ButtonOutlineProps {
     imgSrc?: ImgSrc;
     ref?: FnBase<HTMLButtonElement>;
     type?: "button" | "submit" | "reset";
+    disabled?: boolean;
 }
-export default function ({ children, onClick, onMiddleClick, className, color, imgSrc, ref, type, }: Readonly<ButtonOutlineProps>): import("react/jsx-runtime").JSX.Element;
+export default function ({ children, onClick, onMiddleClick, className, color, imgSrc, ref, type, disabled, }: Readonly<ButtonOutlineProps>): import("react/jsx-runtime").JSX.Element;
