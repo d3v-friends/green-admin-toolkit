@@ -1,12 +1,13 @@
 "use server";
 import React, {ReactNode} from "react";
-import ImgPowerOff from "web-asset/svg/regular/fi-rr-power.svg";
+
 import ImgLogo from "../../asset/png/icon.png";
 import ImgButton from "web-asset/svg/regular/fi-rr-tip-button-hand.svg";
 import ImgForm from "web-asset/svg/regular/fi-rr-form.svg";
 import ImgDoc from "web-asset/svg/regular/fi-rr-a.svg";
 import ImgControl from "web-asset/svg/regular/fi-rr-console-controller.svg";
-import {LayoutAsideAccordion, LayoutAsideAccordionLink, LayoutBase, LayoutNavItemLink, LayoutTitle} from "../../src";
+import {LayoutAsideAccordion, LayoutAsideAccordionLink, LayoutBase, LayoutTitle} from "../../src";
+import Nav from "./_nav";
 
 export default async function ({children}: Readonly<{children?: ReactNode | ReactNode[]}>) {
 	return (
@@ -15,19 +16,6 @@ export default async function ({children}: Readonly<{children?: ReactNode | Reac
 			aside={<Aside />}>
 			{children}
 		</LayoutBase>
-	);
-}
-
-function Nav({}: Readonly<{children?: ReactNode}>) {
-	return (
-		<div>
-			<LayoutNavItemLink
-				className="w-20"
-				imgSrc={ImgPowerOff}
-				href="/">
-				로그아웃
-			</LayoutNavItemLink>
-		</div>
 	);
 }
 

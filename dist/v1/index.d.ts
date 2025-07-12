@@ -8,6 +8,7 @@ export { default as LayoutNavItemButton } from "./layout/base/nav-item-button";
 export { default as LayoutAsideAccordion } from "./layout/base/aside-accordion";
 export { default as LayoutAsideAccordionLink } from "./layout/base/aside-accordion-link";
 export { default as LayoutNavMobileMenuButton } from "./layout/base/popup";
+export { default as LayoutAsideAccordionMobileLink } from "./layout/base/aside-accordion-mobile-link";
 export { default as PanelBorder } from "./widget/panel-border";
 export { default as Button } from "./widget/button";
 export { default as ButtonLink } from "./widget/button-link";
