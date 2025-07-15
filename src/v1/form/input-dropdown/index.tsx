@@ -62,7 +62,7 @@ export default function ({
 
 	return (
 		<div>
-			{label && <p>{label}</p>}
+			{label && <p className="mb-[-5px]">{label}</p>}
 			<div className="relative">
 				<input
 					hidden
