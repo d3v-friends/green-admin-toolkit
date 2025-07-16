@@ -1,6 +1,5 @@
 {
   "name": "green-admin-toolkit",
-  "version": "1.0.18",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {

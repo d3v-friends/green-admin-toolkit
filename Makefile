@@ -2,7 +2,7 @@ SHELL:=/bin/bash
 include .env
 
 tag:
-	sh ./script/tag.sh $(shell jq ".version" package.json | tr -d '"')
+	sh ./script/tag.sh $(shell cat ./version)
 export:
 	sh ./script/build.sh
 prod:

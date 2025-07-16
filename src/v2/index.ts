@@ -6,6 +6,7 @@ export {default as HTML} from "./layout/html";
 export {default as Section} from "./layout/section";
 export {default as ScreenCenter} from "./layout/screen-center";
 export {default as Panel} from "./layout/panel";
+export {default as PanelHeader} from "./layout/panel-header";
 
 // button
 export {default as ButtonSolid} from "./button/solid";
