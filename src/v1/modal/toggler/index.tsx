@@ -47,7 +47,6 @@ export default function ({
 	}, [onEscPress, open, disableEscapeKey]);
 
 	if (!open) return null;
-
 	if (!children) return null;
 
 	return (

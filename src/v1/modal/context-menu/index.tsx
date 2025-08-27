@@ -1,5 +1,6 @@
 import React, {ReactNode} from "react";
 import {fnCss} from "nextjs-tools";
+import {createPortal} from "react-dom";
 
 interface Props<T> {
 	value?: T;
@@ -17,7 +18,7 @@ export type ContextMenu<T> = {
 export default function <T>({menu, top, left, value}: Readonly<Props<T>>) {
 	if (!value) return null;
 	if (menu.length === 0) return null;
-	return (
+	return createPortal(
 		<div
 			className="fixed z-5 bg-(--bg-panel) shadow-2xl rounded-md p-2 shadow-(--color-shadow) min-w-[8rem] border-all"
 			style={{top, left}}>
@@ -36,6 +37,7 @@ export default function <T>({menu, top, left, value}: Readonly<Props<T>>) {
 					{label}
 				</button>
 			))}
-		</div>
+		</div>,
+		document.body
 	);
 }

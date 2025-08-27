@@ -10,5 +10,5 @@ export type ContextMenu<T> = {
     onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, row: T) => void;
     borderTop?: boolean;
 };
-export default function <T>({ menu, top, left, value }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element | null;
+export default function <T>({ menu, top, left, value }: Readonly<Props<T>>): React.ReactPortal | null;
 export {};

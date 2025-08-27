@@ -1,6 +1,7 @@
 "use client";
 import React, {MouseEventHandler, ReactNode} from "react";
 import {fnCss} from "nextjs-tools";
+import {createPortal} from "react-dom";
 
 interface Props {
 	children?: ReactNode;
@@ -18,7 +19,7 @@ export default function Component({
 	backdropClassName = "bg-[rgba(0,0,0,0.3)] backdrop-grayscale-40",
 }: Readonly<Props>) {
 	if (!children) return null;
-	return (
+	return createPortal(
 		<div
 			onClick={onClick}
 			className={fnCss.concat(
@@ -33,6 +34,7 @@ export default function Component({
 				}}>
 				{children}
 			</div>
-		</div>
+		</div>,
+		document.body
 	);
 }
