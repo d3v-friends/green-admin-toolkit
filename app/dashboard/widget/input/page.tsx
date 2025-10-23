@@ -119,6 +119,8 @@ export default function () {
 					onChange={setArrayCheckbox}>
 					{(items) => <div className="grid grid-cols-3 gap-2 lg:gap-4">{items}</div>}
 				</InputArrayCheckbox>
+
+				<InputTextarea />
 			</Panel>
 		</>
 	);

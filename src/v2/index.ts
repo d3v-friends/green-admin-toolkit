@@ -13,6 +13,11 @@ export {default as ButtonSolid} from "./button/solid";
 export {default as ButtonOutline} from "./button/outline";
 export {default as ButtonText} from "./button/text";
 
+// hook
+
+export {default as useModel} from "./hook/use-modal";
+export {default as fnModal} from "./hook/use-modal/fn";
+
 // input
 export {default as InputArrayCheckbox} from "./input/array-checkbox";
 
