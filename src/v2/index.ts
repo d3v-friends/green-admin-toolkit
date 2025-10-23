@@ -15,7 +15,7 @@ export {default as ButtonText} from "./button/text";
 
 // hook
 
-export {default as useModel} from "./hook/use-modal";
+export {default as useModal} from "./hook/use-modal";
 export {default as fnModal} from "./hook/use-modal/fn";
 
 // input

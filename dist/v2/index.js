@@ -7,7 +7,7 @@ export { default as PanelHeader } from "./layout/panel-header/index.js";
 export { default as ButtonSolid } from "./button/solid/index.js";
 export { default as ButtonOutline } from "./button/outline/index.js";
 export { default as ButtonText } from "./button/text/index.js";
-export { default as useModel } from "./hook/use-modal/index.js";
+export { default as useModal } from "./hook/use-modal/index.js";
 export { default as fnModal } from "./hook/use-modal/fn.js";
 export { default as InputArrayCheckbox } from "./input/array-checkbox/index.js";
 export { default as LinkOutline } from "./link/outline/index.js";
