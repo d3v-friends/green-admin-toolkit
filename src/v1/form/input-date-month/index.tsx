@@ -69,6 +69,7 @@ export default function ({
 							onChange={() => {}}
 						/>
 						<button
+							type="button"
 							className="hover:underline"
 							onClick={() => setOpen(true)}>
 							{dateStr}
@@ -98,6 +99,7 @@ export default function ({
 						<div className="grid grid-cols-4 gap-2 lg:gap-4">
 							{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((month, i) => (
 								<button
+									type="button"
 									onClick={() => onClickMonth(month)}
 									className={fnCss.sum(
 										"no-drag p-2 border-all rounded-md text-center",
@@ -124,6 +126,7 @@ function YearButton({
 }>) {
 	return (
 		<button
+			type="button"
 			className="filter-(--text-2-filter) hover:filter-(--primary-filter) outline-none"
 			onClick={onClick}>
 			<Image
