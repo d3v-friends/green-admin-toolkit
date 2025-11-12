@@ -31,3 +31,9 @@ export {default as Table} from "./table/base";
 
 // value
 export {default as ValueNumber} from "./value/number";
+export {default as ValueBase} from "./value/base";
+export {default as ValueEnum} from "./value/enum";
+export {default as ValueName} from "./value/name";
+export {default as ValueObjectId} from "./value/object-id";
+export {default as ValueTextbox} from "./value/textbox";
+export {default as ValueTime} from "./value/time";

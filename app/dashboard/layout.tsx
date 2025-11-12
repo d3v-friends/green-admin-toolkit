@@ -35,7 +35,8 @@ function Aside({}: Readonly<{children?: ReactNode}>) {
 				<LayoutAsideAccordionLink href="/dashboard/widget/chart">Chart</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/dashboard/widget/progress-bar">Progress bar</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/dashboard/widget/wysiwyg">wysiwyg</LayoutAsideAccordionLink>
-				<LayoutAsideAccordionLink href="/dashboard/hook/modal">Modal</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/dashboard/hook/modal">useModal</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/dashboard/widget/value">Value</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink
 					href="/dashboard/widget/tabs/t-01"
 					prefix="/dashboard/widget/tabs">
