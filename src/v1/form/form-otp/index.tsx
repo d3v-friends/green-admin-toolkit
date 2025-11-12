@@ -1,44 +1,36 @@
 "use client";
 import React, {ReactNode, useRef, useState} from "react";
-import {ActionForm, FnBase, fnServerAction} from "nextjs-tools";
+import {FnBase} from "nextjs-tools";
 import {ActionLoadingBackdrop, InputString, ModalElement, ModalToggler} from "../..";
 import {ModalBasicProps} from "../../modal/basic";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
 
-interface Props<INPUT> extends Pick<ModalBasicProps, "disableEscapeKey" | "disableCloseButton" | "header"> {
+interface Props extends Pick<ModalBasicProps, "disableEscapeKey" | "disableCloseButton" | "header"> {
 	children: FormOtpChildren;
-	beforeSubmit?: (payload: FormData) => boolean;
 	action: (payload: FormData) => void;
 	pending: boolean;
 	otpContent?: ReactNode;
-	form: ActionForm<INPUT>;
 	modalClassName?: string;
 }
 
 export type FormOtpChildren = (onToggle: FnBase<boolean>) => ReactNode;
 const {Body, Header, Content, OkCancel} = ModalElement;
 
-export default function <INPUT>({
+export default function ({
 	children,
 	action,
 	pending,
-	beforeSubmit,
 	disableCloseButton,
 	disableEscapeKey,
 	header = "OTP를 입력하여 주십시오",
 	otpContent,
-	form,
 	modalClassName = "w-[20rem]",
-}: Readonly<Props<INPUT>>) {
+}: Readonly<Props>) {
 	const [open, setOpen] = useState(false);
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const onSubmit = () => {
-		if (pending) return;
 		if (!formRef.current) return;
-		if (beforeSubmit && !beforeSubmit(new FormData(formRef.current))) return;
-		const {err} = fnServerAction.forms.value(new FormData(formRef.current), form);
-		if (err) return;
 		formRef.current.requestSubmit();
 		setOpen(false);
 	};
