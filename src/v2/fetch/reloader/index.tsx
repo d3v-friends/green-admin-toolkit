@@ -1,12 +1,10 @@
 "use client";
 import {ReactNode, useEffect, useState} from "react";
-import {Fetch, TypedDocumentString} from "../types";
+import {Fetch} from "../types";
 
-interface Props<TResult, TVariables> {
+interface Props<TResult> {
 	data: TResult;
-	fetch: Fetch<TResult, TVariables>;
-	query: TypedDocumentString<TResult, TVariables>;
-	variables?: TVariables;
+	fetch: Fetch<TResult>;
 	delay?: ReloaderDelay;
 	children: ReloaderChildren<Data<TResult>>;
 }
@@ -17,19 +15,12 @@ export type ReloaderDelay = 5 | 10 | 15 | 20 | 30 | 60;
 
 export type ReloaderChildren<T> = (v: Data<T>) => ReactNode;
 
-export default function <TResult, TVariables>({
-	data: initData,
-	fetch,
-	query,
-	variables,
-	delay = 10,
-	children,
-}: Readonly<Props<TResult, TVariables>>) {
+export default function <TResult>({data: initData, fetch, delay = 10, children}: Readonly<Props<TResult>>) {
 	const [data, setData] = useState<Data<TResult>>({...initData, syncAt: new Date()});
 
 	useEffect(() => {
 		onReload(new Date());
-	}, [variables]);
+	}, [fetch]);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -47,7 +38,7 @@ export default function <TResult, TVariables>({
 	}, []);
 
 	const onReload = (syncAt: Date) => {
-		fetch(query, variables)
+		fetch()
 			.then((res) => setData({...res.data, syncAt}))
 			.catch((err) => console.error(err));
 	};
