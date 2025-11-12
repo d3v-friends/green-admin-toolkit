@@ -13,11 +13,6 @@ export {default as ButtonSolid} from "./button/solid";
 export {default as ButtonOutline} from "./button/outline";
 export {default as ButtonText} from "./button/text";
 
-// fetch
-export * from "./fetch/types";
-export {default as FetchReloader} from "./fetch/reloader";
-export {default as FetchServerReloader} from "./fetch/server-reloader";
-
 // hook
 export {default as useModal} from "./hook/use-modal";
 export {default as fnModal} from "./hook/use-modal/fn";
