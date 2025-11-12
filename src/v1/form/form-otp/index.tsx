@@ -1,6 +1,6 @@
 "use client";
-import React, {ReactNode, useState} from "react";
-import {ActionForm, FnBase, fnServerAction, Nullable} from "nextjs-tools";
+import React, {ReactNode, useRef, useState} from "react";
+import {ActionForm, FnBase, fnServerAction} from "nextjs-tools";
 import {ActionLoadingBackdrop, InputString, ModalElement, ModalToggler} from "../..";
 import {ModalBasicProps} from "../../modal/basic";
 import ImgOTP from "web-asset/svg/regular/fi-rr-otp.svg";
@@ -31,15 +31,15 @@ export default function <INPUT>({
 	modalClassName = "w-[20rem]",
 }: Readonly<Props<INPUT>>) {
 	const [open, setOpen] = useState(false);
-	const [formElement, setFormElement] = useState<Nullable<HTMLFormElement>>();
+	const formRef = useRef<HTMLFormElement>(null);
 
 	const onSubmit = () => {
 		if (pending) return;
-		if (!formElement) return;
-		if (beforeSubmit && !beforeSubmit(new FormData(formElement))) return;
-		const {err} = fnServerAction.forms.value(new FormData(formElement), form);
+		if (!formRef.current) return;
+		if (beforeSubmit && !beforeSubmit(new FormData(formRef.current))) return;
+		const {err} = fnServerAction.forms.value(new FormData(formRef.current), form);
 		if (err) return;
-		formElement.requestSubmit();
+		formRef.current.requestSubmit();
 		setOpen(false);
 	};
 
@@ -48,8 +48,8 @@ export default function <INPUT>({
 	};
 
 	const onToggle = (v: boolean) => {
-		if (!formElement) return;
-		if (!formElement.reportValidity()) return;
+		if (!formRef.current) return;
+		if (!formRef.current.reportValidity()) return;
 		setOpen(v);
 	};
 
@@ -57,7 +57,7 @@ export default function <INPUT>({
 		<>
 			<form
 				action={action}
-				ref={setFormElement}>
+				ref={formRef}>
 				{children(onToggle)}
 				{open && (
 					<ModalToggler
