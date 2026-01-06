@@ -50,7 +50,9 @@ export default function ({
 				onChange={fnVoid}
 				name={name}
 			/>
+
 			{label && <p className="mb-[-5px]">{label}</p>}
+
 			{children(
 				list.map((item, key) => (
 					<Checkbox

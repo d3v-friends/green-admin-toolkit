@@ -54,6 +54,12 @@ export default function ({}: Readonly<Props>) {
 							onClose={onToggle}>
 							Tab
 						</LayoutAsideAccordionMobileLink>
+						<LayoutAsideAccordionMobileLink
+							href="/dashboard/widget/in"
+							prefix="/dashboard/widget/in"
+							onClose={onToggle}>
+							Input V2
+						</LayoutAsideAccordionMobileLink>
 					</>
 				)}
 			</LayoutNavMobileMenuButton>

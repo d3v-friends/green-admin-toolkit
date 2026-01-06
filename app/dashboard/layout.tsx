@@ -42,6 +42,11 @@ function Aside({}: Readonly<{children?: ReactNode}>) {
 					prefix="/dashboard/widget/tabs">
 					Tab
 				</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink
+					href="/dashboard/widget/in"
+					prefix="/dashboard/widget/in">
+					Input v2
+				</LayoutAsideAccordionLink>
 			</LayoutAsideAccordion>
 
 			<LayoutAsideAccordion

@@ -14,7 +14,7 @@ import ImgH2 from "web-asset/svg/regular/fi-rr-h2.svg";
 import ImgH3 from "web-asset/svg/regular/fi-rr-h3.svg";
 import ImgParagraph from "web-asset/svg/regular/fi-rr-align-justify.svg";
 import {Color} from "@tiptap/extension-color";
-import TextStyle from "@tiptap/extension-text-style";
+import {TextStyle} from "@tiptap/extension-text-style";
 
 interface Props {
 	value: string;

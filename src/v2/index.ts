@@ -20,6 +20,11 @@ export {default as fnModal} from "./hook/use-modal/fn";
 // input
 export {default as InputArrayCheckbox} from "./input/array-checkbox";
 
+// in
+export {default as InArrayCheckbox} from "./input/array-checkbox";
+export {default as InString} from "./input/string";
+export {default as InNumber} from "./input/number";
+
 // link
 export {default as LinkOutline} from "./link/outline";
 export {default as LinkSolid} from "./link/solid";
