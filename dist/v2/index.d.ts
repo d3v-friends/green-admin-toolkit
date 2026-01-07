@@ -13,6 +13,7 @@ export { default as InputArrayCheckbox } from "./input/array-checkbox";
 export { default as InArrayCheckbox } from "./input/array-checkbox";
 export { default as InString } from "./input/string";
 export { default as InNumber } from "./input/number";
+export { default as InDate } from "./input/date";
 export { default as LinkOutline } from "./link/outline";
 export { default as LinkSolid } from "./link/solid";
 export { default as LinkText } from "./link/text";

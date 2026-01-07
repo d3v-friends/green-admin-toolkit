@@ -24,6 +24,7 @@ export {default as InputArrayCheckbox} from "./input/array-checkbox";
 export {default as InArrayCheckbox} from "./input/array-checkbox";
 export {default as InString} from "./input/string";
 export {default as InNumber} from "./input/number";
+export {default as InDate} from "./input/date";
 
 // link
 export {default as LinkOutline} from "./link/outline";
