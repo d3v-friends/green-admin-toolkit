@@ -18,13 +18,11 @@ export {default as useModal} from "./hook/use-modal";
 export {default as fnModal} from "./hook/use-modal/fn";
 
 // input
-export {default as InputArrayCheckbox} from "./input/array-checkbox";
-
-// input v2
-export {default as InArrayCheckbox} from "./input/array-checkbox";
 export {default as InString} from "./input/string";
 export {default as InNumber} from "./input/number";
 export {default as InDate} from "./input/date";
+export {default as InSelectCheckbox} from "./input/select-checkbox";
+export {default as InCheckbox} from "./input/checkbox";
 
 // link
 export {default as LinkOutline} from "./link/outline";

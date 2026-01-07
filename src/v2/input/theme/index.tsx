@@ -1,7 +1,8 @@
 "use client";
-import React, {ReactNode} from "react";
-import {fnCss} from "nextjs-tools";
+import React, {MouseEvent, ReactNode} from "react";
+import {FnBase, fnCss} from "nextjs-tools";
 import Image, {StaticImageData} from "next/image";
+import ImgCheck from "web-asset/svg/regular/fi-rr-check.svg";
 
 function Label({children}: Readonly<{children?: ReactNode}>) {
 	if (!children) return null;
@@ -57,9 +58,51 @@ function InvalidMessage({children, isInvalid}: Readonly<{children?: ReactNode; i
 	return <div className="min-h-[1.5rem] text-(--danger)">{children}</div>;
 }
 
+export type OnClickCheckboxInterceptor = (e: MouseEvent<HTMLButtonElement>, value: boolean) => boolean;
+
+const DefaultOnClickCheckboxInterceptor: OnClickCheckboxInterceptor = (e, value) => {
+	e.stopPropagation();
+	return value;
+};
+
+function Checkbox({
+	value,
+	children,
+	onClickInterceptor = DefaultOnClickCheckboxInterceptor,
+	onChange,
+}: Readonly<{
+	value: boolean;
+	children: ReactNode;
+	onChange: FnBase<boolean>;
+	onClickInterceptor?: OnClickCheckboxInterceptor;
+}>) {
+	return (
+		<button
+			type="button"
+			className="inline-flex items-center"
+			onClick={(e) => onChange(onClickInterceptor(e, !value))}>
+			<div
+				className={fnCss.sum(
+					"border-(--border) border-[2px] w-[1.2rem] h-[1.2rem] rounded-sm flex items-center justify-center",
+					value ? "border-(--primary) bg-(--primary)" : ""
+				)}>
+				<Image
+					className={fnCss.sum("w-[0.7rem] filter-(--primary-alt-filter)")}
+					src={ImgCheck}
+					alt="check"
+					width={20}
+					height={20}
+				/>
+			</div>
+			<div className={fnCss.sum("pl-2", value ? "text-(--text-3)" : "text-(--text-1)")}>{children}</div>
+		</button>
+	);
+}
+
 export default {
 	Label,
 	Outline,
 	Icon,
 	InvalidMessage,
+	Checkbox,
 };

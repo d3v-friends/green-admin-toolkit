@@ -55,6 +55,7 @@ export {default as FormBase} from "./form/form-base";
 export {default as FormOTP} from "./form/form-otp";
 export {default as fnFormOTPModal} from "./form/form-otp/modal";
 export {default as InputBetween} from "./form/input-between";
+export {default as InputArrayCheckbox} from "./form/array-checkbox";
 
 // @fn
 export {default as ThemeToggler} from "../fn/wrap/theme-toggler";

@@ -1,0 +1,8 @@
+"use client";
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
+import Theme from "../theme/index.js";
+const { Checkbox } = Theme;
+export default function ({ value, onChange, label, onClickInterceptor, name, }) {
+    return (_jsxs(_Fragment, { children: [_jsx("input", { hidden: true, type: "checkbox", value: value ? "true" : "false", onChange: (e) => onChange(e.target.value === "true"), name }), _jsx(Checkbox, { value: value, onClickInterceptor: onClickInterceptor, onChange: onChange, children: label })] }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvdjIvaW5wdXQvY2hlY2tib3gvaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFlBQVksQ0FBQzs7QUFHYixPQUFPLEtBQW1DLE1BQU0sVUFBVSxDQUFDO0FBSTNELE1BQU0sRUFBQyxRQUFRLEVBQUMsR0FBRyxLQUFLLENBQUM7QUFhekIsTUFBTSxDQUFDLE9BQU8sV0FBVyxFQUN4QixLQUFLLEVBQ0wsUUFBUSxFQUNSLEtBQUssRUFDTCxrQkFBa0IsRUFHbEIsSUFBSSxHQUNhO0lBQ2pCLE9BQU8sQ0FDTiw4QkFDQyxnQkFDQyxNQUFNLFFBQ04sSUFBSSxFQUFDLFVBQVUsRUFDZixLQUFLLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDLE9BQU8sRUFDL0IsUUFBUSxFQUFFLENBQUMsQ0FBQyxFQUFFLEVBQUUsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxLQUFLLEtBQUssTUFBTSxDQUFDLEVBQy9DLElBQUksR0FDUixFQUVGLEtBQUMsUUFBUSxJQUNSLEtBQUssRUFBRSxLQUFLLEVBQ1osa0JBQWtCLEVBQUUsa0JBQWtCLEVBQ3RDLFFBQVEsRUFBRSxRQUFRLFlBQ2pCLEtBQUssR0FDSSxJQUNULENBQ0gsQ0FBQztBQUNILENBQUMifQ==

@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import {InDate, InNumber, InString, Panel, PanelHeader} from "@app";
+import {InCheckbox, InDate, InNumber, InSelectCheckbox, InString, Panel, PanelHeader} from "@app";
 import {Nullable} from "nextjs-tools";
 
 export default function () {
@@ -8,10 +8,14 @@ export default function () {
 		str: string;
 		num: string;
 		date: Nullable<Date>;
+		check: boolean;
+		checkList: string[];
 	}>({
 		str: "",
 		num: "",
 		date: new Date(),
+		check: false,
+		checkList: ["1", "2"],
 	});
 	return (
 		<div className="grid grid-cols-1 gap-2 lg:gap-4">
@@ -41,6 +45,25 @@ export default function () {
 					value={args.date}
 					onChange={(date) => setArgs({...args, date})}
 					disabled
+				/>
+
+				<InCheckbox
+					value={args.check}
+					onChange={(check) => setArgs({...args, check})}
+					label="checkbox"
+				/>
+
+				<InSelectCheckbox
+					value={args.checkList}
+					onChange={(checkList) => setArgs({...args, checkList})}
+					items={[
+						{label: "item1", value: "1"},
+						{label: "item2", value: "2"},
+						{label: "item3", value: "3"},
+						{label: "item4", value: "4"},
+						{label: "item5", value: "5"},
+					]}
+					label="select checkbox"
 				/>
 			</Panel>
 		</div>
