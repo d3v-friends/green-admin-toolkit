@@ -24,6 +24,11 @@ export default function ({}: Readonly<Props>) {
 							Input
 						</LayoutAsideAccordionMobileLink>
 						<LayoutAsideAccordionMobileLink
+							href="/dashboard/widget/in"
+							onClose={onToggle}>
+							Input_v2
+						</LayoutAsideAccordionMobileLink>
+						<LayoutAsideAccordionMobileLink
 							href="/dashboard/widget/table"
 							onClose={onToggle}>
 							Table
