@@ -1,4 +1,0 @@
-import Body from "./body/index.js";
-import Nav from "./nav/index.js";
-export default { Body, Nav };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29tcC93aWRnZXQvcGFuZWwtcGFnZXIvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxJQUFJLE1BQU0sUUFBUSxDQUFDO0FBQzFCLE9BQU8sR0FBRyxNQUFNLE9BQU8sQ0FBQztBQUV4QixlQUFlLEVBQUMsSUFBSSxFQUFFLEdBQUcsRUFBQyxDQUFDIn0=

@@ -1,7 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { ModalElement } from "../../../index.js";
-const { Body, Header, Content, OkCancel } = ModalElement;
-export default function ({ ok, cancel, title, content }) {
-    return (onSubmit, onCancel) => (_jsxs(Body, { className: "min-w-[20rem]", children: [title && _jsx(Header, { disableCloseButton: true, children: title }), _jsx(Content, { children: content }), _jsx(OkCancel, { ok: ok, cancel: cancel, onClickOk: onSubmit, onClickCancel: onCancel })] }));
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9kYWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29tcC9mb3JtL2Zvcm0tY29uZmlybS9tb2RhbC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUVBLE9BQU8sRUFBQyxZQUFZLEVBQUMsTUFBTSxZQUFZLENBQUM7QUFTeEMsTUFBTSxFQUFDLElBQUksRUFBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLFFBQVEsRUFBQyxHQUFHLFlBQVksQ0FBQztBQUV2RCxNQUFNLENBQUMsT0FBTyxXQUFXLEVBQUMsRUFBRSxFQUFFLE1BQU0sRUFBRSxLQUFLLEVBQUUsT0FBTyxFQUFrQjtJQUNyRSxPQUFPLENBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxFQUFFLENBQUMsQ0FDOUIsTUFBQyxJQUFJLElBQUMsU0FBUyxFQUFDLGVBQWUsYUFDN0IsS0FBSyxJQUFJLEtBQUMsTUFBTSxJQUFDLGtCQUFrQixrQkFBRSxLQUFLLEdBQVUsRUFDckQsS0FBQyxPQUFPLGNBQUUsT0FBTyxHQUFXLEVBQzVCLEtBQUMsUUFBUSxJQUNSLEVBQUUsRUFBRSxFQUFFLEVBQ04sTUFBTSxFQUFFLE1BQU0sRUFDZCxTQUFTLEVBQUUsUUFBUSxFQUNuQixhQUFhLEVBQUUsUUFBUSxHQUN0QixJQUNJLENBQ1AsQ0FBQztBQUNILENBQUMifQ==

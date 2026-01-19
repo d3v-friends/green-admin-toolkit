@@ -1,8 +1,0 @@
-"use client";
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Toggler from "../toggler/index.js";
-import Elem from "../element/index.js";
-export default function ({ children, disableEscapeKey, disableCloseButton, header, open, onChange, className = "min-w-[20rem]", classNameHeader = "text-xl font-bold", classNameContent = "", }) {
-    return (_jsx(Toggler, { onChange: onChange, open: open, disableEscapeKey: disableEscapeKey, children: _jsxs(Elem.Body, { className: className, children: [_jsx(Elem.Header, { className: classNameHeader, onChange: onChange, disableCloseButton: disableCloseButton, children: header }), _jsx(Elem.Content, { className: classNameContent, children: children })] }) }));
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29tcC9tb2RhbC9iYXNpYy9pbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWSxDQUFDOztBQUViLE9BQU8sT0FBTyxNQUFNLFlBQVksQ0FBQztBQUVqQyxPQUFPLElBQUksTUFBTSxZQUFZLENBQUM7QUFjOUIsTUFBTSxDQUFDLE9BQU8sV0FBVyxFQUN4QixRQUFRLEVBQ1IsZ0JBQWdCLEVBQ2hCLGtCQUFrQixFQUNsQixNQUFNLEVBQ04sSUFBSSxFQUNKLFFBQVEsRUFDUixTQUFTLEdBQUcsZUFBZSxFQUMzQixlQUFlLEdBQUcsbUJBQW1CLEVBQ3JDLGdCQUFnQixHQUFHLEVBQUUsR0FDTTtJQUMzQixPQUFPLENBQ04sS0FBQyxPQUFPLElBQ1AsUUFBUSxFQUFFLFFBQVEsRUFDbEIsSUFBSSxFQUFFLElBQUksRUFDVixnQkFBZ0IsRUFBRSxnQkFBZ0IsWUFDbEMsTUFBQyxJQUFJLENBQUMsSUFBSSxJQUFDLFNBQVMsRUFBRSxTQUFTLGFBQzlCLEtBQUMsSUFBSSxDQUFDLE1BQU0sSUFDWCxTQUFTLEVBQUUsZUFBZSxFQUMxQixRQUFRLEVBQUUsUUFBUSxFQUNsQixrQkFBa0IsRUFBRSxrQkFBa0IsWUFDckMsTUFBTSxHQUNNLEVBQ2QsS0FBQyxJQUFJLENBQUMsT0FBTyxJQUFDLFNBQVMsRUFBRSxnQkFBZ0IsWUFBRyxRQUFRLEdBQWdCLElBQ3pELEdBQ0gsQ0FDVixDQUFDO0FBQ0gsQ0FBQyJ9
