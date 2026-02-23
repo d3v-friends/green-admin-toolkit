@@ -2,6 +2,7 @@
 import React, {ReactNode} from "react";
 import "../../../../asset/style/index.scss";
 import localFont from "next/font/local";
+import ModalPromiseChaining from "../../../v3/fn/modal/promise-chaining";
 
 interface Props {
 	children?: ReactNode | ReactNode[];
@@ -12,6 +13,7 @@ export default async function ({lang = "ko", children}: Readonly<Props>) {
 	return (
 		<html lang={lang}>
 			<body className="bg-(--bg-main) min-h-screen text-[14px] lg:text-[18px] text-(--text-3) font-roboto">
+				<ModalPromiseChaining />
 				{children}
 			</body>
 		</html>

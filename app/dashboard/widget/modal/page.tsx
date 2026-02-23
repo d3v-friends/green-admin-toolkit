@@ -3,6 +3,7 @@ import React from "react";
 import {Panel} from "@app";
 import BasicModal from "./_basic";
 import Alert from "./_alert";
+import V3Fn from "./_v3-fn";
 
 // todo *.md 파일 읽어오는 기능 알아보기.
 // https://nextjs.org/docs/pages/guides/mdx
@@ -16,6 +17,10 @@ export default async function () {
 			<Panel>
 				<h4>Alert</h4>
 				<Alert />
+			</Panel>
+			<Panel>
+				<h4>v3 fn</h4>
+				<V3Fn />
 			</Panel>
 		</div>
 	);

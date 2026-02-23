@@ -1,0 +1,10 @@
+"use client";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import Container from "../../comp/modal/elem/container.js";
+import Header from "../../comp/modal/elem/header.js";
+import Content from "../../comp/modal/elem/content.js";
+import modalPromise from "./modal-promise.js";
+export default function (children, { header = "알림", okText = "확인", cancelText = "취소" } = {}) {
+    return modalPromise((onClose) => (_jsxs(Container, { children: [header && _jsx(Header, { children: header }), _jsxs(Content, { children: [_jsx("div", { children: children }), _jsxs("div", { className: "text-right pt-2", children: [_jsx("button", { className: "lined mr-2", onClick: () => onClose(false), children: cancelText }), _jsx("button", { autoFocus: true, className: "filled", onClick: () => onClose(true), children: okText })] })] })] })));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZy1vay1jYW5jZWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvdjMvZm4vbW9kYWwvZy1vay1jYW5jZWwudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFlBQVksQ0FBQzs7QUFFYixPQUFPLFNBQVMsTUFBTSxpQ0FBaUMsQ0FBQztBQUN4RCxPQUFPLE1BQU0sTUFBTSw4QkFBOEIsQ0FBQztBQUNsRCxPQUFPLE9BQU8sTUFBTSwrQkFBK0IsQ0FBQztBQUNwRCxPQUFPLFlBQVksTUFBTSxpQkFBaUIsQ0FBQztBQVEzQyxNQUFNLENBQUMsT0FBTyxXQUNiLFFBQW1CLEVBQ25CLEVBQUMsTUFBTSxHQUFHLElBQUksRUFBRSxNQUFNLEdBQUcsSUFBSSxFQUFFLFVBQVUsR0FBRyxJQUFJLEtBQTRCLEVBQUU7SUFFOUUsT0FBTyxZQUFZLENBQUMsQ0FBQyxPQUFPLEVBQUUsRUFBRSxDQUFDLENBQ2hDLE1BQUMsU0FBUyxlQUNSLE1BQU0sSUFBSSxLQUFDLE1BQU0sY0FBRSxNQUFNLEdBQVUsRUFDcEMsTUFBQyxPQUFPLGVBQ1Asd0JBQU0sUUFBUSxHQUFPLEVBQ3JCLGVBQUssU0FBUyxFQUFDLGlCQUFpQixhQUMvQixpQkFDQyxTQUFTLEVBQUMsWUFBWSxFQUN0QixPQUFPLEVBQUUsR0FBRyxFQUFFLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxZQUM1QixVQUFVLEdBQ0gsRUFDVCxpQkFDQyxTQUFTLFFBQ1QsU0FBUyxFQUFDLFFBQVEsRUFDbEIsT0FBTyxFQUFFLEdBQUcsRUFBRSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsWUFDM0IsTUFBTSxHQUNDLElBQ0osSUFDRyxJQUNDLENBQ1osQ0FBQyxDQUFDO0FBQ0osQ0FBQyJ9

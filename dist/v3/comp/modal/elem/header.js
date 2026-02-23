@@ -1,0 +1,8 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { fnCss } from "nextjs-tools";
+import ImgCross from "web-asset/svg/regular/fi-rr-cross.svg";
+import Image from "next/image";
+export default function ({ children, className = "", onClose }) {
+    return (_jsxs("div", { className: fnCss.sum(className, "p-2 lg:pl-4 lg:pr-4", "flex border-bottom text-lg"), children: [children, onClose && (_jsx("div", { className: "grow text-right", children: _jsx("button", { className: "ml-2 no-drag", onClick: () => onClose(), children: _jsx(Image, { className: "filter-(--text-1-filter) w-[1rem] hover:filter-(--primary-filter)", src: ImgCross, alt: "close", width: 20, height: 20 }) }) }))] }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVhZGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vc3JjL3YzL2NvbXAvbW9kYWwvZWxlbS9oZWFkZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxPQUFPLEVBQUMsS0FBSyxFQUFTLE1BQU0sY0FBYyxDQUFDO0FBQzNDLE9BQU8sUUFBUSxNQUFNLHVDQUF1QyxDQUFDO0FBQzdELE9BQU8sS0FBSyxNQUFNLFlBQVksQ0FBQztBQVEvQixNQUFNLENBQUMsT0FBTyxXQUFXLEVBQUMsUUFBUSxFQUFFLFNBQVMsR0FBRyxFQUFFLEVBQUUsT0FBTyxFQUFrQjtJQUM1RSxPQUFPLENBQ04sZUFBSyxTQUFTLEVBQUUsS0FBSyxDQUFDLEdBQUcsQ0FBQyxTQUFTLEVBQUUscUJBQXFCLEVBQUUsNEJBQTRCLENBQUMsYUFDdkYsUUFBUSxFQUNSLE9BQU8sSUFBSSxDQUNYLGNBQUssU0FBUyxFQUFDLGlCQUFpQixZQUMvQixpQkFDQyxTQUFTLEVBQUMsY0FBYyxFQUN4QixPQUFPLEVBQUUsR0FBRyxFQUFFLENBQUMsT0FBTyxFQUFFLFlBQ3hCLEtBQUMsS0FBSyxJQUNMLFNBQVMsRUFBQyxtRUFBbUUsRUFDN0UsR0FBRyxFQUFFLFFBQVEsRUFDYixHQUFHLEVBQUMsT0FBTyxFQUNYLEtBQUssRUFBRSxFQUFFLEVBQ1QsTUFBTSxFQUFFLEVBQUUsR0FDVCxHQUNNLEdBQ0osQ0FDTixJQUNJLENBQ04sQ0FBQztBQUNILENBQUMifQ==

@@ -1,0 +1,74 @@
+"use client";
+import React, {ReactNode, useEffect, useState} from "react";
+import {concat} from "nextjs-tools";
+import {createPortal} from "react-dom";
+import ImgLogo from "../../../../../asset/png/icon.png";
+import Image, {StaticImageData} from "next/image";
+
+export interface SuspendProps {
+	pending: boolean;
+	children?: ReactNode;
+	image?: StaticImageData;
+	// wait 초 후에 로딩화면이 표시된다.
+	wait?: number;
+}
+
+export default function ({children, image, pending, wait = 1}: Readonly<SuspendProps>) {
+	const [init, setInit] = useState(false);
+	const [show, setShow] = useState(false);
+
+	useEffect(() => {
+		document.body.style.overflow = "hidden";
+		setInit(true);
+
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, []);
+
+	useEffect(() => {
+		if (wait === 0) {
+			setShow(true);
+			return;
+		}
+
+		setTimeout(() => {
+			setShow(true);
+		}, wait * 1000);
+	}, []);
+
+	if (!pending) return null;
+	if (!init) return null;
+
+	return createPortal(
+		<div
+			className={concat(
+				"fixed w-full h-full top-0 left-0",
+				"flex items-center justify-center",
+				"transition-all duration-300",
+				"z-(--z-modal)",
+				show ? "backdrop-blur-xs bg-(--suspend) opacity-100" : "opacity-0"
+			)}>
+			<Children
+				image={image}
+				children={children}
+			/>
+		</div>,
+		document.body
+	);
+}
+
+function Children({children = "Loading", image = ImgLogo}: Readonly<{image?: StaticImageData; children?: ReactNode}>) {
+	return (
+		<div className="flex flex-col items-center no-drag">
+			<Image
+				className="brightness-50 mb-2 breathing-effect"
+				src={image}
+				alt="logo"
+				width={40}
+				height={40}
+			/>
+			<div className="text-xl font-bold text-(--primary) brightness-50 ">{children}</div>
+		</div>
+	);
+}
