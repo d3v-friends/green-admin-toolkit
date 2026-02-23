@@ -1,0 +1,10 @@
+@use "../fn";
+
+@layer base {
+  section.green {
+    border-radius: 0.2rem;
+    background-color: var(--bg-panel);
+    padding: fn.spacing(4);
+    box-shadow: 10px 10px 10px var(--shadow);
+  }
+}

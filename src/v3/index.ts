@@ -1,4 +1,8 @@
 /* comp ---------------- */
+/* input */
+export {default as GInputBase} from "./comp/input/base";
+export {default as GInputNumber} from "./comp/input/number";
+
 /* modal */
 export {default as ModalContainer} from "./comp/modal/elem/container";
 export {default as ModalHeader} from "./comp/modal/elem/header";

@@ -1,5 +1,6 @@
 #!/bin/zsh
-rm -rf ./dist
+set -e;
+rm -rf ./dist;
 
 tsc -p ./tsconfig.export.json;
 rm ./**/tsconfig.export.tsbuildinfo;

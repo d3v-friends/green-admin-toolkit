@@ -1,0 +1,18 @@
+@use "../fn";
+
+@layer base {
+  input.green {
+    display: block;
+    height: var(--elem-height);
+    outline: none;
+    transition: var(--transition-150);
+    border: 1px solid var(--border);
+    padding-left: fn.spacing(2);
+    width: 100%;
+    border-radius: fn.spacing(1);
+
+    &:focus {
+      border: 1px solid var(--primary);
+    }
+  }
+}

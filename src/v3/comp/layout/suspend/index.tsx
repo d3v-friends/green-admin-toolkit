@@ -2,7 +2,7 @@
 import React, {ReactNode, useEffect, useState} from "react";
 import {concat} from "nextjs-tools";
 import {createPortal} from "react-dom";
-import ImgLogo from "../../../../../asset/png/icon.png";
+import ImgLogo from "web-asset/svg/regular/fi-rr-badge-leaf.svg";
 import Image, {StaticImageData} from "next/image";
 
 export interface SuspendProps {

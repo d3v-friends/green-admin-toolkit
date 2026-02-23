@@ -29,8 +29,9 @@ function Aside({}: Readonly<{children?: ReactNode}>) {
 				title="ELEMENT"
 				group="Widget">
 				<LayoutAsideAccordionLink href="/dashboard/widget/button">Button</LayoutAsideAccordionLink>
-				<LayoutAsideAccordionLink href="/dashboard/widget/input">Input</LayoutAsideAccordionLink>
-				<LayoutAsideAccordionLink href="/dashboard/widget/in">Input_v2</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/dashboard/widget/input-v1">Input</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/dashboard/widget/input-v2">Input_v2</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/dashboard/widget/input-v3">Input_v3</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/dashboard/widget/table">Table</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/dashboard/widget/modal">Modal</LayoutAsideAccordionLink>
 				<LayoutAsideAccordionLink href="/dashboard/widget/chart">Chart</LayoutAsideAccordionLink>
