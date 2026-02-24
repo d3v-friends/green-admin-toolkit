@@ -1,6 +1,8 @@
 /* comp ---------------- */
 /* input */
 export {default as GInputBase} from "./comp/input/base";
+export {default as GInputDropbox} from "./comp/input/dropdown";
+export type {GInputDropdownItem} from "./comp/input/dropdown";
 export {default as GInputNumber} from "./comp/input/number";
 
 /* modal */
