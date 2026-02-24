@@ -18,7 +18,7 @@ export default function ({title, group, imgSrc, children, isCollapsed = false}: 
 	const [open, setOpen] = useState(isCollapsed);
 
 	return (
-		<>
+		<div>
 			{title && <div className="text-xs pl-[1rem] text-(--text-2) mb-2">{title}</div>}
 			<button
 				onClick={() => setOpen(!open)}
@@ -47,7 +47,14 @@ export default function ({title, group, imgSrc, children, isCollapsed = false}: 
 					/>
 				</div>
 			</button>
-			{open && children}
-		</>
+
+			{open && (
+				<div
+					className="overflow-y-auto"
+					autoFocus>
+					{children}
+				</div>
+			)}
+		</div>
 	);
 }

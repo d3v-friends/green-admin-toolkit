@@ -37,7 +37,11 @@ export default function ({children = () => ""}: Readonly<Props>) {
 					onClick={() => setOpen(false)}>
 					<div
 						onClick={(e) => e.stopPropagation()}
-						className={fnCss.sum("fixed left-0 top-0", "w-4/5 h-full bg-(--bg-aside)", "shadow-xl")}>
+						className={fnCss.sum(
+							"fixed left-0 top-0",
+							"w-4/5 h-full bg-(--bg-aside)",
+							"shadow-xl overflow-y-auto"
+						)}>
 						{children(setOpen)}
 					</div>
 				</div>
