@@ -47,12 +47,14 @@ Promise.prototype.suspend = function <T, TResult1 = T>(
 			/>
 		);
 
-		const res = onfulfilled ? await onfulfilled(value) : (value as unknown as TResult1);
-
-		root.unmount();
-		cont.remove();
-
-		return res;
+		try {
+			return onfulfilled ? await onfulfilled(value) : (value as unknown as TResult1);
+		} catch (e) {
+			throw e;
+		} finally {
+			root.unmount();
+			cont.remove();
+		}
 	});
 };
 
