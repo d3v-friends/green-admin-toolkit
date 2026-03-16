@@ -59,7 +59,7 @@ export default function () {
 					)}
 				/>
 
-				<div className="h-100"></div>
+				<div className="h-700"></div>
 			</section>
 		</div>
 	);

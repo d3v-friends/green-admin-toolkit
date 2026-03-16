@@ -99,6 +99,7 @@ export default function <T>({
 		PCContextMenu({
 			clientX: e.clientX,
 			clientY: e.clientY,
+			scrollY: window.scrollY,
 			row,
 			children: onContextMenuRow,
 		});

@@ -1,18 +1,18 @@
 "use client";
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect} from "react";
 import {createRoot} from "react-dom/client";
 import {FnVoid} from "nextjs-tools";
 
 interface Props<T> {
+	scrollY: number;
 	clientX: number;
 	clientY: number;
 	children: (row: T, onClose: FnVoid) => ReactNode;
 	row: T;
 }
 
-export default function <T>({clientX, clientY, children, row}: Readonly<Props<T>>) {
+export default function <T>({clientX, clientY, children, scrollY, row}: Readonly<Props<T>>) {
 	const container = document.createElement("div");
-	container.className = "absolute top-0 left-0 w-full h-full";
 	document.body.appendChild(container);
 
 	const root = createRoot(container);
@@ -23,17 +23,35 @@ export default function <T>({clientX, clientY, children, row}: Readonly<Props<T>
 	};
 
 	root.render(
+		<Menu
+			top={scrollY + clientY}
+			left={clientX}
+			onClose={onClose}>
+			{children(row, onClose)}
+		</Menu>
+	);
+}
+
+interface MenuProps {
+	children: ReactNode;
+	top: number;
+	left: number;
+	onClose: FnVoid;
+}
+
+function Menu({children, top, left, onClose}: Readonly<MenuProps>) {
+	useEffect(() => {
+		window.addEventListener("click", onClose);
+		return () => window.removeEventListener("click", onClose);
+	}, []);
+
+	return (
 		<div
-			className="w-full h-full"
-			onContextMenu={(e) => e.preventDefault()}
-			onClick={onClose}>
-			<div
-				className="absolute p-2 bg-(--bg-modal) rounded-md shadow-2xl"
-				style={{top: clientY, left: clientX}}
-				onClick={(e) => e.stopPropagation()}
-				onContextMenu={(e) => e.preventDefault()}>
-				{children(row, onClose)}
-			</div>
+			className="absolute p-2 bg-(--bg-modal) rounded-md shadow-2xl"
+			style={{top, left}}
+			onClick={(e) => e.stopPropagation()}
+			onContextMenu={(e) => e.preventDefault()}>
+			{children}
 		</div>
 	);
 }
