@@ -12,7 +12,7 @@ export default function <T>({children, row}: Readonly<Props<T>>) {
 	document.body.style.overflow = "hidden";
 
 	const container = document.createElement("div");
-	container.className = "absolute top-0 left-0 w-screen h-screen bg-(--color-shadow) backdrop-blur-xs";
+	container.className = "table-mobile-context-menu-container";
 	document.body.appendChild(container);
 
 	const root = createRoot(container);
@@ -32,11 +32,12 @@ export default function <T>({children, row}: Readonly<Props<T>>) {
 				onClose();
 			}}>
 			<div
-				className="absolute bottom-0 pl-5 pr-5 pt-2 pb-10 bg-(--bg-modal) rounded-tr-xl rounded-tl-xl w-full"
+				autoFocus
+				className="table-mobile-context-menu"
 				onPointerDown={(e) => e.stopPropagation()}
 				onContextMenu={(e) => e.preventDefault()}>
 				<div className="flex justify-center mb-1">
-					<div className="h-1 w-25 rounded-full bg-(--color-shadow)" />
+					<div className="table-mobile-context-menu-bar" />
 				</div>
 				{children(row, onClose)}
 			</div>

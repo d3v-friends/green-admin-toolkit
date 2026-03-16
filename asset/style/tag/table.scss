@@ -1,4 +1,37 @@
 @layer base {
+  body {
+    --table-mobile-context-bar: #bdbdbd;
+  }
+
+  div.table-mobile-context-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-shadow);
+    backdrop-filter: blur(2px);
+  }
+
+  div.table-mobile-context-menu {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem 1rem 2rem 1rem;
+    background-color: var(--bg-modal);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0px -10px 10px var(--color-shadow);
+  }
+
+  div.table-mobile-context-menu-bar {
+    width: 100px;
+    height: 5px;
+    border-radius: 99rem;
+    background-color: var(--table-mobile-context-bar);
+  }
+
   table.green {
     $cell-padding: 0.7rem;
     width: 100%;
