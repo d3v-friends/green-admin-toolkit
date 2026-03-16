@@ -1,0 +1,22 @@
+@layer base {
+  table.green {
+    $cell-padding: 0.7rem;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+
+    tr {
+      border-top: 1px solid var(--border);
+    }
+
+    td {
+      padding: $cell-padding 0 $cell-padding 0;
+      user-select: none;
+    }
+
+    tbody {
+      tr:hover {
+        background-color: var(--color-table-hover);
+      }
+    }
+  }
+}

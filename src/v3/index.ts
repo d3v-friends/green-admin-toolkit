@@ -5,6 +5,10 @@ export {default as GInputDropbox} from "./comp/input/dropdown";
 export type {GInputDropdownItem} from "./comp/input/dropdown";
 export {default as GInputNumber} from "./comp/input/number";
 
+/* table */
+export {default as GTable} from "./comp/table/base";
+export type * from "./comp/table/base";
+
 /* modal */
 export {default as ModalContainer} from "./comp/modal/elem/container";
 export {default as ModalHeader} from "./comp/modal/elem/header";

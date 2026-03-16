@@ -30,6 +30,11 @@ export default async function () {
 						href="/dashboard/widget/button">
 						Sign in
 					</LinkSolid>
+					<LinkSolid
+						className="mb-2 w-full"
+						href="/v3">
+						Version 3
+					</LinkSolid>
 					<LinkOutline
 						className="mb-2 w-full"
 						href="/">
