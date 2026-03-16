@@ -1,5 +1,5 @@
 "use client";
-import React, {ReactNode, useEffect, useRef, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import {FnVoid} from "nextjs-tools";
 import {createRoot} from "react-dom/client";
 
@@ -23,21 +23,12 @@ export default function <T>({children, row}: Readonly<Props<T>>) {
 		root.unmount();
 	};
 
-	root.render(
-		<div
-			className="w-full h-full"
-			onContextMenu={(e) => e.preventDefault()}
-			onPointerDown={(e) => {
-				if (e.pointerType !== "touch") return;
-				onClose();
-			}}>
-			<Menu>{children(row, onClose)}</Menu>
-		</div>
-	);
+	root.render(<Menu onClose={onClose}>{children(row, onClose)}</Menu>);
 }
 
 interface MenuProps {
 	children: ReactNode;
+	onClose: FnVoid;
 }
 
 const MenuStyle: Record<string, string> = {
@@ -45,24 +36,44 @@ const MenuStyle: Record<string, string> = {
 	close: "table-mobile-context-menu translate-y-full",
 };
 
-function Menu({children}: Readonly<MenuProps>) {
-	const contRef = useRef<HTMLDivElement>(null);
+const MenuContainerStyle: Record<string, string> = {
+	open: "w-full h-full bg-(--color-shadow) backdrop-blur-xs transition-all duration-300",
+	close: "w-full h-full bg-transparent backdrop-blur-none transition-all duration-300",
+};
+
+function Menu({children, onClose}: Readonly<MenuProps>) {
 	const [isOpen, onChangeOpen] = useState(false);
+	const getStyle = (v: boolean) => (v ? "open" : "close");
+
 	useEffect(() => {
 		onChangeOpen(true);
 	}, []);
 
+	const onCloseAnimation = () => {
+		onChangeOpen(false);
+		setTimeout(() => {
+			onClose();
+		}, 300);
+	};
+
 	return (
 		<div
-			ref={contRef}
-			autoFocus
-			className={MenuStyle[isOpen ? "open" : "close"]}
-			onPointerDown={(e) => e.stopPropagation()}
-			onContextMenu={(e) => e.preventDefault()}>
-			<div className="flex justify-center mb-1">
-				<div className="table-mobile-context-menu-bar" />
+			className={MenuContainerStyle[getStyle(isOpen)]}
+			onContextMenu={(e) => e.preventDefault()}
+			onPointerDown={(e) => {
+				if (e.pointerType !== "touch") return;
+				onCloseAnimation();
+			}}>
+			<div
+				autoFocus
+				className={MenuStyle[isOpen ? "open" : "close"]}
+				onPointerDown={(e) => e.stopPropagation()}
+				onContextMenu={(e) => e.preventDefault()}>
+				<div className="flex justify-center mb-1">
+					<div className="table-mobile-context-menu-bar" />
+				</div>
+				{children}
 			</div>
-			{children}
 		</div>
 	);
 }

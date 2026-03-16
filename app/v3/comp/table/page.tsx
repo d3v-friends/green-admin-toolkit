@@ -42,16 +42,20 @@ export default function () {
 					onContextMenuRow={(row, onClose) => (
 						<>
 							<h4>{row.name}</h4>
-							<button
-								className="filled"
-								onClick={() => {
-									alert("hello");
-								}}>
-								alert
-							</button>
+							{[1, 2, 3, 4].map((key) => (
+								<button
+									key={key}
+									className="outlined w-full mb-2"
+									onClick={() => {
+										alert("hello");
+										onClose();
+									}}>
+									alert {key}
+								</button>
+							))}
 
 							<button
-								className="filled"
+								className="liend  w-full"
 								onClick={onClose}>
 								close
 							</button>
