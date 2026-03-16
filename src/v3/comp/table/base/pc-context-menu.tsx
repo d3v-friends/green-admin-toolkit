@@ -11,8 +11,18 @@ interface Props<T> {
 	row: T;
 }
 
+const CONTAINER_CLASSNAME = "table-pc-context-menu-container";
+
 export default function <T>({clientX, clientY, children, scrollY, row}: Readonly<Props<T>>) {
+	const prev = document.getElementsByClassName(CONTAINER_CLASSNAME);
+	if (prev) {
+		for (let elem of prev) {
+			elem.remove();
+		}
+	}
+
 	const container = document.createElement("div");
+	container.className = "table-pc-context-menu-container";
 	document.body.appendChild(container);
 
 	const root = createRoot(container);
@@ -42,7 +52,9 @@ interface MenuProps {
 function Menu({children, top, left, onClose}: Readonly<MenuProps>) {
 	useEffect(() => {
 		window.addEventListener("click", onClose);
-		return () => window.removeEventListener("click", onClose);
+		return () => {
+			window.removeEventListener("click", onClose);
+		};
 	}, []);
 
 	return (
