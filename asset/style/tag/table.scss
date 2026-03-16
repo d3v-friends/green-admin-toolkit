@@ -4,7 +4,7 @@
   }
 
   div.table-mobile-context-menu-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -14,7 +14,7 @@
   }
 
   div.table-mobile-context-menu {
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
