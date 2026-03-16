@@ -23,14 +23,18 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     box-shadow: 0px -10px 10px var(--color-shadow);
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-
+  
   div.table-mobile-context-menu-bar {
     width: 100px;
     height: 5px;
     border-radius: 99rem;
     background-color: var(--table-mobile-context-bar);
   }
+
 
   table.green {
     $cell-padding: 0.7rem;
