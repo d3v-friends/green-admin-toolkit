@@ -8,6 +8,8 @@ export {default as GInputNumber} from "./comp/input/number";
 /* table */
 export {default as GTable} from "./comp/table/base";
 export type * from "./comp/table/base";
+export {default as GTableContextMenu} from "./comp/table/base/context-menu";
+export type * from "./comp/table/base/context-menu";
 
 /* modal */
 export {default as ModalContainer} from "./comp/modal/elem/container";

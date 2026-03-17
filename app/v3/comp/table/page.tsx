@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {GTable} from "@src";
+import {GTable, GTableContextMenu} from "@src";
 
 type Data = {name: string; age: number; content: string};
 
@@ -42,23 +42,17 @@ export default function () {
 					onContextMenuRow={(row, onClose) => (
 						<>
 							<h4>{row.name}</h4>
-							{[1, 2, 3, 4].map((key) => (
-								<button
-									key={key}
-									className="outlined w-full mb-2"
-									onClick={() => {
-										alert("hello");
-										onClose();
-									}}>
-									alert {key}
-								</button>
-							))}
-
-							<button
-								className="liend  w-full"
-								onClick={onClose}>
-								close
-							</button>
+							<GTableContextMenu
+								items={[
+									{
+										label: "menu 01",
+										onClick: () => {
+											alert("menu 01");
+											onClose();
+										},
+									},
+								]}
+							/>
 						</>
 					)}
 				/>
