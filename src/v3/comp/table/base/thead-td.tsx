@@ -1,6 +1,6 @@
 "use client";
-import React, {ReactNode, useState} from "react";
-import {usePathname, useSearchParams} from "next/navigation";
+import React, {ReactNode, useEffect, useState} from "react";
+import {useSearchParams} from "next/navigation";
 import {useRouterTools} from "nextjs-tools";
 import ImgCaretUp from "web-asset/svg/solid/fi-sr-caret-up.svg";
 import ImgCaretDown from "web-asset/svg/solid/fi-sr-caret-down.svg";
@@ -16,10 +16,13 @@ interface Props {
 export default function ({children, sortkey, multiSortable}: Readonly<Props>) {
 	if (!sortkey) return children;
 
-	const pathname = usePathname();
 	const params = useSearchParams();
 	const router = useRouterTools();
 	const [dir, onChangeDir] = useState(getDirection(params.get(sortkey) || "none"));
+
+	useEffect(() => {
+		onChangeDir(getDirection(params.get(sortkey) || "none"));
+	}, [params]);
 
 	const onClick = () => {
 		const next = getNextDirection(dir);
