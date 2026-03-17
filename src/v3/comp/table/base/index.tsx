@@ -19,6 +19,7 @@ interface Props<T> extends Omit<TableHTMLAttributes<HTMLTableElement>, "children
 	onClickRow?: TablePointerHandler<T>;
 	onMiddleClickRow?: TablePointerHandler<T>;
 	onContextMenuRow?: TableContextMenuRow<T>;
+	emptyListMessage?: ReactNode;
 }
 
 export type TablePointerHandler<T> = (row: T) => void;
@@ -45,6 +46,7 @@ export default function <T>({
 	className,
 	onContextMenuRow,
 	multiSortable,
+	emptyListMessage = "데이터가 없습니다.",
 	...attr
 }: Readonly<Props<T>>) {
 	const touchDuration = 500;
@@ -144,6 +146,15 @@ export default function <T>({
 						))}
 					</tr>
 				))}
+				{list.length === 0 && (
+					<tr>
+						<td
+							className="text-center"
+							colSpan={columns.length}>
+							{emptyListMessage}
+						</td>
+					</tr>
+				)}
 			</tbody>
 		</table>
 	);

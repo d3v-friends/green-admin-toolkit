@@ -58,6 +58,11 @@ export default function () {
 					)}
 				/>
 
+				<GTable
+					columns={[]}
+					list={[]}
+				/>
+
 				<div className="h-700"></div>
 			</section>
 		</div>

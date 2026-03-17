@@ -7,6 +7,7 @@ interface Props<T> extends Omit<TableHTMLAttributes<HTMLTableElement>, "children
     onClickRow?: TablePointerHandler<T>;
     onMiddleClickRow?: TablePointerHandler<T>;
     onContextMenuRow?: TableContextMenuRow<T>;
+    emptyListMessage?: ReactNode;
 }
 export type TablePointerHandler<T> = (row: T) => void;
 export type TableContextMenuRow<T> = (row: T, onClose: FnVoid) => ReactNode;
@@ -18,5 +19,5 @@ export type TableColumn<T> = {
     theadClassName?: string;
     tbodyClassName?: string;
 };
-export default function <T>({ list, columns, onClickRow, onMiddleClickRow, className, onContextMenuRow, multiSortable, ...attr }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
+export default function <T>({ list, columns, onClickRow, onMiddleClickRow, className, onContextMenuRow, multiSortable, emptyListMessage, ...attr }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
 export {};
