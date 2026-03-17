@@ -31,6 +31,7 @@ export default function () {
 						{
 							label: "나이",
 							widthClassName: "w-1/3",
+							sortkey: "age",
 							row: (row) => row.age,
 						},
 						{

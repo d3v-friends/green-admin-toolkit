@@ -15,14 +15,22 @@ interface Props {
 
 export default function ({children, sortkey, multiSortable}: Readonly<Props>) {
 	if (!sortkey) return children;
-
 	const params = useSearchParams();
+	const getDirection = (): string => {
+		if (multiSortable) {
+			return parseDirection(params.get(sortkey) || "none");
+		}
+
+		if (params.get("sortkey") !== sortkey) return "none";
+
+		return parseDirection(params.get("direction") || "none");
+	};
 	const router = useRouterTools();
-	const [dir, onChangeDir] = useState(getDirection(params.get(sortkey) || "none"));
+	const [dir, onChangeDir] = useState(getDirection());
 
 	useEffect(() => {
-		onChangeDir(getDirection(params.get(sortkey) || "none"));
-	}, [params]);
+		onChangeDir(getDirection());
+	}, [params.toString()]);
 
 	const onClick = () => {
 		const next = getNextDirection(dir);
@@ -67,7 +75,7 @@ export default function ({children, sortkey, multiSortable}: Readonly<Props>) {
 	);
 }
 
-function getDirection(dir: string): string {
+function parseDirection(dir: string): string {
 	switch (dir.toLowerCase()) {
 		case "asc":
 			return "asc";
