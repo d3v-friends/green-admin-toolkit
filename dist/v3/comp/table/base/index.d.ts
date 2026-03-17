@@ -3,6 +3,7 @@ import { FnVoid } from "nextjs-tools";
 interface Props<T> extends Omit<TableHTMLAttributes<HTMLTableElement>, "children"> {
     list: T[];
     columns: TableColumn<T>[];
+    multiSortable?: boolean;
     onClickRow?: TablePointerHandler<T>;
     onMiddleClickRow?: TablePointerHandler<T>;
     onContextMenuRow?: TableContextMenuRow<T>;
@@ -17,5 +18,5 @@ export type TableColumn<T> = {
     theadClassName?: string;
     tbodyClassName?: string;
 };
-export default function <T>({ list, columns, onClickRow, onMiddleClickRow, className, onContextMenuRow, ...attr }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
+export default function <T>({ list, columns, onClickRow, onMiddleClickRow, className, onContextMenuRow, multiSortable, ...attr }: Readonly<Props<T>>): import("react/jsx-runtime").JSX.Element;
 export {};

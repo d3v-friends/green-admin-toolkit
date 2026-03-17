@@ -15,6 +15,7 @@ import TheadTd from "./thead-td";
 interface Props<T> extends Omit<TableHTMLAttributes<HTMLTableElement>, "children"> {
 	list: T[];
 	columns: TableColumn<T>[];
+	multiSortable?: boolean;
 	onClickRow?: TablePointerHandler<T>;
 	onMiddleClickRow?: TablePointerHandler<T>;
 	onContextMenuRow?: TableContextMenuRow<T>;
@@ -43,6 +44,7 @@ export default function <T>({
 	onMiddleClickRow = fnVoid,
 	className,
 	onContextMenuRow,
+	multiSortable,
 	...attr
 }: Readonly<Props<T>>) {
 	const touchDuration = 500;
@@ -115,7 +117,11 @@ export default function <T>({
 						<td
 							key={key}
 							className={concat(column.widthClassName, column.theadClassName || "text-center font-bold")}>
-							<TheadTd sortkey={column.sortkey}>{column.label}</TheadTd>
+							<TheadTd
+								sortkey={column.sortkey}
+								multiSortable={multiSortable}>
+								{column.label}
+							</TheadTd>
 						</td>
 					))}
 				</tr>
