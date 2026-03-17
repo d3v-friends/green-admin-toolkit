@@ -22,7 +22,7 @@ export default function ({children, sortkey}: Readonly<Props>) {
 	const onClick = () => {
 		const next = getNextDirection(dir);
 		router.pushBySearchParams({
-			sortkey: next,
+			[sortkey]: next,
 		});
 		onChangeDir(next);
 	};
