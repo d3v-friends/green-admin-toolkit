@@ -26,6 +26,7 @@ function Aside() {
 				title="ELEMENT"
 				group="Component">
 				<LayoutAsideAccordionLink href="/v3/comp/table">GTable</LayoutAsideAccordionLink>
+				<LayoutAsideAccordionLink href="/v3/comp/modal">gModal</LayoutAsideAccordionLink>
 			</LayoutAsideAccordion>
 		</>
 	);

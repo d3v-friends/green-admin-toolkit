@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import {gAlert, gModal, gOkCancel, ModalContainer, ModalContent, ModalHeader} from "@src";
-import {sleep} from "nextjs-tools";
+import {gAlert, gModal, ModalContainer, ModalContent, ModalHeader} from "@src";
 
 export default function () {
 	const onClick = () => {
@@ -28,19 +27,7 @@ export default function () {
 		gAlert("Hello world", {header: "알림"});
 	};
 
-	const onClickOkCancel = () => {
-		gOkCancel("ok cancel")
-			.suspend(
-				async (value) => {
-					if (!value) return;
-					await sleep(5000);
-				},
-				{
-					wait: 0,
-				}
-			)
-			.alert({});
-	};
+	const onClickOkCancel = () => {};
 	return (
 		<div className="grid grid-cols-5 gap-2 lg:gap-4">
 			<button

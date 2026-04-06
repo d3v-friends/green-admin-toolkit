@@ -10,8 +10,7 @@ export interface ModalPromiseOptions {
 
 export type ModalPromiseChildren = (onClose: FnBase<boolean>) => ReactNode;
 
-export const ModalEscaped = "MODAL_ESCAPED";
-export const ModalCanceled = "MODAL_CANCELLED";
+export const ModalCancel = "MODAL_CANCEL";
 
 export default function (children: ModalPromiseChildren, opts: Partial<ModalPromiseOptions> = {}): Promise<boolean> {
 	return new Promise<boolean>((resolve, reject) => {
@@ -21,7 +20,7 @@ export default function (children: ModalPromiseChildren, opts: Partial<ModalProm
 		const escapeHandler = (e: KeyboardEvent) => {
 			if (e.key !== "Escape") return;
 			unmount();
-			reject(new Error(ModalEscaped));
+			reject(new Error(ModalCancel));
 		};
 
 		const root = createRoot(cont);
@@ -37,7 +36,7 @@ export default function (children: ModalPromiseChildren, opts: Partial<ModalProm
 			if (e.button !== 0) return;
 			if (opts.backdrop) {
 				unmount();
-				reject(new Error(ModalEscaped));
+				reject(new Error(ModalCancel));
 			}
 		};
 

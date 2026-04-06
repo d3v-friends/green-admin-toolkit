@@ -1,0 +1,9 @@
+"use client";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { fnCss } from "nextjs-tools";
+import Image from "next/image";
+import Link from "next/link";
+export default function ({ children, style = "solid", className = "w-full", color = "primary", imgSrc, href = "/", }) {
+    return (_jsxs(Link, { className: fnCss.sum(style, className, color, "button", "flex items-center justify-center min-h-[2.5rem] pl-2 pr-2 rounded-md", "outline-none"), href: href, children: [imgSrc && (_jsx(Image, { className: "mr-2 w-[0.8rem]", src: imgSrc, alt: "icon", width: 20, height: 20 })), _jsx("span", { className: fnCss.sum(imgSrc ? "pr-4" : ""), children: children })] }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWSxDQUFDOztBQUViLE9BQU8sRUFBQyxLQUFLLEVBQVMsTUFBTSxjQUFjLENBQUM7QUFFM0MsT0FBTyxLQUFLLE1BQU0sWUFBWSxDQUFDO0FBQy9CLE9BQU8sSUFBSSxNQUFNLFdBQVcsQ0FBQztBQVc3QixNQUFNLENBQUMsT0FBTyxXQUFXLEVBQ3hCLFFBQVEsRUFDUixLQUFLLEdBQUcsT0FBTyxFQUNmLFNBQVMsR0FBRyxRQUFRLEVBQ3BCLEtBQUssR0FBRyxTQUFTLEVBQ2pCLE1BQU0sRUFDTixJQUFJLEdBQUcsR0FBRyxHQUNPO0lBQ2pCLE9BQU8sQ0FDTixNQUFDLElBQUksSUFDSixTQUFTLEVBQUUsS0FBSyxDQUFDLEdBQUcsQ0FDbkIsS0FBSyxFQUNMLFNBQVMsRUFDVCxLQUFLLEVBQ0wsUUFBUSxFQUNSLHNFQUFzRSxFQUN0RSxjQUFjLENBQ2QsRUFDRCxJQUFJLEVBQUUsSUFBSSxhQUNULE1BQU0sSUFBSSxDQUNWLEtBQUMsS0FBSyxJQUNMLFNBQVMsRUFBQyxpQkFBaUIsRUFDM0IsR0FBRyxFQUFFLE1BQU0sRUFDWCxHQUFHLEVBQUMsTUFBTSxFQUNWLEtBQUssRUFBRSxFQUFFLEVBQ1QsTUFBTSxFQUFFLEVBQUUsR0FDVCxDQUNGLEVBQ0QsZUFBTSxTQUFTLEVBQUUsS0FBSyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLFlBQUcsUUFBUSxHQUFRLElBQzdELENBQ1AsQ0FBQztBQUNILENBQUMifQ==

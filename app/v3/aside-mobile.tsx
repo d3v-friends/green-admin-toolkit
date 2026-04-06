@@ -18,6 +18,11 @@ export default function ({}: Readonly<Props>) {
 							onClose={onToggle}>
 							GTable
 						</LayoutAsideAccordionMobileLink>
+						<LayoutAsideAccordionMobileLink
+							href="/v3/comp/modal"
+							onClose={onToggle}>
+							gModal
+						</LayoutAsideAccordionMobileLink>
 					</>
 				)}
 			</LayoutNavMobileMenuButton>

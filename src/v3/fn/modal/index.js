@@ -1,0 +1,50 @@
+"use client";
+import { jsx as _jsx } from "react/jsx-runtime";
+import { useEffect, useRef } from "react";
+import { createRoot } from "react-dom/client";
+export default function (children, opts = {}) {
+    const cont = document.createElement("dialog");
+    cont.className = "green";
+    cont.onmouseup = (e) => {
+        if (e.button !== 0)
+            return;
+        if (opts.backdrop)
+            onClose();
+    };
+    document.body.appendChild(cont);
+    const root = createRoot(cont);
+    const onClose = () => {
+        root.unmount();
+        cont.remove();
+    };
+    let target;
+    if (typeof children === "function") {
+        target = children(onClose);
+    }
+    else {
+        target = children;
+    }
+    root.render(_jsx(Alert, Object.assign({ onClose: onClose }, opts, { children: target })));
+}
+function Alert({ onClose, children, escape = true }) {
+    const onCloseRef = useRef(onClose);
+    useEffect(() => {
+        if (!escape)
+            return;
+        const handler = (e) => {
+            if (e.key !== "Escape")
+                return;
+            onCloseRef.current();
+        };
+        document.addEventListener("keydown", handler);
+        return () => document.removeEventListener("keydown", handler);
+    }, []);
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, []);
+    return _jsx("div", { onMouseUp: (e) => e.stopPropagation(), children: children });
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWSxDQUFDOztBQUNiLE9BQWMsRUFBWSxTQUFTLEVBQUUsTUFBTSxFQUFDLE1BQU0sT0FBTyxDQUFDO0FBRTFELE9BQU8sRUFBQyxVQUFVLEVBQUMsTUFBTSxrQkFBa0IsQ0FBQztBQVc1QyxNQUFNLENBQUMsT0FBTyxXQUFXLFFBQTZCLEVBQUUsT0FBOEIsRUFBRTtJQUN2RixNQUFNLElBQUksR0FBRyxRQUFRLENBQUMsYUFBYSxDQUFDLFFBQVEsQ0FBQyxDQUFDO0lBQzlDLElBQUksQ0FBQyxTQUFTLEdBQUcsT0FBTyxDQUFDO0lBQ3pCLElBQUksQ0FBQyxTQUFTLEdBQUcsQ0FBQyxDQUFDLEVBQUUsRUFBRTtRQUN0QixJQUFJLENBQUMsQ0FBQyxNQUFNLEtBQUssQ0FBQztZQUFFLE9BQU87UUFDM0IsSUFBSSxJQUFJLENBQUMsUUFBUTtZQUFFLE9BQU8sRUFBRSxDQUFDO0lBQzlCLENBQUMsQ0FBQztJQUNGLFFBQVEsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBRWhDLE1BQU0sSUFBSSxHQUFHLFVBQVUsQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUM5QixNQUFNLE9BQU8sR0FBRyxHQUFHLEVBQUU7UUFDcEIsSUFBSSxDQUFDLE9BQU8sRUFBRSxDQUFDO1FBQ2YsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDO0lBQ2YsQ0FBQyxDQUFDO0lBRUYsSUFBSSxNQUFpQixDQUFDO0lBQ3RCLElBQUksT0FBTyxRQUFRLEtBQUssVUFBVSxFQUFFLENBQUM7UUFDcEMsTUFBTSxHQUFHLFFBQVEsQ0FBQyxPQUFPLENBQUMsQ0FBQztJQUM1QixDQUFDO1NBQU0sQ0FBQztRQUNQLE1BQU0sR0FBRyxRQUFRLENBQUM7SUFDbkIsQ0FBQztJQUVELElBQUksQ0FBQyxNQUFNLENBQ1YsS0FBQyxLQUFLLGtCQUNMLE9BQU8sRUFBRSxPQUFPLElBQ1osSUFBSSxjQUNQLE1BQU0sSUFDQSxDQUNSLENBQUM7QUFDSCxDQUFDO0FBT0QsU0FBUyxLQUFLLENBQUMsRUFBQyxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sR0FBRyxJQUFJLEVBQStDO0lBQzlGLE1BQU0sVUFBVSxHQUFHLE1BQU0sQ0FBQyxPQUFPLENBQUMsQ0FBQztJQUVuQyxTQUFTLENBQUMsR0FBRyxFQUFFO1FBQ2QsSUFBSSxDQUFDLE1BQU07WUFBRSxPQUFPO1FBRXBCLE1BQU0sT0FBTyxHQUFHLENBQUMsQ0FBZ0IsRUFBRSxFQUFFO1lBQ3BDLElBQUksQ0FBQyxDQUFDLEdBQUcsS0FBSyxRQUFRO2dCQUFFLE9BQU87WUFDL0IsVUFBVSxDQUFDLE9BQU8sRUFBRSxDQUFDO1FBQ3RCLENBQUMsQ0FBQztRQUNGLFFBQVEsQ0FBQyxnQkFBZ0IsQ0FBQyxTQUFTLEVBQUUsT0FBTyxDQUFDLENBQUM7UUFDOUMsT0FBTyxHQUFHLEVBQUUsQ0FBQyxRQUFRLENBQUMsbUJBQW1CLENBQUMsU0FBUyxFQUFFLE9BQU8sQ0FBQyxDQUFDO0lBQy9ELENBQUMsRUFBRSxFQUFFLENBQUMsQ0FBQztJQUVQLFNBQVMsQ0FBQyxHQUFHLEVBQUU7UUFDZCxRQUFRLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxRQUFRLEdBQUcsUUFBUSxDQUFDO1FBQ3hDLE9BQU8sR0FBRyxFQUFFO1lBQ1gsUUFBUSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsUUFBUSxHQUFHLE9BQU8sQ0FBQztRQUN4QyxDQUFDLENBQUM7SUFDSCxDQUFDLEVBQUUsRUFBRSxDQUFDLENBQUM7SUFFUCxPQUFPLGNBQUssU0FBUyxFQUFFLENBQUMsQ0FBQyxFQUFFLEVBQUUsQ0FBQyxDQUFDLENBQUMsZUFBZSxFQUFFLFlBQUcsUUFBUSxHQUFPLENBQUM7QUFDckUsQ0FBQyJ9

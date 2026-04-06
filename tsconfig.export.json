@@ -1,18 +1,14 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "noEmit": false,
-    "removeComments": true,
-    "declaration": true,
-    "inlineSourceMap": true,
-    "outDir": "./dist"
-  },
-  "include": [
-    "./src/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "./app/*"
-  ]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"noEmit": false,
+		"removeComments": true,
+		"declaration": true,
+		"inlineSourceMap": true,
+		"outDir": "./dist",
+		"rootDir": "./src"
+	},
+	"include": ["./src/*"],
+	"exclude": ["node_modules", "./app/*"]
 }
