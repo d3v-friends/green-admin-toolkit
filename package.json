@@ -2,7 +2,7 @@
 	"name": "green-admin-toolkit",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"version": "3.0.19",
+	"version": "3.0.20",
 	"scripts": {
 		"dev": "next dev -p 61001",
 		"update": "pnpm up -i --latest"

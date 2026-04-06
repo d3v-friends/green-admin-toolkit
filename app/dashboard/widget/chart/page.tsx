@@ -50,6 +50,7 @@ export default function () {
 							tickAmount: 10,
 							labels: {
 								formatter: function (value, timestamp, opts) {
+									if (!opts) return;
 									return opts.dateFormatter(new Date(timestamp ?? 0), "dd MMM");
 								},
 							},

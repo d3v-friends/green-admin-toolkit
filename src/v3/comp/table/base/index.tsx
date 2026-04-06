@@ -3,6 +3,7 @@ import React, {
 	MouseEventHandler,
 	PointerEventHandler,
 	ReactNode,
+	Suspense,
 	TableHTMLAttributes,
 	TouchEventHandler,
 	useState,
@@ -110,52 +111,57 @@ export default function <T>({
 	};
 
 	return (
-		<table
-			className={className}
-			{...attr}>
-			<thead>
-				<tr>
-					{columns.map((column, key) => (
-						<td
-							key={key}
-							className={concat(column.widthClassName, column.theadClassName || "text-center font-bold")}>
-							<TheadTd
-								sortkey={column.sortkey}
-								multiSortable={multiSortable}>
-								{column.label}
-							</TheadTd>
-						</td>
-					))}
-				</tr>
-			</thead>
-			<tbody>
-				{list.map((row, i1) => (
-					<tr
-						key={i1}
-						onPointerUp={onPointerUp(row)}
-						onContextMenu={onContextMenu(row)}>
-						{columns.map((column, i2) => (
+		<Suspense>
+			<table
+				className={className}
+				{...attr}>
+				<thead>
+					<tr>
+						{columns.map((column, key) => (
 							<td
-								key={i2}
-								className={column.tbodyClassName}
-								onTouchStart={onTouchStart(row)}
-								onTouchEnd={onTouchEnd(row)}
-								onTouchCancel={(e) => {}}>
-								{column.row(row)}
+								key={key}
+								className={concat(
+									column.widthClassName,
+									column.theadClassName || "text-center font-bold"
+								)}>
+								<TheadTd
+									sortkey={column.sortkey}
+									multiSortable={multiSortable}>
+									{column.label}
+								</TheadTd>
 							</td>
 						))}
 					</tr>
-				))}
-				{list.length === 0 && (
-					<tr>
-						<td
-							className="text-center"
-							colSpan={columns.length}>
-							{emptyListMessage}
-						</td>
-					</tr>
-				)}
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					{list.map((row, i1) => (
+						<tr
+							key={i1}
+							onPointerUp={onPointerUp(row)}
+							onContextMenu={onContextMenu(row)}>
+							{columns.map((column, i2) => (
+								<td
+									key={i2}
+									className={column.tbodyClassName}
+									onTouchStart={onTouchStart(row)}
+									onTouchEnd={onTouchEnd(row)}
+									onTouchCancel={(e) => {}}>
+									{column.row(row)}
+								</td>
+							))}
+						</tr>
+					))}
+					{list.length === 0 && (
+						<tr>
+							<td
+								className="text-center"
+								colSpan={columns.length}>
+								{emptyListMessage}
+							</td>
+						</tr>
+					)}
+				</tbody>
+			</table>
+		</Suspense>
 	);
 }
